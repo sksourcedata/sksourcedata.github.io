@@ -1,0 +1,101 @@
+pre.code {
+    white-space: pre-wrap;
+    margin-left: 8em;
+}
+  
+pre.code::before {
+    counter-reset: listing;
+}
+  
+pre.code code {
+    counter-increment: listing;
+    text-align: left;
+    float: left;
+    clear: left;
+}
+  
+pre.code code::before {
+    content: counter(listing) ". ";
+    display: inline-block;
+    float: left;
+    height: 3em;
+    padding-left: auto;
+    margin-left: auto;
+    text-align: right;
+}
+
+.sk.box.d {
+    border-left: 10px solid #C6DAFC;
+    padding-left: 10px;
+    margin: 20px
+  }
+  
+.sk-math-d {
+  width: auto;
+  border: 2px solid #00cafa;
+  border-left: 7px solid #00cafa;
+  padding-left: 7px;
+  margin: 20px;
+}
+
+.sk-math-d::before {
+  position: relative;
+  top:15px;
+  left:15px;
+  font-size:12px;
+  font-weight:700;
+  color:black;
+  text-transform: uppercase;
+  letter-spacing:1px;
+  content: "Definición"
+}
+
+.sk-math-d b {
+  color: #ff9b17;
+}
+
+.sk-math-l {
+  width: auto;
+  border-left: 7px solid #00cafa;
+  padding-left: 7px;
+  margin: 20px;
+}
+
+.sk-math-l b {
+  color: #ff9b17;
+}
+
+.sk-math-t {
+  width: auto;
+  border-left: 7px solid #00cafa;
+  padding-left: 7px;
+  margin: 20px;
+}
+
+.sk-math-t b {
+  color: #ff9b17;
+}
+
+.sk-math-c {
+  width: auto;
+  border-left: 7px solid #00cafa;
+  padding-left: 7px;
+  margin: 20px;
+}
+
+.sk-math-c b {
+  color: #ff9b17;
+}
+
+/* Proof style */
+
+.sk-math-p {
+    width: auto;
+  border-left: 7px solid #00cafa;
+  padding-left: 7px;
+  margin: 20px;
+}
+
+.sk-math-p b {
+  color: #ff9b17;
+}
