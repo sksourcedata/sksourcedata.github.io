@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /** Reset some basic elements */
 body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, hr, dl, dd, ol, ul, figure { margin: 0; padding: 0; }
 
@@ -273,5 +274,30 @@ table td { border: 1px solid #e8e8e8; }
 .highlight .vi { color: #008080; }
 
 .highlight .il { color: #099; }
+
+.sk.box.math { margin-top: 20px; margin-bottom: 20px; }
+
+.sk.box.math.d { width: auto; border-left: 10px solid #00cafa; padding-left: 10px; }
+
+.sk.box.math.d::before { font-weight: bold; content: "Definición. "; }
+
+.sk.box.math.d b { color: #ff9b17; }
+
+.sk-math-l { width: auto; border-left: 7px solid #00cafa; padding-left: 7px; margin: 20px; }
+
+.sk-math-l b { color: #ff9b17; }
+
+.sk-math-t { width: auto; border-left: 7px solid #00cafa; padding-left: 7px; margin: 20px; }
+
+.sk-math-t b { color: #ff9b17; }
+
+.sk-math-c { width: auto; border-left: 7px solid #00cafa; padding-left: 7px; margin: 20px; }
+
+.sk-math-c b { color: #ff9b17; }
+
+/* Proof style */
+.sk-math-p { width: auto; border-left: 7px solid #00cafa; padding-left: 7px; margin: 20px; }
+
+.sk-math-p b { color: #ff9b17; }
 
 /*# sourceMappingURL=main.css.map */
