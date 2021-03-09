@@ -8,7 +8,7 @@
 		"C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/minima-2.5.1/_sass/minima/_layout.scss",
 		"C:/Ruby27-x64/lib/ruby/gems/2.7.0/gems/minima-2.5.1/_sass/minima/_syntax-highlighting.scss",
 		"_sass/sksource.scss",
-		"_sass/sksource/_boxes.scss"
+		"_sass/sksource/boxes.scss"
 	],
 	"sourcesContent": [
 		"@import \"minima\";\n@import \"sksource\";\n",
