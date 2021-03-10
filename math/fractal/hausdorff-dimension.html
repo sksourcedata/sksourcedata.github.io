@@ -5,19 +5,19 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>SK Source | Bienvenidos al sitio web personal de SK Source. Aquí encontraras contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyeis a seguir adelante.</title>
+<title>Dimensión de Hausdorff | SK Source</title>
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="SK Source" />
+<meta property="og:title" content="Dimensión de Hausdorff" />
 <meta property="og:locale" content="es_ES" />
 <meta name="description" content="Bienvenidos al sitio web personal de SK Source. Aquí encontraras contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyeis a seguir adelante." />
 <meta property="og:description" content="Bienvenidos al sitio web personal de SK Source. Aquí encontraras contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyeis a seguir adelante." />
-<link rel="canonical" href="https://sksourcedata.github.io//" />
-<meta property="og:url" content="https://sksourcedata.github.io//" />
+<link rel="canonical" href="https://sksourcedata.github.io//math/fractal/hausdorff-dimension.html" />
+<meta property="og:url" content="https://sksourcedata.github.io//math/fractal/hausdorff-dimension.html" />
 <meta property="og:site_name" content="SK Source" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="SK Source" />
+<meta property="twitter:title" content="Dimensión de Hausdorff" />
 <script type="application/ld+json">
-{"headline":"SK Source","@type":"WebSite","url":"https://sksourcedata.github.io//","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontraras contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyeis a seguir adelante.","name":"SK Source","@context":"https://schema.org"}</script>
+{"headline":"Dimensión de Hausdorff","@type":"WebPage","url":"https://sksourcedata.github.io//math/fractal/hausdorff-dimension.html","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontraras contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyeis a seguir adelante.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://sksourcedata.github.io//feed.xml" title="SK Source" /></head>
 
@@ -43,25 +43,48 @@
 
     <main class="page-content" aria-label="Content">
         <div class="wrapper">
-            <div class="home">
+            <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Dimensión de Hausdorff</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="medida">Medida</h2>
+
+<div class="sk math box d">
+    Una <strong>\(\sigma\)-álgebra</strong> sobre un conjunto \(X\) es una colección \(\mathcal{A}\) de subconjuntos de \(X\) satisfaciendo los siguientes axiomas:
+    <ol>
+        <li>\(\varnoting,X\in\mathcal{A}\).</li>
+        <li>\((\forall A\in\mathcal{A})(X\setminus A\in\mathcal{A})\).</li>
+        <li>\((\forall\{A_n\}_{n\in\N}\subseteq\mathcal{A})(\bigcup_{n\in\N}A_n\in\mathcal{A})\).</li>
+    </ol>
+</div>
+
+<div class="sk math box l">
+    <ol>
+        <li>\(A\cap B,A\cup B\in\mathcal{A}\).</li>
+        <li>\(A\setminus B,B\setminus A\in\mathcal{A}\).</li>
+        <li>\((\forall\{A_n\}_{n\in\N}\subseteq\mathcal{A})(\bigcap_{n\in\N}A_n\in\mathcal{A})\).</li>
+    </ol>
+</div>
+
+<div class="sk math box t">
+    <ol>
+        <li>La intersección de \(\sigma\)-álgebras es una \(\sigma\)álgebra.</li>
+        <li></li>
+    </ol>
+</div>
+
+<div class="sk math box d">
+    Sea \((X,\mathcal{Tau})\) un espacio topológico. Un <strong>\(\sigma\)-álgebra de Borel</strong> es la \(\sigma\)-álgebra generada por \mathcal{T}, es decir, por los conjunos abiertos en \(X\).
+</div>
 
 
+  </div>
 
-  <ul class="post-list"><li>
-        <span class="post-meta">Mar 9, 2021</span>
-        <h3>
-          <a class="post-link" href="/update/2021/03/09/mathjax.html">
-            MathJax
-          </a>
-        </h3></li><li>
-        <span class="post-meta">Mar 8, 2021</span>
-        <h3>
-          <a class="post-link" href="/update/2021/03/08/starting.html">
-            El comienzo
-          </a>
-        </h3></li></ul>
+</article>
 
-    </div>
         </div>
     </main>
 
@@ -94,3 +117,7 @@
 
 </html>
 
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://example.com/mathjax/MathJax.js?config=TeX-AMS_CHTML&locale=fr"></script>
