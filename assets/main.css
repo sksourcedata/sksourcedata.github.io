@@ -277,13 +277,15 @@ table td { border: 1px solid #e8e8e8; }
 
 .sk.box.math { margin-top: 20px; margin-bottom: 20px; padding-left: 5px; }
 
-.sk.box.math.d { width: auto; border-left: 5px solid #90c4bd; }
-
 .sk.box.math.d::before { font-weight: bold; content: "Definición. "; }
 
-.sk.box.math.d strong { font-weight: normal; color: #30658d; }
+.sk.box.math.d { width: auto; border-left: 5px solid #3ac0e9; }
 
-.sk.box.math.l { width: auto; border-left: 5px solid #00cafa; }
+.sk.box.math.d strong { font-weight: normal; color: #ff601c; }
+
+.sk.box.math.l::before { font-weight: bold; content: "Lema. "; }
+
+.sk.box.math.l { width: auto; border-left: 5px solid #41b65e; }
 
 .sk.box.math.l strong { color: #ff9b17; }
 

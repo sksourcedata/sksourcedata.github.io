@@ -55,31 +55,59 @@
 <div class="sk math box d">
     Una <strong>\(\sigma\)-álgebra</strong> sobre un conjunto \(X\) es una colección \(\mathcal{A}\) de subconjuntos de \(X\) satisfaciendo los siguientes axiomas:
     <ol>
-        <li>\(\varnoting,X\in\mathcal{A}\).</li>
-        <li>\((\forall A\in\mathcal{A})(X\setminus A\in\mathcal{A})\).</li>
-        <li>\((\forall\{A_n\}_{n\in\N}\subseteq\mathcal{A})(\bigcup_{n\in\N}A_n\in\mathcal{A})\).</li>
+        <li>\(\varnothing,X\in\mathcal{A}.\)</li>
+        <li><span class="math-container">\((\forall A\in\mathcal{A})(X\setminus A\in\mathcal{A}).\)</span></li>
+        <li><span class="math-container">\(\displaystyle(\forall\{A_n\}_{n\in\mathbb{N}}\subseteq\mathcal{A})\left(\bigcup_{n\in\mathbb{N}}A_n\in\mathcal{A}\right).\)</span></li>
     </ol>
 </div>
 
 <div class="sk math box l">
+    Sea \(\mathcal{A}\) una \(\sigma\)-álgebra sobre un conjunto \(X\) y \(A,B\in\mathcal{A}.\)
     <ol>
-        <li>\(A\cap B,A\cup B\in\mathcal{A}\).</li>
-        <li>\(A\setminus B,B\setminus A\in\mathcal{A}\).</li>
-        <li>\((\forall\{A_n\}_{n\in\N}\subseteq\mathcal{A})(\bigcap_{n\in\N}A_n\in\mathcal{A})\).</li>
+        <li>\(A\cap B,A\cup B\in\mathcal{A}.\)</li>
+        <li>\(A\setminus B,B\setminus A\in\mathcal{A}.\)</li>
+        <li><span class="math-container">\(\displaystyle(\forall\{A_n\}_{n\in\mathbb{N}}\subseteq\mathcal{A})\left(\bigcap_{n\in\mathbb{N}}A_n\in\mathcal{A}\right).\)</span></li>
     </ol>
+</div>
+
+<div class="sk math box d">
+    La <strong>\(\sigma\)-álgebra generada</strong> por una colección \(\mathcal{C}\) de subconjuntos de un conjunto \(X\) es la menor \(\sigma\)-álgebra que contiene a \(\mathcal{C}.\)
 </div>
 
 <div class="sk math box t">
     <ol>
         <li>La intersección de \(\sigma\)-álgebras es una \(\sigma\)álgebra.</li>
-        <li></li>
+        <li>La \(\sigma\)-álgebra generada por una colección \(\mathcal{C}\) de subconjuntos de un conjunto \(X\) es la intersección de todas las \(\sigma\)-álgebras que contienen a \(\mathcal{C}.\)</li>
     </ol>
 </div>
 
 <div class="sk math box d">
-    Sea \((X,\mathcal{Tau})\) un espacio topológico. Un <strong>\(\sigma\)-álgebra de Borel</strong> es la \(\sigma\)-álgebra generada por \mathcal{T}, es decir, por los conjunos abiertos en \(X\).
+    La <strong>\(\sigma\)-álgebra de Borel</strong> sobre un espacio topológico \((X,\mathcal{T})\) es la \(\sigma\)-álgebra generada por \(\mathcal{T},\) es decir, por los conjunos abiertos en \(X.\)
 </div>
 
+<div class="sk math box d">
+    Una <strong>medida</strong> sobre una \(\sigma\)-álgebra \(\mathcal{A}\) de un conjunto \(X\) es una aplicación \(\mu:\mathcal{A}\to\mathbb{R}_0^{+}\) satisfaciendo los siguientes axiomas:
+    <ol>
+        <li>\(\mu(\varnothing)=0.\)</li>
+        <li>\(\mu\) es monótona, es decir, <span class="math-container">\((\forall A,B\in\mathcal{A})[(A\subseteq B)\Rightarrow(\mu(A)\leq\mu(B))]\)</span></li>
+        <li>\(\mu\) es \(\sigma\)-aditiva, es decir, <span class="math-container">\((\forall\{A_n\}_{n\in\mathbb{N}}\subseteq\mathcal{A}\text{ disjunta})\left(\mu\left(\bigcup_{n\in\mathbb{N}}A_n\right)=\sum_{n=0}^{\infty}\mu(A_n)\right).\)</span></li>
+    </ol>
+</div>
+
+<h2 id="construcción-de-medidas">Construcción de medidas</h2>
+
+<div class="sk math box d">
+    Una <strong>medida exterior</strong> sobre un conjunto \(X\) es una aplicación \(\mu:\mathcal{P}(X)\to[0,+\infty]\) satisfaciendo los siguientes axiomas:
+    <ol>
+        <li>\(\mu(\varnothing)=0.\)</li>
+        <li>\(\mu\) es monótona, es decir, <span class="math-container">\((\forall A,B\in\mathcal{P}(X))[(A\subseteq B)\Rightarrow(\mu(A)\leq\mu(B))]\)</span></li>
+        <li>\(\mu\) es sub-\(\sigma\)-aditiva, es decir, <span class="math-container">\((\forall\{A_n\}_{n\in\mathbb{N}}\subseteq\mathcal{P}(X)) \left(\mu\left(\bigcup_{n\in\mathbb{N}}A_n\right)\leq\sum_{n=0}^{\infty}\mu(A_n)\right).\)</span></li>
+    </ol>
+</div>
+
+<h2 id="medida-de-hausdorff">Medida de Hausdorff</h2>
+
+<h2 id="dimensión-de-hasudorff">Dimensión de Hasudorff</h2>
 
   </div>
 

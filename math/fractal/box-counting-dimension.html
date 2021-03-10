@@ -55,14 +55,14 @@
 <div class="sk box math d">
     El <strong>volumen \(n\)-dimensional</strong> de un cubo \([a_1,b_1]\times\cdots\times[a_n,b_n]\) en \(\mathbb{R}^n\) es
     <div class="math-container">
-        $$\mathrm{vol}^n([a_1,b_1]\times\cdots\times[a_n,b_n])=\prod_{i=1}^n(b_i-a_i).$$
+        $$\mathrm{vol}^n([a_1,b_1]\times\cdots\times[a_n,b_n]):=\prod_{i=1}^n(b_i-a_i).$$
     </div>
 </div>
 
 <div class="sk box math d">
     La <strong>medida de Lebesgue \(n\)-dimensional</strong> de un conjunto \(A\) en \(\mathbb{R}^n\) como
     <div class="math-container">
-        $$\mathrm{vol}^n(A)=\mathrm{ínf}\sum_{i=1}^{\infty}\mathrm{vol}^n(A_i):A\subseteq\bigcup_{i=1}^\infty A_i.$$
+        $$\mathrm{vol}^n(A):=\mathrm{ínf}\left\{\sum_{i=1}^{\infty}\mathrm{vol}^n(A_i):A\subseteq\bigcup_{i=1}^\infty A_i\right\}.$$
     </div>
     donde el ínfimo se toma sobre todos los recubrimientos por abiertos de \(A\) por cubos de la forma \(A_i=[a_1,b_1]\times\cdots\times[a_n,b_n]\).
 </div>
@@ -72,14 +72,14 @@
 <div class="sk box math d">
     El <strong>límite superior</strong> de una función \(f:\mathbb{R}^+\to\mathbb{R}\) es
     <div class="math-container">
-        $$\underset{x\to 0}{\overline{\mathrm{lı́m}}}f(x)=\underset{r\to 0}{\mathrm{lı́m}}\sup\{f(y):0 &lt; y &lt; r\}.$$
+        $$\underset{x\to 0}{\overline{\mathrm{lı́m}}}f(x):=\underset{r\to 0}{\mathrm{lı́m}}\sup\{f(y):0 &lt; y &lt; r\}.$$
     </div>
 </div>
 
 <div class="sk box math d">
     El <strong>límite inferior</strong> de una función \(f:\mathbb{R}^+\to\mathbb{R}\) es
     <div class="math-container">
-        $$\underset{x\to 0}{\underline{\mathrm{lı́m}}}f(x)=\underset{r\to 0}{\mathrm{lı́m}}\mathrm{ínf}\{f(y):0 &lt; y &lt; r\}.$$
+        $$\underset{x\to 0}{\underline{\mathrm{lı́m}}}f(x):=\underset{r\to 0}{\mathrm{lı́m}}\operatorname{ínf}\{f(y):0 &lt; y &lt; r\}.$$
     </div>
 </div>
 
@@ -88,21 +88,21 @@
 <div class="sk box math d">
     La <strong>dimensión box-counting superior</strong> de un conjunto no vacío y acotado \(F\) en \(\mathbb{R}^n\) es
     <div class="math-container">
-        $$\underline{\overline{\mathrm{dim}}}_BF=\underset{\delta\to 0}{\overline{\mathrm{lı́m}}}\frac{\log N_{\delta}(F)}{-\log\delta}.$$
+        $$\underline{\overline{\mathrm{dim}}}_BF:=\underset{\delta\to 0}{\overline{\mathrm{lı́m}}}\frac{\log N_{\delta}(F)}{-\log\delta}.$$
     </div>
 </div>
 
 <div class="sk box math d">
     La <strong>dimensión box-counting inferior</strong> de un conjunto no vacío y acotado \(F\) en \(\mathbb{R}^n\) es
     <div class="math-container">
-        $$\underline{\mathrm{dim}}_BF=\underset{\delta\to 0}{\underline{\mathrm{lı́m}}}\frac{\log N_{\delta}(F)}{-\log\delta}.$$
+        $$\underline{\mathrm{dim}}_BF:=\underset{\delta\to 0}{\underline{\mathrm{lı́m}}}\frac{\log N_{\delta}(F)}{-\log\delta}.$$
     </div>
 </div>
 
 <div class="sk box math d">
-    La <strong>dimensión box-counting</strong> de Un conjunto no vacío y acotado \(F\) en \(\mathbb{R}^n\) tiene dimensión box-counting si, y solo si, \(\overline{\mathrm{dim}}_BF=\underline{\mathrm{dim}}_BF\). En tal caso, la dimensión box-counting de \(F\) es
+    La <strong>dimensión box-counting</strong> de un conjunto no vacío y acotado \(F\) en \(\mathbb{R}^n\) existe si, y solo si, \(\overline{\mathrm{dim}}_BF=\underline{\mathrm{dim}}_BF\). En tal caso, la dimensión box-counting de \(F\) es
     <div class="math-container">
-        $$\mathrm{dim}_BF=\underset{\delta\to 0}{\mathrm{lı́m}}\frac{\log N_{\delta}(F)}{-\log\delta}.$$
+        $$\mathrm{dim}_BF:=\underset{\delta\to 0}{\mathrm{lı́m}}\frac{\log N_{\delta}(F)}{-\log\delta}.$$
     </div>
 </div>
 
@@ -113,7 +113,7 @@
 <div class="sk box math t">
     Si \(F\) es un conjunto no vacío y acotado en \(\mathbb{R}^n\), entonces 
     <div class="math-container">
-        $$\overline{\mathrm{dim}}_BF=\underset{\delta\to 0}{\mathrm{lı́m}}\frac{\log N'_{\delta}(F)}{-\log\delta},\qquad\underline{\mathrm{dim}}_BF=\underset{\delta\to 0}{\mathrm{lı́m}}\frac{\log N'_{\delta}(F)}{-\log\delta}.$$
+        $$\overline{\mathrm{dim}}_BF:=\underset{\delta\to 0}{\mathrm{lı́m}}\frac{\log N'_{\delta}(F)}{-\log\delta},\qquad\underline{\mathrm{dim}}_BF=\underset{\delta\to 0}{\mathrm{lı́m}}\frac{\log N'_{\delta}(F)}{-\log\delta}.$$
     </div>
     donde \(N'_{\delta}(F)\) indica alguno de los siguientes valores:
     <ol>
@@ -128,7 +128,7 @@
 <div class="sk box math d">
     El <strong>\(\delta\)-cuerpo</strong> de un conjunto \(F\) en \(\mathbb{R}^n\) es
     <div class="math-container">
-        $$F_{\delta}=\{y\in\mathbb{R}^n:(\exists x\in F)(d(x,y)\leq\delta)\},$$
+        $$F_{\delta}:=\{y\in\mathbb{R}^n:(\exists x\in F)(d(x,y)\leq\delta)\},$$
     </div>
     donde \(d\) es la distancia euclídea sobre \(\mathbb{R}^n\).
 </div>
