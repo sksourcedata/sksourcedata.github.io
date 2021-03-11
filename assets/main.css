@@ -39,8 +39,6 @@ a:hover { color: #111; text-decoration: underline; }
 .social-media-list a:hover .username { text-decoration: underline; }
 
 /** Blockquotes */
-blockquote { color: #828282; border-left: 4px solid #e8e8e8; padding-left: 15px; font-size: 18px; letter-spacing: -1px; font-style: italic; }
-
 blockquote > :last-child { margin-bottom: 0; }
 
 /** Code formatting */
@@ -277,6 +275,10 @@ table td { border: 1px solid #e8e8e8; }
 
 .sk.box.math { margin-top: 20px; margin-bottom: 20px; padding-left: 5px; }
 
+.sk.box.math span.title { font-weight: bold; }
+
+.sk.box.math ol li { list-style-type: upper-roman; }
+
 .sk.box.math.d::before { font-weight: bold; content: "Definición. "; }
 
 .sk.box.math.d { width: auto; border-left: 5px solid #3ac0e9; }
@@ -310,6 +312,30 @@ table td { border: 1px solid #e8e8e8; }
 
 .sk.box.example::before { font-weight: bold; content: "Ejemplo. "; }
 
-.math-container { overflow-x: auto; }
+.eq { overflow-x: auto; }
+
+dl { display: block; border-left: solid 5px; border-right: solid 5px; border-radius: 5px; width: 100%; }
+
+dl dt { display: inline-block; font-weight: bold; border-bottom: solid 2px; padding-left: 5px; padding-right: 5px; }
+
+dl dd { display: block; padding-left: 5px; }
+
+dl.d { border-color: #3ac0e9; background-color: #e9f9fc; }
+
+dl.d dt { border-color: #3ac0e9; }
+
+dl.d dd strong { color: #ff601c; }
+
+dl.l dt { border-bottom: #41b65e; }
+
+dl.l dd { border-color: #41b65e; }
+
+dl.t dt { border-bottom: #436585; }
+
+dl.t dd { border-color: #436585; }
+
+dl.c dt { border-bottom: #4c5972; }
+
+dl.c dd { border-color: #4c5972; }
 
 /*# sourceMappingURL=main.css.map */

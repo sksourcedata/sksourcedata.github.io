@@ -37,12 +37,14 @@
                 </span>
             </label>
 
-            <div class="trigger"><a class="page-link" href="/jekyll/">Jekyll</a><a class="page-link" href="/math/">Matemáticas</a><a class="page-link" href="/programming/">Programación</a></div>
+            <div class="trigger"><a class="page-link" href="/art/">Arte</a><a class="page-link" href="/math/">Matemáticas</a><a class="page-link" href="/programming/">Programación</a></div>
         </nav></div>
 </header>
 
     <main class="page-content" aria-label="Content">
         <div class="wrapper">
+            
+
             <article class="post">
 
   <header class="post-header">
@@ -50,69 +52,68 @@
   </header>
 
   <div class="post-content">
-    <h2 id="medida-de-lebesgue">Medida de Lebesgue</h2>
+    <h2>Medida de Lebesgue</h2>
 
 <div class="sk box math d">
-    El <strong>volumen \(n\)-dimensional</strong> de un cubo \([a_1,b_1]\times\cdots\times[a_n,b_n]\) en \(\mathbb{R}^n\) es
-    <div class="math-container">
+    El <strong>volumen \(n\)-dimensional</strong> de un cubo \([a_1,b_1]\times\cdots\times[a_n,b_n]\)
         $$\mathrm{vol}^n([a_1,b_1]\times\cdots\times[a_n,b_n]):=\prod_{i=1}^n(b_i-a_i).$$
     </div>
 </div>
 
 <div class="sk box math d">
     La <strong>medida de Lebesgue \(n\)-dimensional</strong> de un conjunto \(A\) en \(\mathbb{R}^n\) como
-    <div class="math-container">
+    <div class="eq">
         $$\mathrm{vol}^n(A):=\mathrm{ínf}\left\{\sum_{i=1}^{\infty}\mathrm{vol}^n(A_i):A\subseteq\bigcup_{i=1}^\infty A_i\right\}.$$
     </div>
     donde el ínfimo se toma sobre todos los recubrimientos por abiertos de \(A\) por cubos de la forma \(A_i=[a_1,b_1]\times\cdots\times[a_n,b_n]\).
 </div>
 
-<h2 id="dimensión-box-counting">Dimensión box-counting</h2>
+<h2>Dimensión box-counting</h2>
 
 <div class="sk box math d">
     El <strong>límite superior</strong> de una función \(f:\mathbb{R}^+\to\mathbb{R}\) es
-    <div class="math-container">
-        $$\underset{x\to 0}{\overline{\mathrm{lı́m}}}f(x):=\underset{r\to 0}{\mathrm{lı́m}}\sup\{f(y):0 &lt; y &lt; r\}.$$
+    <div class="eq">
+        $$\underset{x\to 0}{\overline{\mathrm{lı́m}}}f(x):=\underset{r\to 0}{\mathrm{lı́m}}\sup\{f(y):0 < y < r\}.$$
     </div>
 </div>
 
 <div class="sk box math d">
     El <strong>límite inferior</strong> de una función \(f:\mathbb{R}^+\to\mathbb{R}\) es
-    <div class="math-container">
-        $$\underset{x\to 0}{\underline{\mathrm{lı́m}}}f(x):=\underset{r\to 0}{\mathrm{lı́m}}\operatorname{ínf}\{f(y):0 &lt; y &lt; r\}.$$
+    <div class="eq">
+        $$\underset{x\to 0}{\underline{\mathrm{lı́m}}}f(x):=\underset{r\to 0}{\mathrm{lı́m}}\operatorname{ínf}\{f(y):0 < y < r\}.$$
     </div>
 </div>
 
-<p>Dado un conjunto no vacío y acotado \(F\) en \(\mathbb{R}^n\), denotaremos por \(N_{\delta}(F)\) al menor número de conjuntos con diámetro a lo sumo \(\delta\) que recubren a \(F\).</p>
+Dado un conjunto no vacío y acotado \\(F\\) en \\(\mathbb{R}^n\\), denotaremos por \\(N_{\delta}(F)\\) al menor número de conjuntos con diámetro a lo sumo \\(\delta\\) que recubren a \\(F\\).
 
 <div class="sk box math d">
     La <strong>dimensión box-counting superior</strong> de un conjunto no vacío y acotado \(F\) en \(\mathbb{R}^n\) es
-    <div class="math-container">
+    <div class="eq">
         $$\underline{\overline{\mathrm{dim}}}_BF:=\underset{\delta\to 0}{\overline{\mathrm{lı́m}}}\frac{\log N_{\delta}(F)}{-\log\delta}.$$
     </div>
 </div>
 
 <div class="sk box math d">
     La <strong>dimensión box-counting inferior</strong> de un conjunto no vacío y acotado \(F\) en \(\mathbb{R}^n\) es
-    <div class="math-container">
+    <div class="eq">
         $$\underline{\mathrm{dim}}_BF:=\underset{\delta\to 0}{\underline{\mathrm{lı́m}}}\frac{\log N_{\delta}(F)}{-\log\delta}.$$
     </div>
 </div>
 
 <div class="sk box math d">
     La <strong>dimensión box-counting</strong> de un conjunto no vacío y acotado \(F\) en \(\mathbb{R}^n\) existe si, y solo si, \(\overline{\mathrm{dim}}_BF=\underline{\mathrm{dim}}_BF\). En tal caso, la dimensión box-counting de \(F\) es
-    <div class="math-container">
+    <div class="eq">
         $$\mathrm{dim}_BF:=\underset{\delta\to 0}{\mathrm{lı́m}}\frac{\log N_{\delta}(F)}{-\log\delta}.$$
     </div>
 </div>
 
-<h2 id="definiciones-alternativas">Definiciones alternativas</h2>
+<h2>Definiciones alternativas</h2>
 
-<p>En los siguientes dos teoremas, se recogen definiciones alternativas para la dimensión box-counting.</p>
+En los siguientes dos teoremas, se recogen definiciones alternativas para la dimensión box-counting.
 
 <div class="sk box math t">
     Si \(F\) es un conjunto no vacío y acotado en \(\mathbb{R}^n\), entonces 
-    <div class="math-container">
+    <div class="eq">
         $$\overline{\mathrm{dim}}_BF:=\underset{\delta\to 0}{\mathrm{lı́m}}\frac{\log N'_{\delta}(F)}{-\log\delta},\qquad\underline{\mathrm{dim}}_BF=\underset{\delta\to 0}{\mathrm{lı́m}}\frac{\log N'_{\delta}(F)}{-\log\delta}.$$
     </div>
     donde \(N'_{\delta}(F)\) indica alguno de los siguientes valores:
@@ -127,7 +128,7 @@
 
 <div class="sk box math d">
     El <strong>\(\delta\)-cuerpo</strong> de un conjunto \(F\) en \(\mathbb{R}^n\) es
-    <div class="math-container">
+    <div class="eq">
         $$F_{\delta}:=\{y\in\mathbb{R}^n:(\exists x\in F)(d(x,y)\leq\delta)\},$$
     </div>
     donde \(d\) es la distancia euclídea sobre \(\mathbb{R}^n\).
@@ -135,7 +136,7 @@
 
 <div class="sk box math t">
     Si \(F\) es un conjunto no vacío y acotado en \(\mathbb{R}^n\), entonces
-    <div class="math-container">
+    <div class="eq">
         $$\underline{\mathrm{dim}}_BF=n-\underset{\delta\to 0}{\overline{\mathrm{lı́m}}}\frac{\log(\mathrm{vol}^n(F))}{\log\delta},
         \qquad\overline{\mathrm{dim}}_BF=n-\underset{\delta\to 0}{\underline{\mathrm{lı́m}}}\frac{\log(\mathrm{vol}^n(F))}{\log\delta}.$$
     </div>
@@ -145,12 +146,12 @@
     La dimension box-counting del conjunto de Cantor es \(\frac{\log2}{\log3}\).
 </div>
 
-<h2 id="propiedades">Propiedades</h2>
+<h2>Propiedades</h2>
 
 <div class="sk box math t">
     <ol>
         <li>\(\underline{\dim}_B\) y \(\overline{\dim}_B\) son monótonas, es decir, si \(A\subseteq B\), entonces \(\dim_BA\leq\dim_BB\).</li>
-        <li>\(\overline{\dim}_B\) es finitamente estable, es decir, <span class="math-container">\(\overline{\mathrm{dim}}_B(A\cup B)=\mathrm{máx}\{\overline{\dim}_B(A),\overline{\dim}_B(B)\}\);</span> pero \(\underline{\dim}_B\) no lo es.</li>
+        <li>\(\overline{\dim}_B\) es finitamente estable, es decir, <span class="eq">\(\overline{\mathrm{dim}}_B(A\cup B)=\mathrm{máx}\{\overline{\dim}_B(A),\overline{\dim}_B(B)\}\);</span> pero \(\underline{\dim}_B\) no lo es.</li>
         <li>Si \(f:F\to\mathbb{R}^m\) es una aplicación de Lipschitz, entonces \(\overline{\dim}_Bf(F)\leq\overline{\dim}_BF\) y \(\underline{\dim}_Bf(F)\leq\underline{\dim}_BF\).</li>
         <li>\(\overline{\dim}_B\) y \(\underline{\dim}_B\) son bi-Lipschitz invariantes; es decir, si \(f:\mathbb{R}^n\to\mathbb{R}^n\) es una aplicación bi-Lipschitz, entonces \(\overline{\dim}_Bf(F)\leq\overline{\dim}_BF\) y \(\underline{\dim}_Bf(F)\leq\underline{\dim}_BF\). En particular, son invariantes por aplicaciones bi-Lipschitz</li>
         <li>\(\overline{\dim}_BF=\overline{\dim}_B\bar{F}\) y \(\underline{\dim}_BF=\underline{\dim}_B\bar{F}\).</li>
@@ -167,7 +168,7 @@
 </div>
 
 <div class="sk box example">
-    Si <span class="math-container">\(F:=\{0\}\cup\left\{\frac{1}{2^{n}}:n\in\mathbb{N}\right\}\)</span>, entonces \(\dim_BF=\frac{1}{2}\).
+    Si <span class="eq">\(F:=\{0\}\cup\left\{\frac{1}{2^{n}}:n\in\mathbb{N}\right\}\)</span>, entonces \(\dim_BF=\frac{1}{2}\).
 </div>
 
   </div>
