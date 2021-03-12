@@ -314,28 +314,60 @@ table td { border: 1px solid #e8e8e8; }
 
 .eq { overflow-x: auto; }
 
+@font-face { font-family: "Computer Modern"; src: url("http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf"); }
+
+@font-face { font-family: "Computer Modern"; src: url("http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunsx.otf"); font-weight: bold; }
+
+@font-face { font-family: "Computer Modern"; src: url("http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunsi.otf"); font-style: italic, oblique; }
+
+@font-face { font-family: "Computer Modern"; src: url("http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunbxo.otf"); font-weight: bold; font-style: italic, oblique; }
+
+body { font-family: "Computer Modern", sans-serif; }
+
 dl { display: block; border-left: solid 5px; border-right: solid 5px; border-radius: 5px; width: 100%; }
 
 dl dt { display: inline-block; font-weight: bold; border-bottom: solid 2px; padding-left: 5px; padding-right: 5px; }
 
-dl dd { display: block; padding-left: 5px; }
+dl dd { display: block; padding-left: 5px; padding-right: 5px; }
 
-dl.d { border-color: #3ac0e9; background-color: #e9f9fc; }
+dl dd ol { list-style: none; counter-reset: li; }
 
-dl.d dt { border-color: #3ac0e9; }
+dl dd ol li { counter-increment: li; }
+
+dl dd ol li::before { content: "(" counter(li, upper-roman); font-weight: bold; display: inline-block; width: 1em; margin-left: -1.5em; margin-right: 0.5em; text-align: right; direction: rtl; }
+
+dl.d { background-color: #e9f9fc; }
+
+dl.d, dl.d dt { border-color: #1fbbeb; }
+
+dl.d dt, dl.d dd ol li::before { color: #1fbbeb; }
 
 dl.d dd strong { color: #ff601c; }
 
-dl.l dt { border-bottom: #41b65e; }
+dl.l { background-color: #e0fae8; }
 
-dl.l dd { border-color: #41b65e; }
+dl.l, dl.l dt { border-color: #41b65e; }
 
-dl.t dt { border-bottom: #436585; }
+dl.l dt, dl.l dd ol li::before { color: #41b65e; }
 
-dl.t dd { border-color: #436585; }
+dl.t { background-color: #e7f4ff; }
 
-dl.c dt { border-bottom: #4c5972; }
+dl.t, dl.t dt { border-color: #136ec4; }
 
-dl.c dd { border-color: #4c5972; }
+dl.t dt, dl.t dd ol li::before { color: #136ec4; }
+
+dl.c { background-color: #e7f4ff; }
+
+dl.c, dl.c dt { border-color: #136ec4; }
+
+dl.c dt, dl.c dd ol li::before { color: #136ec4; }
+
+dl.r { background-color: #ffdada; }
+
+dl.r, dl.r dt { border-color: #cc0000; }
+
+dl.r dt, dl.r dd ol li::before { color: #cc0000; }
+
+dl.r dd ol li::before { content: "." counter(li); }
 
 /*# sourceMappingURL=main.css.map */
