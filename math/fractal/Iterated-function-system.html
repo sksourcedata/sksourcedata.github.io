@@ -61,47 +61,61 @@
   <div class="post-content">
     <h2 id="hiperespacio">Hiperespacio</h2>
 
-<p>En lo sucesivo, dado un espacio métrico ((X,d)), (\mathcal{P}_0(X)) denotará la familia de todos los subconjuntos no vacíos de (X); (\mathcal{C}_0(X)) la de todos los subconjuntos cerrados no vacíos, y (\mathcal{K}_0(X)) todos los subconjuntos compactos no vacíos.</p>
+<p>En lo sucesivo, dado un espacio métrico \((X,d)\), \(A\subseteq X\) y \(\varpesilon\in\R^+\), consideraremos la siguiente notación:</p>
+<ul>
+  <li>\(\mathcal{P}_0(X)\) es la familia formada por todos los subconjuntos no vacíos de \(X).</li>
+  <li>\(\mathcal{C}_0(X)\) es la familia formada por todos los subconjuntos cerrados no vacíos de \(X).</li>
+  <li>\(\mathcal{K}_0(X)\) todos los subconjuntos compactos no vacíos de \(X).</li>
+  <li>d(x, A) = ı́nf{d(x, y ) : y ∈ A}.</li>
+  <li>B(A, ε) = {x ∈ X : d(x, A) &lt; ε}.
+B[A, ε] = {x ∈ X : d(x, A) ≤ ε}.</li>
+</ul>
 
-<p>Notaciones
-Sean (X , d) un espacio métrico, A ⊆ X , ε &gt; 0.
-d(x, A) = ı́nf{d(x, y ) : y ∈ A}.
-B(A, ε) = {x ∈ X : d(x, A) &lt; ε}.
-B[A, ε] = {x ∈ X : d(x, A) ≤ ε}.
+<dl class="r">
+  <dt>Notación</dt>
+  <dd>Sean (X , d) un espacio métrico, A ⊆ X , ε &gt; 0.
 En este capı́tulo (X , d) será un espacio métrico, salvo que se
-indique lo contrario.</p>
+indique lo contrario.</dd>
+</dl>
 
-<p>Definición (distancia de Hausdorff)
+<p class="d">Definición (distancia de Hausdorff)
 Sean A, B ∈ P0 (X ).
 D(A, B) = sup{d(x, B) : x ∈ A}. (casi-pseudo-métrica de
 Hausdorff)
 dH (A, B) = máx{D(A, B), D(B, a)} (pseudo-métrica de
 Hausdorff).</p>
 
-<p>Proposición (propiedades de D y dH )
-Sean A, B, C ∈ P0 (X ).
+<dl class="l">
+  <dt>Lema</dt>
+  <dd>Sean A, B, C ∈ P0 (X ).
 Si A ⊆ B entonces D(A, B) = 0
 D(A, B) = D(A, B).
 Si D(A, B) = 0 entonces A ⊆ B.
-D(A, B) ≤ D(A, C ) + D(C , B).</p>
+D(A, B) ≤ D(A, C ) + D(C , B).</dd>
+</dl>
 
-<p>Proposición (propiedades de D y dH )
-Sean A, B, C ∈ P0 (X ) y ε, δ &gt; 0.
+<dl class="l">
+  <dt>Lema</dt>
+  <dd>Sean A, B, C ∈ P0 (X ) y ε, δ &gt; 0.
 Si A ⊆ B(C , ε) y C ⊆ B(B, δ) entonces A ⊆ B(B, ε + δ.
 dH (A, B) ≤ ε si y sólo si A ⊆ B[B, ε] y B ⊆ B[A, ε].
 dH (A, B) = ı́nf{ε &gt; 0 : A ⊆ B[B, ε] y B ⊆ B[A, ε]}.
 dH (A, B) = dH (A, B).
 dH (A, B) = 0 si y sólo si A = B.
-dH (A, B) ≤ dH (A, C ) + dH (C , B).</p>
+dH (A, B) ≤ dH (A, C ) + dH (C , B).</dd>
+</dl>
 
-<p>Teorema
-dH es una métrica en C0 (X ) y en K0 (X ) y una pseudo-métrica en
+<dl class="t">
+  <dt>Teorema</dt>
+  <dd>dH es una métrica en C0 (X ) y en K0 (X ) y una pseudo-métrica en
 P0 (X ).
 Definición
-(K0 (X ), dH ): hiperespacio de X .</p>
+(K0 (X ), dH ): hiperespacio de X .</dd>
+</dl>
 
-<p>Lema
-Sean K ∈ K0 (X ) y x ∈ X . Entonces existe y ∈ K tal que
+<dl>
+  <dt>Lema</dt>
+  <dd>Sean K ∈ K0 (X ) y x ∈ X . Entonces existe y ∈ K tal que
 d(x, K ) = d(x, y ).
 Sea (xn ) una sucesión de Cauchy. Entonces existe una
 1
@@ -112,7 +126,8 @@ n ∈ N.
 Sea (yn ) una sucesión tal que d(yn , yn−1 ) &lt; 2n−1
 para todo
 1
-n ∈ N. Entonces d(yn , yn+h ) &lt; 2n−1 , para todo h ∈ N.</p>
+n ∈ N. Entonces d(yn , yn+h ) &lt; 2n−1 , para todo h ∈ N.</dd>
+</dl>
 
 <div class="sk math box t">
     <span class="title">Teorema de Zeron-Morita.</span> Si \((X,d)\) un espacio métrico completo, entonces \((\mathcal{K}_{0}(X ),d_H)\) es un espacio métrico completo.

@@ -370,4 +370,12 @@ dl.r dt, dl.r dd ol li::before { color: #cc0000; }
 
 dl.r dd ol li::before { content: "." counter(li); }
 
+dl.e { background-color: #fde2f3; }
+
+dl.e, dl.r dt { border-color: #d63d9c; }
+
+dl.e dt, dl.r dd ol li::before { color: #d63d9c; }
+
+dl.e dd ol li::before { content: "." counter(li); }
+
 /*# sourceMappingURL=main.css.map */
