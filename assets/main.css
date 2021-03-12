@@ -362,19 +362,19 @@ dl.c, dl.c dt { border-color: #136ec4; }
 
 dl.c dt, dl.c dd ol li::before { color: #136ec4; }
 
-dl.r { background-color: #ffdada; }
+dl.r { background-color: #e6e6e6; }
 
-dl.r, dl.r dt { border-color: #cc0000; }
+dl.r, dl.r dt { border-color: #494949; }
 
-dl.r dt, dl.r dd ol li::before { color: #cc0000; }
+dl.r dt, dl.r dd ol li::before { color: #494949; }
 
 dl.r dd ol li::before { content: "." counter(li); }
 
 dl.e { background-color: #fde2f3; }
 
-dl.e, dl.r dt { border-color: #d63d9c; }
+dl.e, dl.e dt { border-color: #d63d9c; }
 
-dl.e dt, dl.r dd ol li::before { color: #d63d9c; }
+dl.e dt, dl.e dd ol li::before { color: #d63d9c; }
 
 dl.e dd ol li::before { content: "." counter(li); }
 

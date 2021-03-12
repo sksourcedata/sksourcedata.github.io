@@ -63,9 +63,9 @@
 
 <p>En lo sucesivo, dado un espacio métrico \((X,d)\), \(A\subseteq X\) y \(\varpesilon\in\R^+\), consideraremos la siguiente notación:</p>
 <ul>
-  <li>\(\mathcal{P}_0(X)\) es la familia formada por todos los subconjuntos no vacíos de \(X).</li>
-  <li>\(\mathcal{C}_0(X)\) es la familia formada por todos los subconjuntos cerrados no vacíos de \(X).</li>
-  <li>\(\mathcal{K}_0(X)\) todos los subconjuntos compactos no vacíos de \(X).</li>
+  <li>\(\mathcal{P}\_0(X)\) es la familia formada por todos los subconjuntos no vacíos de \(X\).</li>
+  <li>\(\mathcal{C}\_0(X)\) es la familia formada por todos los subconjuntos cerrados no vacíos de \(X\).</li>
+  <li>\(\mathcal{K}\_0(X)\) todos los subconjuntos compactos no vacíos de \(X\).</li>
   <li>d(x, A) = ı́nf{d(x, y ) : y ∈ A}.</li>
   <li>B(A, ε) = {x ∈ X : d(x, A) &lt; ε}.
 B[A, ε] = {x ∈ X : d(x, A) ≤ ε}.</li>
@@ -78,7 +78,7 @@ En este capı́tulo (X , d) será un espacio métrico, salvo que se
 indique lo contrario.</dd>
 </dl>
 
-<p class="d">Definición (distancia de Hausdorff)
+<p class="d">Definición
 Sean A, B ∈ P0 (X ).
 D(A, B) = sup{d(x, B) : x ∈ A}. (casi-pseudo-métrica de
 Hausdorff)
@@ -113,7 +113,7 @@ Definición
 (K0 (X ), dH ): hiperespacio de X .</dd>
 </dl>
 
-<dl>
+<dl class="l">
   <dt>Lema</dt>
   <dd>Sean K ∈ K0 (X ) y x ∈ X . Entonces existe y ∈ K tal que
 d(x, K ) = d(x, y ).
@@ -129,9 +129,10 @@ para todo
 n ∈ N. Entonces d(yn , yn+h ) &lt; 2n−1 , para todo h ∈ N.</dd>
 </dl>
 
-<div class="sk math box t">
-    <span class="title">Teorema de Zeron-Morita.</span> Si \((X,d)\) un espacio métrico completo, entonces \((\mathcal{K}_{0}(X ),d_H)\) es un espacio métrico completo.
-</div>
+<dl class="t">
+  <dt>Teorema de Zeron-Morita</dt>
+  <dd>Si \((X,d)\) un espacio métrico completo, entonces \((\mathcal{K}_{0}(X ),d_H)\) es un espacio métrico completo.</dd>
+</dl>
 
 <h2 id="conjuntos-autosimilares">Conjuntos autosimilares</h2>
 
@@ -181,12 +182,13 @@ K se llama atractor del sistema de funciones iteradas. Cuando las
 aplicaciones fi son similaridades (d(fi (x), fi (y )) = ci d(x, y )), se
 dice que K es un conjunto autosimilar.</p>
 
-<p>Observación. Por el Teorema del punto fijo de Banach, sabemos que si (E) es cualquier compacto no vacı́o, entonces (f^n(E)) converge al atractor (K).</p>
+<p>Observación. Por el Teorema del punto fijo de Banach, sabemos que si \(E\) es cualquier compacto no vacı́o, entonces \(f^n(E)\) converge al atractor \(K\).</p>
 
 <h2 id="dimensión-de-conjuntos-autosimilares">Dimensión de conjuntos autosimilares</h2>
 
-<div class="sk math box d">
-    Sea {(X , {f1 , . . . , fm }) un sistema de funciones iteradas. Se dice
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Sea {(X , {f1 , . . . , fm }) un sistema de funciones iteradas. Se dice
 que el sistema de funciones iteradas verifica la condición de
 conjunto abierto (OSC) si existe un abierto V de X tal quei:
 fi (V ) ∩ fj (V ) = ∅ para todo i 6= j.
@@ -194,28 +196,27 @@ S
 f (V ) = m
 i=1 fi (V ) ⊆ V .
 Se dice que {(X , {f1 , . . . , fm }) verifica la propiedad fuerte de
-conjunto abierto (SOSC) si además V ∩ K 6= ∅.
-</div>
+conjunto abierto (SOSC) si además V ∩ K 6= ∅.</dd>
+</dl>
 
-<div class="sk math box t">
-    <span class="title">Teorema de Moran.</span> Sea \(\left(\mathbb{R}^n,\left\{f_i\right\}_{i=1}^m\right)\) un sistema de funciones iteradas, donde las \(f_i\) son similaridades con factor de similaridad \(c_i\). Si \(K\) es el conjunto autosimilar asociado, entonces
-    <div class="math-container">
-        $$\mathrm{dim}_H(K)=\mathrm{dim}_B(K)=s,$$
-    </div>
-    donde \(s\) es la solución de la ecuación \(\sum_{i=1}^mc_i^s=1\). Además, \(0&lt;H^s(K)&lt;+\infty\).
-</div>
+<dl class="t">
+  <dt>Teorema de Moran</dt>
+  <dd>Sea \(\left(\mathbb{R}^n,\left\{f_i\right\}<em>{i=1}^m\right)\) un sistema de funciones iteradas, donde las \(f_i\) son similaridades con factor de similaridad \(c_i\). Si \(K\) es el conjunto autosimilar asociado, entonces
+*\[\mathrm{dim}_H(K)=\mathrm{dim}_B(K)=s, \]*{: .eq}
+donde \(s\) es la solución de la ecuación \(\sum</em>{i=1}^mc_i^s=1\). Además, \( 0 &lt; H^s(K) &lt; +\infty \).</dd>
+</dl>
 
-<div class="sk math box t">
-    <span class="title">Teorema del collage.</span> Sea \(\left(\mathbb{R}^n,\left\{f_i\right\}_{i=1}^m\right)\) un sistema de funciones iteradas. Si \(c\) es el máximo de los factores de contracción de las funciones \(\{f_i\}_{i=1}^m\), entonces para todo \(E\in\mathcal{K}_0(X)\),
-    <div class="math-container">
-        $$d_H(E,K)\leq\frac{d_H(E,f(E))}{1-c},$$
-    </div>
-    donde \(K\) es el atractor del sistema de funciones iteradas.
-</div>
+<dl class="t">
+  <dt>Teorema del collage</dt>
+  <dd>Sea \(\left(\mathbb{R}^n,\left\{f_i\right\}<em>{i=1}^m\right)\) un sistema de funciones iteradas. Si \(c\) es el máximo de los factores de contracción de las funciones \(\{f_i\}</em>{i=1}^m\), entonces para todo \(E\in\mathcal{K}_0(X)\),
+<em class="eq">\[d_H(E,K)\leq\frac{d_H(E,f(E))}{1-c}, \]</em>
+donde \(K\) es el atractor del sistema de funciones iteradas.</dd>
+</dl>
 
-<div class="sk math box c">
-    Sea \(E\in\mathcal{K}_0(\mathbb{R}^n)\) y \(\varepsilon\in]0,+\infty[\). Entonces, existen unas similaridades \(S_1,\ldots,S_m\) satisfaciendo \(d_H(E,K)&lt;\varepsilon\), donde \(K\) es el conjunto autosimilar asociado.
-</div>
+<dl class="c">
+  <dt>Corolario</dt>
+  <dd>Sea \(E\in\mathcal{K}_0(\mathbb{R}^n)\) y \(\varepsilon\in]0,+\infty[\). Entonces, existen unas similaridades \(S_1,\ldots,S_m\) satisfaciendo \(d_H(E,K)&lt;\varepsilon\), donde \(K\) es el conjunto autosimilar asociado.</dd>
+</dl>
 
   </div>
 
