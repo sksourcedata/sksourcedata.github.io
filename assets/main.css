@@ -312,7 +312,7 @@ table td { border: 1px solid #e8e8e8; }
 
 .sk.box.example::before { font-weight: bold; content: "Ejemplo. "; }
 
-.eq { overflow-x: auto; }
+.eq { overflow-x: auto; display: block; }
 
 @font-face { font-family: "Computer Modern"; src: url("http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunss.otf"); }
 
