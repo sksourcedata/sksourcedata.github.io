@@ -142,7 +142,7 @@
 
 <h3 id="método-i">Método I</h3>
 
-<dl class="d">
+<dl class="t">
   <dt>Método I</dt>
   <dd>Sea \(\mathcal{A}\) un recubrimiento de un conjunto \(X\) y \(C:\mathcal{A}\to[0,+\infty ]\) una función. Definamos la función \(\mu:\mathcal{P}(X)\to[0,+\infty ]\) como
 <em class="eq">\[\mu(E)=\mathrm{ı́nf} \left\{\sum_{A\in D}C(A):\mathcal{D}\subseteq\mathcal{A}\text{ numerable que recubre a }E\right\}. \]</em>
@@ -153,12 +153,12 @@ Si usamos la convención \(\operatorname{ínf}\varnothing=+\infty\), entonces \(
 
 <dl class="d">
   <dt>Definición</dt>
-  <dd>Un recubrimiento de Vitali de un conjunto \(E\) en un espacio métrico \(X\) es una familia \(\mathcal{A}\) de subconjuntos de \(X\) tal que para todo \(x\in E\) y todo \(\varepsilon\in\mathbb{R}^+\), existe \(A\in\mathcal{A}\) satisfaciendo \(x\in A\) y \(\mathrm{diam}(A)\leq\varepsilon.\)</dd>
+  <dd>Un <strong>recubrimiento de Vitali</strong> de un conjunto \(E\) en un espacio métrico \(X\) es una familia \(\mathcal{A}\) de subconjuntos de \(X\) tal que para todo \(x\in E\) y todo \(\varepsilon\in\mathbb{R}^+\), existe \(A\in\mathcal{A}\) satisfaciendo \(x\in A\) y \(\mathrm{diam}(A)\leq\varepsilon.\)</dd>
 </dl>
 
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>Sea \(A\) un recubrimiento de Vitali de un espacio métrico \(X\) .
+<dl class="t">
+  <dt>Método II</dt>
+  <dd>Sea \(A\) un recubrimiento de Vitali en un espacio métrico \(X\) .
 Para cada \(ε &gt; 0\), sea µε la medida exterior dada por el Método I
 con respecto a la función \(C\) y al recubrimiento
 \(\{A\in\mathcal{A}:\mathrm{diam}(A)\leq\varepsilon\}\).
@@ -179,7 +179,7 @@ Entonces µ es una medida exterior.</dd>
 
 <dl class="d">
   <dt>Definición</dt>
-  <dd>Sea µ una medida exterior en un conjunto X. Un conjunto me Un subconjunto E
+  <dd>Sea \(\mu\) una medida exterior sobre un conjunto X. Un conjunto me Un subconjunto E
 de X se dice que es µ-medible si µ(A) = µ(A ∩ E ) + µ(A \ E ),
 para todo A ⊆ X .</dd>
 </dl>
@@ -259,31 +259,39 @@ medida exterior métrica.</dd>
 
 <!--Measurable set-->
 
-<p class="d">Definición
-    Sea \(\mu\) una medida exterior sobre un conjunto \(X.\) Un <strong>subconjunto \(\mu\)-medible</strong> de \(X\) es un subconjunto \(E\) de \(X\) satisfaciendo <span class="math-container">(\mu(A)=\mu(A\cap E)+\mu(A\setminus E)\)</span> para todo \(A\subseteq X.\)</p>
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Sea \(\mu\) una medida exterior sobre un conjunto \(X.\) Un <strong>subconjunto \(\mu\)-medible</strong> de \(X\) es un subconjunto \(E\) de \(X\) satisfaciendo \(\mu(A)=\mu(A\cap E)+\mu(A\setminus E)\) para todo \(A\subseteq X.\)</dd>
+</dl>
 
-<p>Teorema (σ álgebra de conjuntos medibles)
-Sea µ una medida exterior en un conjunto X . La familia de todos
-los subconjuntos de X que son µ-medibles es una σ-álgebra en X .</p>
+<dl class="t">
+  <dt>Teorema (σ álgebra de conjuntos medibles)</dt>
+  <dd>Sea µ una medida exterior en un conjunto X . La familia de todos
+los subconjuntos de X que son µ-medibles es una σ-álgebra en X .</dd>
+</dl>
 
-<p>Teorema (restricción de medida exterior métrica a la σ álgebra de
-conjuntos medibles)
-Sea µ una medida exterior métrica en un espacio métrico X . Sea µ
+<dl class="t">
+  <dt>Teorema (restricción de medida exterior métrica a la σ álgebra de</dt>
+  <dt>conjuntos medibles)</dt>
+  <dd>Sea µ una medida exterior métrica en un espacio métrico X . Sea µ
 la restricción de µ a la σ-álgebra de conjuntos µ-medibles.
 Entonces
 La σ-álgebra de conjuntos µ-medibles contiene a la σ-álgebra
 de Borel.
-µ es una medida.</p>
+µ es una medida.</dd>
+</dl>
 
-<p>Teorema
-La medida de Lebesgue es una medida exterior métrica generada
+<dl class="t">
+  <dt>Teorema</dt>
+  <dd>La medida de Lebesgue es una medida exterior métrica generada
 por el Método II, con lo que es una medida en la σ-álgebra de
 conjuntos vol n -medibles y, en particular, en la σ-álgebra de Borel
-de Rn .</p>
+de Rn .</dd>
+</dl>
 
 <h2>Medida de Hausdorff</h2>
 
-<p>Definiciones y notaciones (diámetro y δ-recubrimiento)
+<p class="d">Definiciones y notaciones
 El diámetro de un conjunto A en un espacio métrico se define
 como diam(A) = sup{d(x, y) : x, y ∈ A}.
 {Un }n∈N (también lo denotaremos como {Un }) es un
@@ -313,26 +321,29 @@ n ∈ N.</p>
         \(H^s(E):=\\underset{\\delta\\to0}{\\operatorname{lím}}H_\\delta^s(E).\)
     {: .d}</p>
 
-<p>Teorema
-H s es una medida exterior métrica generada por el Método II y,
+<dl class="t">
+  <dt>Teorema</dt>
+  <dd>H s es una medida exterior métrica generada por el Método II y,
 por tanto, la restricción al σ-álgebra de conjuntos H s -medibles es
 una medida. En particular, la restricción de H s al σ-álgebra de
-Borel de Rn es una medida.</p>
+Borel de Rn es una medida.</dd>
+</dl>
 
-<p>Proposición
-La función s → H s es no creciente.</p>
+<dl class="l">
+  <dt>Lema</dt>
+  <dd>La función s → H s es no creciente.</dd>
+</dl>
 
-<p>Observación
-Se puede probar que:
+<dl class="t">
+  <dt>Observación</dt>
+  <dd>Se puede probar que:
 Si F ⊆ Rn , H n (F ) = cn−1 vol n (F ), donde cn = vol n (B(0, 12 )).
 Si F ⊆ Rn :
 H 0 (F ) es el número de puntos de F .
 Si F es una curva ”suave”, H 1 (F ) es su longitud.
 Si F es una superficie ”suave”, H 2 (F ) es π4 de su área.
 Si F es una subvariedad m-dimensional de Rn ”suave”, H m (F )
-es cm de su volumen m-dimensional.</p>
-
-<dl class="t">
+es cm de su volumen m-dimensional.</dd>
   <dt>Teorema</dt>
   <dd>Sea \(E\subseteq\mathbb{R}^n,\) \(s\in[0,+\infty[\) y \(\lambda\in]0,+\infty[\).
     <ol>
@@ -357,21 +368,27 @@ es cm de su volumen m-dimensional.</p>
   <dd>Sea F ⊆ Rn . Se define la dimensión de Hausdorff (o s Hasdorff-Besicovitch) como dimH (F ) = ı́nf{s ∈ R+0 : H (F ) = 0}.</dd>
 </dl>
 
-<dl>
-  <dt>Observaciones</dt>
+<dl class="r">
+  <dt>Observación</dt>
   <dd></dd>
-  <dt>Proposición (principio de distribución de masa)</dt>
+</dl>
+
+<dl class="t">
+  <dt>Teorema (principio de distribución de masa)</dt>
   <dd>Sean F ⊆ Rn y µ una medida con µ(F ) &gt; 0. Supongamos que
 existen s &gt; 0, c &gt; 0 y  &gt; 0 tales que µ(A) ≤ cdiam(A)s para
 )
 todo A con diam(A) ≤ . Entonces H s (F ) ≥ µ(F
 y s ≤ dimH F .
 c</dd>
+</dl>
+
+<dl class="r">
   <dt>Observación</dt>
   <dd>Nótese que vol n ([a1 , b1 ] × · · · × [an , bn ]) = (b1 − a1 ) . . . (bn − an ).</dd>
 </dl>
 
-<p>Proposición (propiedades de la dimensión de Hausdorff)
+<p class="l">Proposición (propiedades de la dimensión de Hausdorff)
 Sea F ⊆ Rn .
 (Monótona) Si E ⊆ F , entonces dimH (E ) ≤ dimH (F ).
 (Numerablemente estable) Si F1 , F2 , . . . es una sucesión de
@@ -383,7 +400,7 @@ Si F es numerable, entonces dimH (F ) = 0.
 dimH (Rn ) = n.
 Si F ◦ 6= ∅, entonces dimH (F ) = n.</p>
 
-<dl>
+<dl class="l">
   <dt>Proposición (propiedades de la dimensión de Hausdorff)</dt>
   <dd>Sea F ⊆ Rn .
 Si f : F → Rm verifica la condición de Hölder de exponente α,
@@ -397,21 +414,25 @@ Si f : F → Rm es una isometrı́a, entonces
 dimH (f (F )) = dimH (F ).</dd>
 </dl>
 
-<p>Proposición (propiedades de la dimensión de Hausdorff)
-Sea F ⊆ Rn con dimH (F ) &lt; 1. Entonces F es totalmente
-disconexo (es decir, las componentes de F son sus puntos).</p>
+<dl class="l">
+  <dt>Proposición (propiedades de la dimensión de Hausdorff)</dt>
+  <dd>Sea F ⊆ Rn con dimH (F ) &lt; 1. Entonces F es totalmente
+disconexo (es decir, las componentes de F son sus puntos).</dd>
+</dl>
 
 <p>El siguiente teorema muestra una relación de la dimensión box-counting con la de Hausdorff.</p>
 
 <dl class="t">
   <dt>Teorema</dt>
   <dd>Sea \(E\subseteq\mathbb{R}^n\), entonces
-  <em>\[ \]</em> {: .eq}</dd>
+<em>\[ \]</em> {: .eq}</dd>
 </dl>
 
-<p>Proposición (relación de la dimensión box-counting con la
-dimensión de Hausdorff)
-Sea F ⊆ Rn . Entonces dimH (F ) ≤ dimB (F ) ≤ dimB (F ).</p>
+<dl class="t">
+  <dt>Teorema (relación de la dimensión box-counting con la</dt>
+  <dt>dimensión de Hausdorff)</dt>
+  <dd>Sea F ⊆ Rn . Entonces dimH (F ) ≤ dimB (F ) ≤ dimB (F ).</dd>
+</dl>
 
   </div>
 
