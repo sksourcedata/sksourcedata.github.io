@@ -73,7 +73,8 @@
 
 <dl class="d">
   <dt>Definición</dt>
-  <dd>Sean A, B ∈ P0 (X ).
+  <dd>Sea \((X,d)\) un espacio métrico y \(A,B\in\mathcal{P}_0(X)\). Definimos la función \(D:\mathcal{P}_0(X)\times\mathcal{P}_0(X)\to\mathbb{R}_0^+\) 
+<em class="eq">\[D(A,B):=\sup\{d(x,B):x\in A\}.\]</em> Una pseudométrica
 D(A, B) = sup{d(x, B) : x ∈ A}. (casi-pseudo-métrica de
 Hausdorff)
 dH (A, B) = máx{D(A, B), D(B, a)} (pseudo-métrica de
@@ -82,22 +83,25 @@ Hausdorff).</dd>
 
 <dl class="l">
   <dt>Lema</dt>
-  <dd>Sean A, B, C ∈ P0 (X ).
-Si A ⊆ B entonces D(A, B) = 0
+  <dd>Sea \((X,d)\) un espacio métrico y \(A,B,C\in\mathcal{P}_0(X)\).
+Si \(A\subseteq B\) entonces \(D(A,B)=0\)
 D(A, B) = D(A, B).
-Si D(A, B) = 0 entonces A ⊆ B.
-D(A, B) ≤ D(A, C ) + D(C , B).</dd>
+Si \(D(A,B)=0\), entonces \(A\subseteq B.\)
+\(D(A,B)\leq D(A,C)+D(C,B).\)</dd>
 </dl>
 
 <dl class="l">
   <dt>Lema</dt>
-  <dd>Sean A, B, C ∈ P0 (X ) y ε, δ &gt; 0.
-Si A ⊆ B(C , ε) y C ⊆ B(B, δ) entonces A ⊆ B(B, ε + δ.
-dH (A, B) ≤ ε si y sólo si A ⊆ B[B, ε] y B ⊆ B[A, ε].
-dH (A, B) = ı́nf{ε &gt; 0 : A ⊆ B[B, ε] y B ⊆ B[A, ε]}.
-dH (A, B) = dH (A, B).
-dH (A, B) = 0 si y sólo si A = B.
-dH (A, B) ≤ dH (A, C ) + dH (C , B).</dd>
+  <dd>Sea \((X,d)\) un espacio métrico, \(A,B,C\in\mathcal{P}_0(X)\) y \(\varepsilon,\delta\in\mathbb{R}^+.
+Si \(A\subseteq B_{\varepsilon}(C)\) y \(C\subseteq B_{\delta}(B) entonces \(A\subseteq B_{\varepsilon+\delta}(B).
+    <ul>
+      <li>\(d_H(A,B) ≤ ε\) si y sólo si A ⊆ B[B, ε]\) y \(B ⊆ B[A, ε]\).</li>
+      <li>\(d_H(A,B)=\operatorname{ı́nf}\{\varepsilon&gt;0:A\subseteq B_\varepilon(B),\;B\subseteq\overline B_\varepilon(A)\}\).</li>
+      <li>\(d_H(A,B)=d_H(A,B)\).</li>
+      <li>\(d_H(A,B)=0\) si y solo si \(A = B\).</li>
+      <li>\(d_H(A,B)≤d_H(A,C)+d_H(C,B)\).</li>
+    </ul>
+  </dd>
 </dl>
 
 <dl class="t">
@@ -110,7 +114,7 @@ Definición
 
 <dl class="l">
   <dt>Lema</dt>
-  <dd>Sean K ∈ K0 (X ) y x ∈ X . Entonces existe y ∈ K tal que
+  <dd>Sea K ∈ K0 (X ) y x ∈ X . Entonces existe y ∈ K tal que
 d(x, K ) = d(x, y ).
 Sea (xn ) una sucesión de Cauchy. Entonces existe una
 1
@@ -220,6 +224,26 @@ donde \(K\) es el atractor del sistema de funciones iteradas.</dd>
         </div>
     </main>
 
+    
+        <div id="disqus_thread"></div>
+        <script>
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+            /*
+            var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            */
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://sksource.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     
     <footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
