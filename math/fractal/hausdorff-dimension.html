@@ -17,9 +17,24 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Dimensión de Hausdorff" />
 <script type="application/ld+json">
-{"headline":"Dimensión de Hausdorff","@type":"WebPage","url":"https://sksourcedata.github.io//math/fractal/hausdorff-dimension.html","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
+{"@type":"WebPage","url":"https://sksourcedata.github.io//math/fractal/hausdorff-dimension.html","headline":"Dimensión de Hausdorff","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://sksourcedata.github.io//feed.xml" title="SK Source" /></head>
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://sksourcedata.github.io//feed.xml" title="SK Source" /><link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-183860687-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-183860687-1');
+</script></head>
 
 
 <body>
@@ -145,7 +160,7 @@
 <dl class="t">
   <dt>Método I</dt>
   <dd>Sea \(\mathcal{A}\) un recubrimiento de un conjunto \(X\) y \(C:\mathcal{A}\to[0,+\infty ]\) una función. Definamos la función \(\mu:\mathcal{P}(X)\to[0,+\infty ]\) como
-<em class="eq">\[\mu(E)=\mathrm{ı́nf} \left\{\sum_{A\in D}C(A):\mathcal{D}\subseteq\mathcal{A}\text{ numerable que recubre a }E\right\}. \]</em>
+<em class="eq">\[\mu(E)=\operatorname{ı́nf}\left\{\sum_{A\in D}C(A):\mathcal{D}\subseteq\mathcal{A}\text{ numerable que recubre a }E\right\}. \]</em>
 Si usamos la convención \(\operatorname{ínf}\varnothing=+\infty\), entonces \(\mu\) es la mayor medida exterior en X tal que \(\mu(A)\leq C(A)\) para todo \(A\in\mathcal{A}\).</dd>
 </dl>
 
@@ -179,8 +194,7 @@ Entonces µ es una medida exterior.</dd>
 
 <dl class="d">
   <dt>Definición</dt>
-  <dd>Sea \(\mu\) una medida exterior sobre un conjunto X. Un conjunto me Un subconjunto E
-de X se dice que es µ-medible si µ(A) = µ(A ∩ E ) + µ(A \ E ),
+  <dd>Sea \(\mu\) una medida exterior sobre un conjunto X. Un conjunto me Un subconjunto E de X se dice que es µ-medible si µ(A) = µ(A ∩ E ) + µ(A \ E ),
 para todo A ⊆ X .</dd>
 </dl>
 
@@ -401,17 +415,17 @@ dimH (Rn ) = n.
 Si F ◦ 6= ∅, entonces dimH (F ) = n.</p>
 
 <dl class="l">
-  <dt>Proposición (propiedades de la dimensión de Hausdorff)</dt>
-  <dd>Sea F ⊆ Rn .
-Si f : F → Rm verifica la condición de Hölder de exponente α,
-entonces dimH (f (F )) ≤ α1 dimH (F ).
-Si f : F → Rm es una aplicación de Lipschitz, entonces
-dimH (f (F )) ≤ dimH (F ).
-Si f : F → Rm es una aplicación bi-Lipschitz, es decir, existen
-0 &lt; c1 ≤ c2 tales que c1 |x − y | ≤ |f (x) − f (y )| ≤ c2 |x − y |
-para todo x, y ∈ F , entonces dimH (f (F )) = dimH (F ).
-Si f : F → Rm es una isometrı́a, entonces
-dimH (f (F )) = dimH (F ).</dd>
+  <dt>Lema</dt>
+  <dd>Sea \(F\subseteq\mathbb{R}^n\).
+Si \(f:F\to\mathbb{R}^m\) verifica la condición de Hölder de exponente α,
+entonces \(\operatorname{dim}_H(f(F))\leq\alpha_1\operatorname{dim}_H(F)\).
+Si \(f:F\to\mathbb{R}^m\) es una aplicación de Lipschitz, entonces
+\(\operatorname{dim}_H(f(F))\leq\operatorname{dim}_H(F)\).
+Si\(f:F\to\mathbb{R}^m\) es una aplicación bi-Lipschitz, es decir, existen
+\(0 &lt; c1 ≤ c2\) satissfaciendo \(c_1|x-y|\leq|f(x)-f(y)|\leq c_2|x-y|\)
+para todo \(x,y\in F\), entonces \(dimH(f(F))=\operatorname{dim}_H(F)\).
+Si \(f:F\to\mathbb{R}^m\) es una isometrı́a, entonces
+\(\operatorname{dim}_H(f(F))=\operatorname{dim}_H(F)\).</dd>
 </dl>
 
 <dl class="l">

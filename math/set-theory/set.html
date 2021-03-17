@@ -5,19 +5,19 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Matemáticas | SK Source</title>
+<title>Conjunto | SK Source</title>
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Matemáticas" />
+<meta property="og:title" content="Conjunto" />
 <meta property="og:locale" content="es_ES" />
 <meta name="description" content="Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante." />
 <meta property="og:description" content="Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante." />
-<link rel="canonical" href="https://sksourcedata.github.io//math/" />
-<meta property="og:url" content="https://sksourcedata.github.io//math/" />
+<link rel="canonical" href="https://sksourcedata.github.io//math/set-theory/set.html" />
+<meta property="og:url" content="https://sksourcedata.github.io//math/set-theory/set.html" />
 <meta property="og:site_name" content="SK Source" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Matemáticas" />
+<meta property="twitter:title" content="Conjunto" />
 <script type="application/ld+json">
-{"@type":"WebPage","url":"https://sksourcedata.github.io//math/","headline":"Matemáticas","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
+{"@type":"WebPage","url":"https://sksourcedata.github.io//math/set-theory/set.html","headline":"Conjunto","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://sksourcedata.github.io//feed.xml" title="SK Source" /><link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -63,95 +63,92 @@
             <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Matemáticas</h1>
+    <h1 class="post-title">Conjunto</h1>
   </header>
 
   <div class="post-content">
-    <ul>
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-            <li><a href="/math/fractal/">Geometría fractal.</a> </li>
-        
-    
-        
-            <li><a href="/math/abstract/">Álgebra abstracta.</a> </li>
-        
-    
-        
-            <li><a href="/math/information-theory/">Teoría de la información.</a> </li>
-        
-    
-        
-            <li><a href="/math/algebra/">Álgebra.</a> </li>
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
+    <!--Set-->
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Un <strong>conjunto</strong> es una colección de objetos bien definida. Los objetos de un conjunto son llamados <strong>elementos</strong>. Cuando \(a\) es un elemento de un conjunto \(A\), se dice que \(a\) <strong>pertenece</strong> a \(A\), y se escribe \(a\in A\). Se dice que un conjunto <strong>contiene</strong> a sus elementos.</dd>
+</dl>
+
+<p>Bien definida quiere decir que no hay duda de si un elemento pertenece o no al conjunto.</p>
+
+<p>Los elementos pueden ser cualquier cosa: números, letras, colores, otros conjuntos, etc.</p>
+
+<p>Los conjuntos se suelen denotar por letras mayúsculas y no importa el orden de sus elementos. Se pueden definir de dos maneras:</p>
+<ul>
+  <li><strong>Por enumeración.</strong> Enumerando o listando todos sus elementos separándolos por comas y entre llaves.</li>
+  <li><strong>Por compresión.</strong> Declarando la propiedad o propiedades que deben tener todos sus elementos.</li>
 </ul>
+
+<dl class="e">
+  <dt>Ejemplo</dt>
+  <dd>El conjunto de las vocales del alfabeto se puede escribir:
+    <ul>
+      <li>Por enumeración: \(\{a,e,i,o,u\}\).</li>
+      <li>Por compresión: \(\{x:x\text{ es una vocal del alfabeto}\}\).</li>
+    </ul>
+  </dd>
+</dl>
+
+<p>En la anterior, expresión los dos puntos, «:», significan «tal que».</p>
+
+<!--Equals-->
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Dos conjuntos \(A\) y \(B\) son <strong>iguales</strong> si, y solo si, cada elemento de \(A\) está en \(B\), y viceversa. En tal caso, se escribirá \(A=B\).</dd>
+</dl>
+
+<dl class="e">
+  <dt>Ejemplo</dt>
+  <dd>Los conjuntos \(\{1,3\}\) y \(\{x\in\mathbb{R}:x^2-4x+3=0\}\) son iguales.</dd>
+</dl>
+
+<dl class="e">
+  <dt>Ejemplo</dt>
+  <dd>Como las soluciones reales de la ecuación \(x^2-4x+3\) son \(1\) y \(3\), entonces 
+<em class="eq">\[\{x\in\mathbb{R}:x^2-4x+3=0\}=\{1,3\}. \]</em></dd>
+</dl>
+
+<dl class="e">
+  <dt>Ejemplo</dt>
+  <dd>Los conjuntos \(\{1,2\}\) y \(\{1,\{2\}\}\) no son iguales, ya que \(2\not\in\{1,\{2\}\}\) (y \(\{2\}\not\in\{1,2\}\)).</dd>
+</dl>
+
+<!--Universal set-->
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>El <strong>conjunto universal</strong>, denotado por \(\mathbb{U}\), es el conjunto que contiene todos los objetos considerados.</dd>
+</dl>
+
+<!--Empty set-->
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>El <strong>conjunto vacío</strong>, denotado por \(\varnothing\), es el conjunto que no tiene elementos.</dd>
+</dl>
+
+<!--Cardinality-->
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>El <strong>cardinal</strong> de un conjunto \(A\), denotado por \(|A|\), es el número de elementos de \(A\).</dd>
+</dl>
+
+<p>Según el número de elementos de un conjunto, se puede clasificar en dos tipos.</p>
+
+<!--Finite set-->
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Un <strong>conjunto finito</strong> es un conjunto \(A\) que satisface \(|A|&lt;\aleph_0\).
+Sea \(A\) un conjunto.</dd>
+</dl>
+
+<!--Infinite set-->
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Un <strong>conjunto infinito</strong> es un conjunto que no es finito.</dd>
+</dl>
 
   </div>
 
@@ -190,3 +187,7 @@
 
 </html>
 
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://example.com/mathjax/MathJax.js?config=TeX-AMS_CHTML&locale=fr"></script>

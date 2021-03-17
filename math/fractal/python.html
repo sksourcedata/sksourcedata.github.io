@@ -17,9 +17,24 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Prácticas con Python" />
 <script type="application/ld+json">
-{"headline":"Prácticas con Python","@type":"WebPage","url":"https://sksourcedata.github.io//math/fractal/python.html","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
+{"@type":"WebPage","url":"https://sksourcedata.github.io//math/fractal/python.html","headline":"Prácticas con Python","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://sksourcedata.github.io//feed.xml" title="SK Source" /></head>
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://sksourcedata.github.io//feed.xml" title="SK Source" /><link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-183860687-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-183860687-1');
+</script></head>
 
 
 <body>
@@ -92,7 +107,37 @@
 
 <p>Ya que tenemos los datos de este archivo, sigamos trabajando con él. Si usamos el comando <code class="language-plaintext highlighter-rouge">lines[:5]</code>, nos mostrará las primeras cinco líneas.</p>
 
-<p>Pongamos como objetivo extraer los puntos de cada línea. Comencemos con la primera línea. Si escribimos</p>
+<p>Pongamos como objetivo extraer los puntos de cada línea. Comencemos con la primera línea.</p>
+
+<p>Si escribimos <code class="language-plaintext highlighter-rouge">a=eval(lines[0])</code>, definiremos <code class="language-plaintext highlighter-rouge">a</code> como el primer punto del conjunto. Podemos comprobar que se trata de una tabla, ejecutando el comando <code class="language-plaintext highlighter-rouge">type(a)</code>.</p>
+
+<p>Una vez que hemos visto como extraer el primer punto del conjunto, vamos a dar el siguiente paso. Obtengamos todos los puntos y los almacenaremos en una lista. Para ello, ejecutaremos lo siguiente:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">points</span><span class="o">=</span><span class="p">[</span><span class="nb">eval</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Podemos comprobar el tamaño de la lista con <code class="language-plaintext highlighter-rouge">len(points)</code></p>
+
+<p>Para poder visualizar de manera gráfica este conjunto de puntos, usaremos el siguiente código:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pylab</span>
+<span class="n">pylab</span><span class="p">.</span><span class="n">plot</span><span class="p">([</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">points</span><span class="p">],[</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">points</span><span class="p">],</span><span class="s">'.'</span><span class="p">)</span>
+<span class="n">pylab</span><span class="p">.</span><span class="n">grid</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Para guardar la gráfica generada como un archivo PNG, escribiremos lo siguiente:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">pylab</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'sierpinski.png'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib.image</span> <span class="k">as</span> <span class="n">mpimg</span>
+<span class="n">img</span><span class="o">=</span><span class="n">mpimg</span><span class="p">.</span><span class="n">imread</span><span class="p">(</span><span class="s">'sierpinski.png'</span><span class="p">)</span>
+<span class="n">pylab</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="dimensión-box-counting-de-un-conjunto-de-puntos">Dimensión box-counting de un conjunto de puntos</h3>
+
+<h3 id="dimensión-box-counting-de-una-imagen">Dimensión box-counting de una imagen</h3>
 
 
   </div>
