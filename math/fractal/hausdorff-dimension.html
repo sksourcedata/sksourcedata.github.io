@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Dimensión de Hausdorff" />
 <script type="application/ld+json">
-{"@type":"WebPage","url":"https://sksourcedata.github.io//math/fractal/hausdorff-dimension.html","headline":"Dimensión de Hausdorff","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
+{"headline":"Dimensión de Hausdorff","@type":"WebPage","url":"https://sksourcedata.github.io//math/fractal/hausdorff-dimension.html","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://sksourcedata.github.io//feed.xml" title="SK Source" /><link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -361,15 +361,26 @@ es cm de su volumen m-dimensional.</dd>
   <dt>Teorema</dt>
   <dd>Sea \(E\subseteq\mathbb{R}^n,\) \(s\in[0,+\infty[\) y \(\lambda\in]0,+\infty[\).
     <ol>
-      <li>\\(H^s (\\lambda E)=\\lambda^sH^s(E)\\), donde \\(\\lambda E:=\\{\\lambda x:x\\in E\\}\\).</li>
-      <li>Sea f : F → Rm un función que verifica la condición de Hölder de exponente α, es decir, existe c &gt; 0 tal que |f (x) − f (y )| ≤ c|x − y |α para todo x, y ∈ F . Entonces ss H α (f (F )) ≤ c α H s (F ).</li>
+      <li>\(H^s (\lambda E)=\lambda^sH^s(E)\), donde \(\lambda E:=\{\lambda x:x\in E\}\).</li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>Sea f : F → Rm un función que verifica la condición de Hölder de exponente α, es decir, existe c &gt; 0 tal que</td>
+              <td>f (x) − f (y )</td>
+              <td>≤ c</td>
+              <td>x − y</td>
+              <td>α para todo x, y ∈ F . Entonces ss H α (f (F )) ≤ c α H s (F ).</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
       <li>Sea f : F → Rm un función de Lipschitz (verifica la condición de Hölder de exponente α = 1). Entonces H s (f (F )) ≤ c s H s (F ).</li>
       <li>H s is invariante por isometrı́as.</li>
-  </ol>
+    </ol>
   </dd>
 </dl>
 
-<h2>Dimensión de Hausdorff</h2>
 <h2 id="dimensión-de-hasudorff">Dimensión de Hasudorff</h2>
 
 <dl class="d">
@@ -422,30 +433,52 @@ entonces \(\operatorname{dim}_H(f(F))\leq\alpha_1\operatorname{dim}_H(F)\).
 Si \(f:F\to\mathbb{R}^m\) es una aplicación de Lipschitz, entonces
 \(\operatorname{dim}_H(f(F))\leq\operatorname{dim}_H(F)\).
 Si\(f:F\to\mathbb{R}^m\) es una aplicación bi-Lipschitz, es decir, existen
-\(0 &lt; c1 ≤ c2\) satissfaciendo \(c_1|x-y|\leq|f(x)-f(y)|\leq c_2|x-y|\)
+\(0 &lt; c1 ≤ c2\) satisfaciendo \(c_1|x-y|\leq|f(x)-f(y)|\leq c_2|x-y|\)
 para todo \(x,y\in F\), entonces \(dimH(f(F))=\operatorname{dim}_H(F)\).
 Si \(f:F\to\mathbb{R}^m\) es una isometrı́a, entonces
 \(\operatorname{dim}_H(f(F))=\operatorname{dim}_H(F)\).</dd>
 </dl>
 
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Sea \(F\subseteq\mathbb{R}^n\). Una <strong>función bi-Lipschitz</strong> es una función \(f:F\to\mathbb{R}^m\) satisfaciendo
+<em class="eq">\[ c_1|x-y|\leq|f(x)-f(y)|\leq c|x-y|, \]</em>
+donde \(c\in[0,+\infty [\) y \(c_1\in[0,c ].\)</dd>
+</dl>
+
 <dl class="l">
-  <dt>Proposición (propiedades de la dimensión de Hausdorff)</dt>
-  <dd>Sea F ⊆ Rn con dimH (F ) &lt; 1. Entonces F es totalmente
-disconexo (es decir, las componentes de F son sus puntos).</dd>
+  <dt>Lema</dt>
+  <dd>Sea \(F\subseteq\mathbb{R}^n\) y \(f:F\to\mathbb{R}^m\) una función.
+    <ol>
+      <li>Si \(f\) satisface condición de Hölder, entonces \(\operatorname{dim}_{\mathrm{H}}f(F)=\frac{1}{\alpha}\operatorname{dim}_{\mathrm{H}}F.\) En particular, si \(f\) es una función Lipschitz, entonces</li>
+      <li>Si \(f\) es bi-Lipschitz, entonces \(\operatorname{dim}_{\mathrm{H}}f(F)=\operatorname{dim}_{\mathrm{H}}F.\)</li>
+    </ol>
+  </dd>
+</dl>
+
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Un <strong>conjunto totalmente disconexo</strong> es un conjunto \(F\) tal que las únicas componentes conexas de \(F\) son sus puntos.</dd>
+</dl>
+
+<dl class="t">
+  <dt>Teorema</dt>
+  <dd>Sea \(F\subseteq\mathbb{R}^n\). Si \(\operatorname{dim}_{\mathrm{H}}(F)&lt;1\), entonces \(F\) es totalmente disconexo.</dd>
 </dl>
 
 <p>El siguiente teorema muestra una relación de la dimensión box-counting con la de Hausdorff.</p>
 
 <dl class="t">
-  <dt>Teorema</dt>
-  <dd>Sea \(E\subseteq\mathbb{R}^n\), entonces
-<em>\[ \]</em> {: .eq}</dd>
-</dl>
-
-<dl class="t">
   <dt>Teorema (relación de la dimensión box-counting con la</dt>
   <dt>dimensión de Hausdorff)</dt>
-  <dd>Sea F ⊆ Rn . Entonces dimH (F ) ≤ dimB (F ) ≤ dimB (F ).</dd>
+  <dd>Todo \(F\subseteq\mathbb{R}^n\) satisface
+<em class="eq">\[ \operatorname{dim}_{\mathrm{H}}F\leq\underline{\operatorname{dim}}_{\mathrm{B}}F\leq\overline{\operatorname{dim}}_{\mathrm{B}}F. \]</em></dd>
+</dl>
+
+<!--Proposition 3.4. p. 50-->
+<dl class="p">
+  <dt>Demostración</dt>
+  <dd>Sea \(s\in\overline{\mathbb{R}}_0^+\) tal que \(1 &lt; \mathcal{H}^s(F) = \underset{\delta\to 0}{\operatorname{lím}}\mathcal{H}_{\delta}^s(F)\)</dd>
 </dl>
 
   </div>

@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Funciones hash" />
 <script type="application/ld+json">
-{"@type":"WebPage","url":"https://sksourcedata.github.io//math/information-theory/hash-function.html","headline":"Funciones hash","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
+{"headline":"Funciones hash","@type":"WebPage","url":"https://sksourcedata.github.io//math/information-theory/hash-function.html","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://sksourcedata.github.io//feed.xml" title="SK Source" /><link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -74,14 +74,129 @@
   </header>
 
   <div class="post-content">
-    <p>Una función hash \(H\) es una función computable mediante un algoritmo tal que:</p>
+    <p><em>Función hash</em> o <em>función resumen</em> es otra forma de llamar a la función de una vía.</p>
 
-<p>{\displaystyle H:U\rightarrow M}{\displaystyle H:U\rightarrow M}</p>
+<dl>
+  <dt>Definition</dt>
+  <dd>Una función de una vı́a \(h:X\to Y\) se conoce también como 
+Se dice que h es una función hash libre de colisiones débiles si para \(x\in X\) resulta
+imposible desde el punto de vista computacional calcular x 0 ∈ X x 0 6= x tal que
+h(x 0 ) = h(x).</dd>
+</dl>
 
-<p>{\displaystyle x\rightarrow h(x)}{\displaystyle x\rightarrow h(x)} [sd fjso ids\s afd saf asdf]</p>
+<p>Se dice que h es libre de colisiones fuertes si desde el punto de vista computacional,
+resulta imposible encontrar x, x 0 ∈ X distintos tales que h(x) = h(x 0 ).</p>
 
-<p>A la funciónes resumen también se le denomina función hash, función digest, función extracto o función de extractado.</p>
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Una <strong>función hash libre de colisiones débiles</strong> es una función hash \(h:X\to Y\) tal que para todo \(x\in X\), resulta imposible, desde el punto de vista computacional, calcular \(x_1\in X\setminus\{x\}\) satisfaciendo \(h(x_1)=h(x).\)</dd>
+</dl>
 
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Una <strong>función hash libre de colisiones fuertes</strong> es una función hash \(h:X\to Y\) para la cual resulta imposible, desde el punto de vista computacional, calcular \(x_1,x_2\in X\) satisfaciendo \(h(x_1)=h(x_2).\)</dd>
+</dl>
+
+<p>Si h es libre de colisiones débiles y los valores están uniformemente distribuı́dos,
+encontrar x 0 mediante una búsqueda aleatoria requiere \(O(|Y|)\) intentos.</p>
+
+<p>Para el caso de funciones libres de colisiones fuertes, el número de intentos es \(O(\sqrt{|Y|}).\)</p>
+
+<h2 id="la-función-hash-de-chaum-van-heijst-pftizmann">La función hash de Chaum-van Heijst-Pftizmann</h2>
+
+<dl class="l">
+  <dt>Lema</dt>
+  <dd>Sean \(p\) y \(q\) dos primos tales que \(p=2q+1,\) y \(\alpha\) y \(\beta\) dos generadores de \(\mathbb{Z}_p.\)
+Identificando \(\mathbb{Z}_q\) con el conjunto \(\{0,1,\ldots,q-1\}\subseteq\mathbb{N},\) la función \(\mathbb{Z}_q\times\mathbb{Z}_q\to\mathbb{Z}_p^\ast\) definida por \((x_1,x_2)\mapsto\alpha^{x_1}\beta^{x_2}\) es una función hash tal que encontrar una colisión es equivalente a resolver el logaritmo discreto \(\log_{\alpha}(\beta).\)</dd>
+</dl>
+
+<dl class="p">
+  <dt>Demostración</dt>
+  <dd>Sea \(s = log_{\alpha}(\beta).\) Entonces, \(\alpha x_1 \beta x_2=\alpha^{x_1}\alpha^{sx_2}\) y
+<em class="eq">\[\alpha^{x_1+s}\beta^{x_2−1}=\alpha^{x_1}\alpha^{s}\alpha^{sx_2}\alpha^{-s}=\alpha^{x_1}\alpha^ {sx_2},\]</em> 
+por lo que \((x_1,x_2)\) tiene la misma imagen que \((x_1+s,x_2-1).\)
+    <blockquote>
+      <p>Recíprocamente, sean \((x_1,x_2)\neq(x_3,x_4)\) tales que \(h(x_1,x_2)=h(x_3,x_4).\) Luego, \(\alpha x_1-x_3=\beta x_4-x_2.\) Si \(x_2=x_4,\) entonces (por identificar \(\mathbb{Z}_q\) con \(\{0,1,\ldots,q-1\}\)) \(x_1=x_3.\) De aquí, \(x_1\neq x_3\) y \(x_2\neq x_4.\) Supongamos que \(x_4 &gt; x_2\) y sea \(d:=\operatorname{mcd}(x_4-x_2,p-1).\) Como \(q &gt; x_4-x_2\leq 1\) y \(p-1=2q\), entonces \(d\in\{1,2\}.\)
+En caso de que \(d = 1\), para \(y\equiv_{p-1}(x_4 − x_2 )−1,\) \((\beta^{x_4-x_2})^y=\beta.\) Además,
+\((\beta^{x_4-x_2})^y=(\alpha^{x_1 −x_3})^y\), de donde \((x_1-x_3)y=log_{\alpha}(\beta).\)
+Si \(d=2\), entonces \(\operatorname{mcd}(x_4-x_2,q)=1\), dado que \(p-1=2q.\) Sea \(y\equiv_q(x_4-x_2)-1.\)
+Si escribamos \(y(x_4-x_2)=1+kq,\) con \(k\in\mathbb{Z},\) entoncess
+<em class="eq">\[\beta qk \beta ≡p \beta qk+1 ≡p \beta y(x4 −x2 )\]</em>
+y \(\beta^{kq}\equiv_p\pm1\) (en realidad es \((-1)^k\)), ya que \((\beta^q)^2\equiv_p \beta^{p−1}\equiv_p1.\) De este modo, \(log_{\alpha}(\beta)\in\{(x_4-x_2)y,(x_4-x_2)y+q\},\) dependiendo de si \(\beta^{kq}\equiv_p1\) o \(\beta^{kq}\equiv_{p-1},\)
+respectivamente.</p>
+    </blockquote>
+  </dd>
+</dl>
+
+<h2 id="construcciones-de-funciones-hash">Construcciones de funciones hash</h2>
+
+<dl class="t">
+  <dt>Construcción recursiva</dt>
+  <dd>Sea \(h:X\to X\) una función hash y sea \(X^{\ast}=\bigcup_{i=0}^{\infty}X\) y supongamos que \(X\) tiene definida una operación interna \(\ast.\) Si se define la sucesión \((h_n(x_1,\ldots,x_n))_{n\in\mathbb{N}}\) como \(h_0(x_1):=h(x_1)\) y \(h_{n+1}(x_1,\ldots,x_n,x_{n+1}):=h(x_{n+1}\ast h_n(x_1,\ldots,x_n ))\) para todo \(n\in\mathbb{N},\) entonces \(h^{\ast}:X^{\ast}\to X\) es una función hash.</dd>
+</dl>
+
+<dl class="t">
+  <dt>Construcción basada en un criptosistema de clave simétrica</dt>
+  <dd>Sean \(\mathcal{M}\), \(\mathcal{C}\) y \(\mathcal{K}\) conjuntos biyectivos y sea \(f:\mathcal{M}\times\mathcal{K}\to\mathcal{C}\) una función de encriptado. Entonces, la función \(f_m:K\to\mathcal{C}\), dada por \(f_m(k):=f(m,k)\), es una función de una vı́a.
+    <blockquote>
+      <p>Sea \((k_1,\ldots,k_n)\in\mathcal{K}^n.\) Definimos la función \(h_n:\mathcal{K}^n\to\mathcal{C}\) como \(h_n(k_1,\ldots,k_n):=y_{n+1},\) donde \(y_1:=m\) y \(y_{i+1}:=f(y_i,k_i).\) Entonces,
+\(h^\ast\) es una función hash.</p>
+    </blockquote>
+  </dd>
+</dl>
+
+<h2 id="usos-de-la-función-hash">Usos de la función hash</h2>
+
+<dl class="d">
+  <dt>Message Authentication Code</dt>
+  <dd>Sea \(f:\mathcal{M}\times\mathcal{K}\to\mathcal{C}\) la función de encriptado de un criptosistema de clave simétrica y \(h:\mathcal{M}\to\mathcal{M}\) una función hash. Entonces, \(f\circ h\) produce, lo que se conoce como
+un Message Authentication Code o MAC.
+La verificación de un MAC se lleva a cabo exactamente de la misma forma que se
+construye el mismo a partir del mensaje original.</dd>
+</dl>
+
+<dl class="d">
+  <dt>Funcionamiento de firmas digitales</dt>
+  <dd>Sea \(f:X\to Y\) una función de una vía con puerta trasera y \(h:X\to Y\) una función
+hash. Entonces, \(f^{-1}\circ h\) reproduce el verdadero funcionamiento de una firma digital.
+Para verificar una firma digital, se calcula el valor hash del mensaje, \(m\) y este se
+comprueba que \((f\circ f^{-1}\circ h)(m)=h(m)\).</dd>
+</dl>
+
+<h2 id="la-paradoja-del-cumpleaños">La paradoja del cumpleaños</h2>
+
+<dl class="prob">
+  <dt>Problema</dt>
+  <dd>Encontrar el valor mı́nimo \(k\) para el que la probabilidad de que en un grupo de \(k\)
+personas haya dos que tengan la misma fecha de cumpleaños.</dd>
+</dl>
+
+<ol>
+  <li>Para que no exista duplicidad, \(k\leq 365.\)</li>
+  <li>Sea \(N\) el número de formas distintas en las que pueden obtenerse k\) valores
+distintos. Entonces \(N=365\cdot364\cdots(365-k+1),\) es decir,
+\(N=\frac{365!}{(365-k)!.}\)</li>
+  <li>Si hubiera duplicidades, entonces las posibilidades serían \(365k.\)</li>
+  <li>De este modo, la probabilidad de que en una reunión con \(k\) personas no existan
+dos con el mismo cumpleaños es \(N/365k,\) es decir, que la probabilidad de que
+haya dos personas con la misma fecha de cumpleaños es
+<em class="eq">\[ 1-\frac{N}{365^k}=1-\frac{365!}{(365-k)!\,365^k} \]</em></li>
+  <li>Para \(k=23\), dicha probabilidad es \(0.5073.\) Para \(k=100\) es de \(0.9999997.\)</li>
+</ol>
+
+<p>Como podemos observar, entre una cantidad de 100 personas, se obtiene una probabilidad sorprendentemente alta.</p>
+
+<p>Un ataque basado en esta paradoja es el siguiente:</p>
+<ol>
+  <li>La fuente va a firmar un mensaje añadiendo un resumen de m bits.</li>
+  <li>El atacante genera \(2^{\frac{m}{2}}\) variaciones del mensaje, todas ellas teniendo
+esencialmente el mismo significado que el mensaje original. Prepara al mismo
+tiempo un mismo número de mensajes, variaciones del fraudulento y que
+sustituirá por el real.</li>
+  <li>Se comparan ambos conjuntos de mensajes para encontrar una pareja de
+mensajes que produzcan el mismo hash.</li>
+  <li>El atacante ofrece la variación válida a la fuente para que la firme y se añade a la versión fraudulenta encontrada del mensaje.</li>
+</ol>
 
   </div>
 
