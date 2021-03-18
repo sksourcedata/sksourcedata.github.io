@@ -59,13 +59,6 @@
     <main class="page-content" aria-label="Content">
         <div class="wrapper">
             
-                <div style="color:rgb(120, 120, 121);border: 2px solid rgb(247, 204, 17);padding: 2px">
-                    &#9888;Esta página aún se encuentra en desarrollo.
-                </div>
-                <!--<div style="color:rgb(120, 120, 121);border: 2px solid rgb(10, 154, 250);padding: 2px">
-                    &#8505;Información
-                </div>-->
-            
 
             <article class="post">
 
@@ -76,25 +69,14 @@
   <div class="post-content">
     <p><em>Función hash</em> o <em>función resumen</em> es otra forma de llamar a la función de una vía.</p>
 
-<dl>
-  <dt>Definition</dt>
-  <dd>Una función de una vı́a \(h:X\to Y\) se conoce también como 
-Se dice que h es una función hash libre de colisiones débiles si para \(x\in X\) resulta
-imposible desde el punto de vista computacional calcular x 0 ∈ X x 0 6= x tal que
-h(x 0 ) = h(x).</dd>
-</dl>
-
-<p>Se dice que h es libre de colisiones fuertes si desde el punto de vista computacional,
-resulta imposible encontrar x, x 0 ∈ X distintos tales que h(x) = h(x 0 ).</p>
-
 <dl class="d">
   <dt>Definición</dt>
-  <dd>Una <strong>función hash libre de colisiones débiles</strong> es una función hash \(h:X\to Y\) tal que para todo \(x\in X\), resulta imposible, desde el punto de vista computacional, calcular \(x_1\in X\setminus\{x\}\) satisfaciendo \(h(x_1)=h(x).\)</dd>
+  <dd>Una <strong>función hash libre de colisiones débiles</strong> es una función hash \(h:X\to Y\) tal que para todo \(x\in X\), resulta imposible calcular computacionalmente \(x_1\in X\setminus\{x\}\) satisfaciendo \(h(x_1)=h(x).\)</dd>
 </dl>
 
 <dl class="d">
   <dt>Definición</dt>
-  <dd>Una <strong>función hash libre de colisiones fuertes</strong> es una función hash \(h:X\to Y\) para la cual resulta imposible, desde el punto de vista computacional, calcular \(x_1,x_2\in X\) satisfaciendo \(h(x_1)=h(x_2).\)</dd>
+  <dd>Una <strong>función hash libre de colisiones fuertes</strong> es una función hash \(h:X\to Y\) para la cual resulta imposible calcular computacionalmente \(x_1,x_2\in X\) satisfaciendo \(h(x_1)=h(x_2).\)</dd>
 </dl>
 
 <p>Si h es libre de colisiones débiles y los valores están uniformemente distribuı́dos,
@@ -116,12 +98,12 @@ Identificando \(\mathbb{Z}_q\) con el conjunto \(\{0,1,\ldots,q-1\}\subseteq\mat
 <em class="eq">\[\alpha^{x_1+s}\beta^{x_2−1}=\alpha^{x_1}\alpha^{s}\alpha^{sx_2}\alpha^{-s}=\alpha^{x_1}\alpha^ {sx_2},\]</em> 
 por lo que \((x_1,x_2)\) tiene la misma imagen que \((x_1+s,x_2-1).\)
     <blockquote>
-      <p>Recíprocamente, sean \((x_1,x_2)\neq(x_3,x_4)\) tales que \(h(x_1,x_2)=h(x_3,x_4).\) Luego, \(\alpha x_1-x_3=\beta x_4-x_2.\) Si \(x_2=x_4,\) entonces (por identificar \(\mathbb{Z}_q\) con \(\{0,1,\ldots,q-1\}\)) \(x_1=x_3.\) De aquí, \(x_1\neq x_3\) y \(x_2\neq x_4.\) Supongamos que \(x_4 &gt; x_2\) y sea \(d:=\operatorname{mcd}(x_4-x_2,p-1).\) Como \(q &gt; x_4-x_2\leq 1\) y \(p-1=2q\), entonces \(d\in\{1,2\}.\)
+      <p>Recíprocamente, sean \((x_1,x_2)\neq(x_3,x_4)\) tales que \(h(x_1,x_2)=h(x_3,x_4).\) Luego, \(\alpha x_1-x_3=\beta x_4-x_2.\) Si \(x_2=x_4,\) entonces \(x_1=x_3,\) por identificar \(\mathbb{Z}_q\) con \(\{0,1,\ldots,q-1\}.\) De aquí, \(x_1\neq x_3\) y \(x_2\neq x_4.\) Supongamos que \(x_4 &gt; x_2\) y sea \(d:=\operatorname{mcd}(x_4-x_2,p-1).\) Como \(q &gt; x_4-x_2\leq 1\) y \(p-1=2q\), entonces \(d\in\{1,2\}.\)
 En caso de que \(d = 1\), para \(y\equiv_{p-1}(x_4 − x_2 )−1,\) \((\beta^{x_4-x_2})^y=\beta.\) Además,
 \((\beta^{x_4-x_2})^y=(\alpha^{x_1 −x_3})^y\), de donde \((x_1-x_3)y=log_{\alpha}(\beta).\)
 Si \(d=2\), entonces \(\operatorname{mcd}(x_4-x_2,q)=1\), dado que \(p-1=2q.\) Sea \(y\equiv_q(x_4-x_2)-1.\)
-Si escribamos \(y(x_4-x_2)=1+kq,\) con \(k\in\mathbb{Z},\) entoncess
-<em class="eq">\[\beta qk \beta ≡p \beta qk+1 ≡p \beta y(x4 −x2 )\]</em>
+Si escribamos \(y(x_4-x_2)=1+kq,\) con \(k\in\mathbb{Z},\) entonces
+<em class="eq">\[ \beta^{qk}\beta\equiv_p\beta^{qk+1}\equiv_p\beta^{y(x_4-x_2)} \]</em>
 y \(\beta^{kq}\equiv_p\pm1\) (en realidad es \((-1)^k\)), ya que \((\beta^q)^2\equiv_p \beta^{p−1}\equiv_p1.\) De este modo, \(log_{\alpha}(\beta)\in\{(x_4-x_2)y,(x_4-x_2)y+q\},\) dependiendo de si \(\beta^{kq}\equiv_p1\) o \(\beta^{kq}\equiv_{p-1},\)
 respectivamente.</p>
     </blockquote>
