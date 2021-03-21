@@ -336,6 +336,10 @@ dl dd ol li { counter-increment: li; }
 
 dl dd ol li::before { content: "(" counter(li, upper-roman); font-weight: bold; display: inline-block; width: 1em; margin-left: -1.5em; margin-right: 0.5em; text-align: right; direction: rtl; }
 
+dl.ol-number dd ol li::before { content: "." counter(li); }
+
+dl.ol-alpha dd ol li::before { content: "(" counter(li, lower-alpha); }
+
 dl.d { background-color: #e9f9fc; }
 
 dl.d, dl.d dt { border-color: #1fbbeb; }
@@ -376,6 +380,6 @@ dl.e, dl.e dt { border-color: #d63d9c; }
 
 dl.e dt, dl.e dd ol li::before { color: #d63d9c; }
 
-dl.e dd ol li::before { content: "." counter(li); }
+dl.e dd ol li::before { content: "(" counter(li, lower-alpha); }
 
 /*# sourceMappingURL=main.css.map */

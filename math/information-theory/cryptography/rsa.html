@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>RSA | SK Source</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="RSA" />
+<meta property="og:locale" content="es_ES" />
+<meta name="description" content="Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante." />
+<meta property="og:description" content="Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante." />
+<link rel="canonical" href="https://sksourcedata.github.io//math/information-theory/cryptography/rsa.html" />
+<meta property="og:url" content="https://sksourcedata.github.io//math/information-theory/cryptography/rsa.html" />
+<meta property="og:site_name" content="SK Source" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="RSA" />
+<script type="application/ld+json">
+{"headline":"RSA","@type":"WebPage","url":"https://sksourcedata.github.io//math/information-theory/cryptography/rsa.html","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://sksourcedata.github.io//feed.xml" title="SK Source" /><link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-183860687-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-183860687-1');
+</script></head>
+
+
+<body>
+
+    <header class="site-header">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/">SK Source</a><nav class="site-nav">
+            <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+            <label for="nav-trigger">
+                <span class="menu-icon">
+                    <svg viewBox="0 0 18 15" width="18px" height="15px">
+                        <path
+                            d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                    </svg>
+                </span>
+            </label>
+
+            <div class="trigger">
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <a class="page-link" href="/art/">Arte</a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <a class="page-link" href="/math/">Matemáticas</a>
+                
+                
+                
+                
+                
+                
+                
+                    <a class="page-link" href="/programming/">Programación</a>
+                
+                
+                
+                
+                
+                    <a class="page-link" href="/about/">Sobre mí</a>
+                
+                
+            </div>
+        </nav></div>
+</header>
+
+    <main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            
+                <div style="color:rgb(120, 120, 121);border: 2px solid rgb(247, 204, 17);padding: 2px">
+                    &#9888;Esta página aún se encuentra en desarrollo.
+                </div>
+                <!--<div style="color:rgb(120, 120, 121);border: 2px solid rgb(10, 154, 250);padding: 2px">
+                    &#8505;Información
+                </div>-->
+            
+
+            <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">RSA</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="primer-criptosistema-de-clave-pública">Primer criptosistema de clave pública</h2>
+
+<p>En 1978, los matemáticos Ron Rivest, Adi Shamir y Len Addleman publican su artículo
+«A method for Obtaining Digital Signatures and Public Key Cryptosystems» en el que
+introducen el primer criptosistema de clave pública basado en la conjetura publicada
+dos años antes por Whitfield Diffie y Martin Hellman.</p>
+
+<p>La función de una vı́a con puerta trasera viene definida por una aplicación
+f : Zn → Zn , con n = p · q, para p y q números primos, definida por f (g) = g e , siendo
+g un elemento invertible en Zn y mcd(e, (p − 1)(q − 1)) = 1.</p>
+
+<!--Figure: R. Rivest, A. Shamir y L. Addleman-->
+
+<h2 id="función-indicatriz-de-euler">Función indicatriz de Euler</h2>
+
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>La <strong>función indicatriz de Euler</strong> es la función \(\varphi:\mathbb{N}^{\ast}\to\mathbb{N}\), dada por
+<em class="eq">\[ \varphi(n):=|\mathbb{Z}_n^{\times}|, \]</em>
+donde \(\mathbb{Z}_n^{\times}\) es el grupo multiplicativo de las unidades de \(\mathbb{Z}_n.\)</dd>
+</dl>
+
+<dl class="t">
+  <dt>Teorema</dt>
+  <dd>Sea \(k\in\mathbb{N}\), \(p_1,\ldots,p_k\in\mathbb{P}\) distintos y \(e_1,\ldots,e_k\in\mathbb{N}^{\ast}\). Si \(n:=\prod_{i=1}^kp_i^{e_i}\), entonces
+<em class="eq">\[ \varphi(n)=n\prod_{i=1}^k\frac{p_i-1}{p_i}. \]</em></dd>
+</dl>
+
+<h2 id="el-teorema-del-resto-chino">El teorema del resto chino</h2>
+
+<p>Vamos a probar la fórmula que permite el cálculo de la función Φ de Euler haciendo
+uso de otro resultado clásico y conocido de la Teorı́a de Números.</p>
+
+<dl class="t">
+  <dt>Teorema</dt>
+  <dd>Sean n1 , . . . , nk enteros mayores que 2, primos relativos dos a dos, y sea
+n = n1 · · · · · nk . Entonces
+Zn ∼
+= Zn1 × · · · × Znk</dd>
+</dl>
+
+<dl class="p">
+  <dt>Demostración</dt>
+  <dd>Sea la función f : Z → Zn1 × · · · × Znk definida por
+a 7→ (a + n1 Z, . . . , a + nk Z)
+f es claramente un morfismo de anillos y es fácil ver que
+Ker (f ) = ∩ki=1 Ker (x 7→ x + ni Z) = ∩ki=1 ni Z = nZ
+Por tanto, por el primer teorema de isomorfı́a, Z/nZ = Z/Ker (f ) ∼
+= Im(f ). De este
+Q
+modo, |Im(f )| = n. Por otro lado, |Zn1 × · · · × Znk | = ki=1 ni = n y dado que n es
+finito y que Im(f ) ⊆ Zn1 × · · · × Znk y ambos conjuntos tiene el mismo cardinal, n,
+entonces Im(f ) = Zn1 × · · · × Znk , lo que completa la prueba.</dd>
+</dl>
+
+<dl class="t">
+  <dt>Teorema</dt>
+  <dd>Sea n = ki=1 pi i ∈ N&gt;0 , donde pi son primos distintos y ei ∈ N&gt;0 . Entonces
+Φ(n) =
+k
+Y
+e −1
+pi i
+(pi − 1) = n ·
+i=1
+k
+Y
+pi − 1
+pi
+i=1</dd>
+</dl>
+
+<dl class="p">
+  <dt>Demostración</dt>
+  <dd>Como por el Teorema del resto chino se tiene que
+Zn ∼
+= Zn1 × · · · × Znk
+se sigue que
+U(Zn ) ∼
+= U(Zn1 ) × · · · × U(Znk )
+e
+de donde, para el caso ni = pi i con pi con primos distintos y ei ∈ N&gt;0 , se tiene que
+Φ(n) =
+k
+Y
+e
+Φ(pi i )
+i=1
+Ahora bien,
+e
+mcd(a, pi i )
+= 1 si y solo si mcd(a, pi ) = 1, con lo que
+e
+e −1
+|U(Zpei )| = pi i − pi i
+i
+e −1
+= pi i
+(pi − 1)</dd>
+</dl>
+
+<h2 id="el-criptosistema-rsa">El criptosistema RSA</h2>
+
+<p>El criptosistema de clave pública RSA se construye del siguiente modo:</p>
+<ol>
+  <li>Alicia elige dos números primos distintos y muy grandes p, q ≥ 21024.</li>
+  <li>Alicia calcula n = pq y Φ(n) = (p − 1)(q − 1).</li>
+  <li>Alicia escoge e &lt; Φ(n) y tal que mcd(e, Φ(n)) = 1 y calcula d ∈ N, d &lt; Φ(n) tal
+que ed + v Φ(n) = 1 para algún v ∈ Z.</li>
+  <li>Alicia publica la función de una vı́a con puerta trasera f : Zn → Zn dada por m 7→ me , manteniendo p, q, Φ(n) y d en secreto.</li>
+</ol>
+
+<dl>
+  <dt>Nota</dt>
+  <dd>Si Bob envı́a a Alice el número m ∈ U(Zn ) usando f , entonces, Alice recupera el
+mensaje recibido usando la puerta trasera d ya que:
+(me )d = med (mod n) = m1−Φ(n)v (mod n) = m · (mΦ(n) )−v (mod n) = m (mod n)
+Teniendo en cuenta que, dado que m ∈ U(Zn ) y |U(Zn )| = Φ(n), entonces
+mΦ(n) = 1 (mod n) .</dd>
+</dl>
+
+<h2 id="preguntas">Preguntas</h2>
+
+<ol>
+  <li>Si Bob envı́a un valor m, que no es una unidad de Zn , ¿puede Alice recuperar m?</li>
+  <li>¿Cómo de difı́cil es calcular me y (me )d ?</li>
+  <li>¿Cómo es de difı́cil encontar números primos como los requeridos para construir
+el criptosistema?</li>
+  <li>¿Cómo es de difı́cil encontrar los números primos p y q a partir de la información
+pública? ¿Cómo es de difı́cil factorizar n?</li>
+  <li>¿Conocer p y q es equivalente a conocer Φ(n)?</li>
+</ol>
+
+<h2 id="funcionalidad-del-rsa">Funcionalidad del RSA</h2>
+
+<dl class="d">
+  <dt>Respuesta 1</dt>
+  <dd>El teorema del resto chino permite recuperar el valor enviado por Bob, m, en el caso
+de que m no sea coprimo con n.</dd>
+</dl>
+
+<dl class="d">
+  <dt>Respuesta 2</dt>
+  <dd>Sea e un número natural y sea k la longitud de la representación binaria de e.
+Entonces me (mod n) puede calcularse en, a lo sumo, 2k multiplicaciones en Zn .
+P
+Para ello, sea e = ki=1 ei 2i la representación binaria de e. Entonces
+me =
+k
+Y
+i=0
+i
+m ei 2 =
+k
+Y
+m2
+i
+i=0,ei 6=0</dd>
+</dl>
+
+<dl class="e">
+  <dt>Ejemplo</dt>
+  <dd>Sea e = 25. Dado que 25 = 20 + 23 + 24 , se tiene entonces
+m25 = m2
+0
++23 +24
+3
+4
+= m · m2 · m2 = m · ((m2 )2 )2 · (((m2 )2 )2 )2
+es decir, un total de 9 productos, siempre y cuando no se almacenen en alguna
+variable aquellos que puedan ser reutilizados, en cuyo caso se tienen, exactamente 6
+productos.</dd>
+</dl>
+
+<h2 id="complejidad-algorı́tmica">Complejidad algorı́tmica</h2>
+
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Sean \(f,g:\mathbb{Z}\to\mathbb{R}^+\) dos funciones. Se dice que \(f\) es:
+    <ul>
+      <li>más compleja que \(g\) si, y solo si, <em class="eq">\[ \underset{n\to\infty}{\operatorname{lím}}\frac{f(n)}{g(n)}=+\infty. \]</em></li>
+      <li>menos compleja que \(g\) si, y solo si, <em class="eq">\[ \underset{n\to\infty}{\operatorname{lím}}\frac{f(n)}{g(n)}=0. \]</em></li>
+      <li>equivalente a \(g\) en complejidad si, y solo si, existe \(k\in\mathbb{R}^+\) satisfaciendo <em class="eq">\[ \underset{n\to\infty}{\operatorname{lím}}\frac{f(n)}{g(n)}=k. \]</em></li>
+    </ul>
+  </dd>
+</dl>
+
+<h2 id="funciones-de-complejidad">Funciones de complejidad</h2>
+
+<p>Las funciones de complejidad más usuales viene dadas por el siguiente cuadro:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>\(f(n)\)</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>\(1\)</td>
+      <td>constante</td>
+    </tr>
+    <tr>
+      <td>\(\operatorname{log}(n)\)</td>
+      <td>logaritmo</td>
+    </tr>
+    <tr>
+      <td>\(n\)</td>
+      <td>lineal</td>
+    </tr>
+    <tr>
+      <td>\(n\operatorname{log}(n)\)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>\(n^2\)</td>
+      <td>cuadrática</td>
+    </tr>
+    <tr>
+      <td>\(n^k\)</td>
+      <td>polinomial (\(k &gt; 2\))</td>
+    </tr>
+    <tr>
+      <td>\(a^n\)</td>
+      <td>exponencial (\(a &gt; 1\))</td>
+    </tr>
+    <tr>
+      <td>\(n!\)</td>
+      <td>factorial</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="orden-de-complejidad">Orden de complejidad</h2>
+
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>El <strong>conjunto de las funciones de orden \(f(n)\)</strong> es el conjunto
+<em class="eq">\[O(f(n))=\left\{g\in(\mathbb{R}^+)^{\mathbb{Z}}:\underset{n\to\infty}{\operatorname{lím}}\frac{g(n)}{f(n)} &lt; \infty\right\}\]</em></dd>
+</dl>
+
+<p>Los órdenes de complejidad más habituales son los siguientes:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>\(O(1)\)</td>
+      <td>orden constante</td>
+    </tr>
+    <tr>
+      <td>\(O(log(n))\)</td>
+      <td>orden logarítmico</td>
+    </tr>
+    <tr>
+      <td>\(O(n)\)</td>
+      <td>orden lineal</td>
+    </tr>
+    <tr>
+      <td>\(O(n\operatorname{log}(n))\)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>\(O(n^2)\)</td>
+      <td>orden cuadrático</td>
+    </tr>
+    <tr>
+      <td>\(O(n^k)\)</td>
+      <td>orden polinomial (\(k &gt; 2\))</td>
+    </tr>
+    <tr>
+      <td>\(O(a^n)\)</td>
+      <td>orden exponencial (\(a &gt; 1\))</td>
+    </tr>
+    <tr>
+      <td>\(O(n!)\)</td>
+      <td>orden factorial</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="cuadro-de-ejemplo-de-complejidad">Cuadro de ejemplo de complejidad</h2>
+
+<p>La siguiente tabla muestra el comportamiento en tiempo aproximado (\(1\mu\text{s}=10^{-6}\,\text{s},\) \(1\,\text{ms}=10^{-3}\,s\)) de los distintos órdenes de magnitud para ciertos valores de \(n.\)</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>\(n\)</td>
+      <td>\(O(1)\)</td>
+      <td>\(O(log(n))\)</td>
+      <td>\(O(n)\)</td>
+      <td>\(O(n log(n))\)</td>
+      <td>\(O(n^2)\)</td>
+      <td>\(O(n^5)\)</td>
+      <td>\(O(5^n)\)</td>
+      <td>\(O(n!)\)</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>\(1\,\mu\text{s}\)</td>
+      <td>\(2\,\mu\text{s}\)</td>
+      <td>\(10\,\mu\text{s}\)</td>
+      <td>\(23\,\mu\text{s}\)</td>
+      <td>\(100\,\mu\text{s}\)</td>
+      <td>\(100\,\text{ms}\)</td>
+      <td>\(10\,\text{s}\)</td>
+      <td>\(4\,\text{s}\)</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>\(1\,\mu\text{s}\)</td>
+      <td>\(3\,\mu\text{s}\)</td>
+      <td>\(20\,\mu\text{s}\)</td>
+      <td>\(60\,\mu\text{s}\)</td>
+      <td>\(400\,\mu\text{s}\)</td>
+      <td>\(3\,\text{s}\)</td>
+      <td>\(5\,\text{a}\)</td>
+      <td>\(63000\,\text{a}\)</td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>\(1\,\mu\text{s}\)</td>
+      <td>\(3\,\mu\text{s}\)</td>
+      <td>\(20\,\mu\text{s}\)</td>
+      <td>\(102\,\mu\text{s}\)</td>
+      <td>\(900\,\mu\text{s}\)</td>
+      <td>\(20\,\text{s}\)</td>
+      <td>\(28\cdot 10^6\,\text{a}\)</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>50</td>
+      <td>\(1\,\mu\text{s}\)</td>
+      <td>\(4\,\mu\text{s}\)</td>
+      <td>\(50\,\mu\text{s}\)</td>
+      <td>\(196\,\mu\text{s}\)</td>
+      <td>\(2.5\,\text{ms}\)</td>
+      <td>\(300\,\text{s}\)</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>100</td>
+      <td>\(1\,\mu\text{s}\)</td>
+      <td>\(5\,\mu\text{s}\)</td>
+      <td>\(100\,\mu\text{s}\)</td>
+      <td>\(461\,\mu\text{s}\)</td>
+      <td>\(10\,\text{ms}\)</td>
+      <td>\(2\,\text{h}\,46\,\text{min}\)</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="problemas-de-clase-p">Problemas de clase P</h2>
+
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Un <strong>problema de tiempo polinomial</strong> o <strong>de clase P</strong> es un problema para el cual existe un algoritmo de orden polinomial que lo resuelva.</dd>
+</dl>
+
+<dl class="e">
+  <dt>Ejemplo</dt>
+  <dd>
+    <ol>
+      <li>El problema de encontrar el producto de dos elementos de Zn es un problema de
+clase P.</li>
+      <li>M. Agrawal, N. Kayal y N. Saxena probaron en 2004 que determinar si un número
+es o no primo es un problema de clase P.</li>
+    </ol>
+  </dd>
+</dl>
+
+<p>14</p>
+
+<h2 id="problemas-de-clase-np">Problemas de clase NP</h2>
+
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Un <strong>problema de clase NP</strong> es un problema que puede ser resuelto con infinita potencia de cálculo y la respuesta puede verificarse en tiempo polinomial.</dd>
+</dl>
+
+<dl class="e">
+  <dt>Ejemplo</dt>
+  <dd>Encontrar la factorización de un entero es un problema de clase NP, dado que una vez
+obtenidos los factores, la comprobación de la solución se puede obtener en tiempo
+polinomial.</dd>
+</dl>
+
+<dl>
+  <dt>Problema abierto</dt>
+  <dd>Una cuestión aún por resolver es si P=NP o si existe un problema de clase NP, que no
+sea de clase P.</dd>
+</dl>
+
+<p>15</p>
+
+<h2 id="seguridad-del-rsa">Seguridad del RSA</h2>
+
+<dl class="l">
+  <dt>Lema</dt>
+  <dd>Conocer los primos p y q de la factorización de la clave pública del RSA es equivalente
+computacionalmente a conocer n y Φ(n).</dd>
+</dl>
+
+<dl class="p">
+  <dt>Demostración</dt>
+  <dd>Supongamos que conocemos n y Φ(n). Entonces n = pq y Φ(n) = (p − 1)(q − 1),
+sistema de ecuaciones que puede resolverse en tiempo polinomial. El recı́proco es
+trivial.</dd>
+</dl>
+
+<h2 id="el-problema-rsa">El problema RSA</h2>
+
+<dl class="t">
+  <dt>Teorema</dt>
+  <dd>Conocer la clave privada d que permite descifrar es computacionalmente equivalente
+a factorizar.</dd>
+</dl>
+
+<dl class="p">
+  <dt>Demostración</dt>
+  <dd>Si p, q y e son conocidos, entonces es obvio que d se calcula muy fácilmente.
+Sea ahora d la clave privada. De este modo, med−1 ≡n 1 (med ≡n m), para todo m tal
+que mcd(m, n) = 1, de donde se tiene que Φ(n) divide a ed − 1. Sea pues
+k = ed − 1 y escribamos k = 2t r , con r impar. Como p y q son impares,
+Φ(n) = (p − 1)(q − 1) es divisible por 4 (al menos) y, de este modo, t ≥ 2. Sea ahora
+g aleatorio tal que mcd(g, n) = 1 aleatorio y consideremos la sucesión:
+t
+g, g 2r , . . . g 2 r
+i
+i−1
+Sea ahora i el menor entero tal que g 2 r ≡n 1, con lo que g 2 r 6≡n 1 si i ≥ 1.
+i−1
+Por el Teorema del resto chino, se tiene que Zn ∼
+= Zp × Zq y dado que g 2 r es la raı́z
+i
+i−1
+cuadrada de g 2 r , entonces la imagen de g 2
+(1, 1) ∈ Zp × Zq , es decir, (±1, ±1).
+r
+es una de las cuatro raı́ces de
+i−1
+En primer lugar (1, 1) no puede ser, porque se tiene que g 2 r 6≡n 1. En caso de que
+i−1
+i−1
+sea (−1, −1), entonces mcd(g 2 r + 1, n) = n, ya que g 2 r ≡n −1. Finalmente, en
+i−1
+2
+r
+el caso de ser (−1, 1), se tendrı́a que mcd(g+1, n) = p.</dd>
+</dl>
+
+  </div>
+
+</article>
+
+        </div>
+    </main>
+
+    
+        <div id="disqus_thread"></div>
+        <script>
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+            /*
+            var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            */
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://sksource.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    <footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">SK Source</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">SK Source</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/sksourcedata"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">sksourcedata</span></a></li><li><a href="https://instagram.com/sksource_art"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#instagram"></use></svg> <span class="username">sksource_art</span></a></li><li><a href="https://www.twitter.com/sksource_art"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">sksource_art</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido  sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer  pero espero que me apoyéis a seguir adelante.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+
+</html>
+
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://example.com/mathjax/MathJax.js?config=TeX-AMS_CHTML&locale=fr"></script>

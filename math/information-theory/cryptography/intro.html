@@ -5,19 +5,19 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Dimensión box-counting | SK Source</title>
+<title>Introducción | SK Source</title>
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Dimensión box-counting" />
+<meta property="og:title" content="Introducción" />
 <meta property="og:locale" content="es_ES" />
 <meta name="description" content="Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante." />
 <meta property="og:description" content="Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante." />
-<link rel="canonical" href="https://sksourcedata.github.io//math/fractal/box-counting-dimension.html" />
-<meta property="og:url" content="https://sksourcedata.github.io//math/fractal/box-counting-dimension.html" />
+<link rel="canonical" href="https://sksourcedata.github.io//math/information-theory/cryptography/intro.html" />
+<meta property="og:url" content="https://sksourcedata.github.io//math/information-theory/cryptography/intro.html" />
 <meta property="og:site_name" content="SK Source" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Dimensión box-counting" />
+<meta property="twitter:title" content="Introducción" />
 <script type="application/ld+json">
-{"headline":"Dimensión box-counting","@type":"WebPage","url":"https://sksourcedata.github.io//math/fractal/box-counting-dimension.html","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
+{"headline":"Introducción","@type":"WebPage","url":"https://sksourcedata.github.io//math/information-theory/cryptography/intro.html","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://sksourcedata.github.io//feed.xml" title="SK Source" /><link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -160,132 +160,132 @@
             <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Dimensión box-counting</h1>
+    <h1 class="post-title">Introducción</h1>
   </header>
 
   <div class="post-content">
-    <h2 id="medida-de-lebesgue">Medida de Lebesgue</h2>
+    <h2 id="criptologı́a">Criptologı́a</h2>
 
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>El <strong>volumen \(n\)-dimensional</strong> de un cubo \([a_1,b_1]\times\cdots\times[a_n,b_n]\)
-<em class="eq">\[ \mathrm{vol}^n([a_1,b_1]\times\cdots\times[a_n,b_n]):=\prod_{i=1}^n(b_i-a_i).\]</em></dd>
-</dl>
+<p>La <strong>Criptologı́a</strong> es un área de la ciencia que contiene muchas disciplinas aunque las
+tres básicas son:</p>
+<ol>
+  <li><strong>Criptografı́a:</strong> disciplina matemática encargada del diseño de cifradores y
+protocolos.</li>
+  <li><strong>Criptoanálisis:</strong> disciplina que trata el análisis y búsqueda de métodos para romper
+cifradores y/o protocolos criptográficos.</li>
+  <li><strong>Esteganografı́a:</strong> disciplina que trata de encontrar métodos para ocultar
+información.</li>
+</ol>
 
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>La <strong>medida de Lebesgue \(n\)-dimensional</strong> de un conjunto \(A\) en \(\mathbb{R}^n\) como
-<em class="eq">\[\mathrm{vol}^n(A):=\mathrm{ínf}\left\{\sum_{i=1}^{\infty}\mathrm{vol}^n(A_i):A\subseteq\bigcup_{i=1}^\infty A_i\right\}.\]</em>
-donde el ínfimo se toma sobre todos los recubrimientos por abiertos de \(A\) por cubos de la forma \(A_i=[a_1,b_1]\times\cdots\times[a_n,b_n]\).</dd>
-</dl>
+<h2 id="criptografı́a">Criptografı́a</h2>
 
-<h2 id="dimensión-box-counting">Dimensión box-counting</h2>
+<p>La <strong>Criptografía</strong> es una disciplina matemática cuyo interés se centra en distintos
+aspectos de la Teoría de la Información relacionados con la seguridad de esta. Sus
+objetivos principales son:</p>
+<ol>
+  <li><strong>Confidencialidad.</strong> La información sea solo accesible por partes
+autorizadas a ello.</li>
+  <li><strong>Autentificacón.</strong> Hace posible determinar sin
+género de duda la fuente que crea una información determinada.</li>
+  <li><strong>Integridad.</strong> Hace posible comprobar que la información a la
+que se accede en un momento determinado no ha sido alterada desde el
+momento de su creación.</li>
+  <li><strong>No repudio.</strong> La información creadora de una información no pueda
+posteriormente negar la autoría de la misma.</li>
+</ol>
 
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>El <strong>límite superior</strong> de una función \(f:\mathbb{R}^+\to\mathbb{R}\) es
-<em class="eq">\[\underset{x\to 0}{\overline{\mathrm{lı́m}}}f(x):=\underset{r\to 0}{\mathrm{lı́m}}\sup\{f(y):0 &lt; y &lt; r\}.\]</em></dd>
-</dl>
+<h2 id="escítala">Escítala</h2>
 
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>El <strong>límite inferior</strong> de una función \(f:\mathbb{R}^+\to\mathbb{R}\) es
-<em class="eq">\[\underset{x\to 0}{\underline{\mathrm{lı́m}}}f(x):=\underset{r\to 0}{\mathrm{lı́m}}\operatorname{ínf}\{f(y):0 &lt; y &lt; r\}.\]</em></dd>
-</dl>
+<p>La escítala usada por los lacedemonios o espartanos en el siglo V antes de Cristo, es
+un método constituido por un basto, alrededor del que se enrollaba una cinta de cuero
+sobre la que se escribía. Tras desenrollar la cinta, el mensaje podía leerse únicamente
+volviendo a ser enrollada sobre un bastón de igual grosor.</p>
 
-<p>Dado un conjunto no vacío y acotado \(F\) en \(\mathbb{R}^n\), denotaremos por \(N_{\delta}(F)\) al menor número de conjuntos con diámetro a lo sumo \(\delta\) que recubren a \(F\).</p>
+<!--Figure: escítala-->
 
-<!--box-counting dimension-->
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>La <strong>dimensión box-counting superior</strong> de un conjunto no vacío y acotado \(F\) en \(\mathbb{R}^n\) es
-<em class="eq">\[\underline{\overline{\mathrm{dim}}}_BF:=\underset{\delta\to 0}{\overline{\mathrm{lı́m}}}\frac{\log N_{\delta}(F)}{-\log\delta}.\]</em></dd>
-</dl>
+<h2 id="cifrado-de-césar">Cifrado de César</h2>
 
-<!--box-counting dimension-->
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>La <strong>dimensión box-counting inferior</strong> de un conjunto no vacío y acotado \(F\) en \(\mathbb{R}^n\) es
-<em class="eq">\[\underline{\mathrm{dim}}_BF:=\underset{\delta\to 0}{\underline{\mathrm{lı́m}}}\frac{\log N_{\delta}(F)}{-\log\delta}.\]</em></dd>
-</dl>
+<p>Usado por Julio César en el siglo I antes de Cristo, consiste en el desplazamiento del
+alfabeto un número determinado de caracteres. Matemáticamente puede
+representarse como la función \(f:\mathbb{Z}_{27}\to\mathbb{Z}_{27},\) dada por
+<em class="eq">\[ f(x)\equiv_{27}x+k, \]</em>
+donde \(k\in\mathbb{Z}_{27}.\)</p>
 
-<!--box-counting dimension-->
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>La <strong>dimensión box-counting</strong> de un conjunto no vacío y acotado \(F\) en \(\mathbb{R}^n\) existe si, y solo si, \(\overline{\mathrm{dim}}_BF=\underline{\mathrm{dim}}_BF\). En tal caso, la dimensión box-counting de \(F\) es
-  <em class="eq">\[\mathrm{dim}_BF:=\underset{\delta\to 0}{\mathrm{lı́m}}\frac{\log N_{\delta}(F)}{-\log\delta}.\]</em></dd>
-</dl>
+<p>El criptoanálisis es muy básico, pues basta conocer como se cifra una letra. Esto
+puede conocerse mediante el análisis de frecuencias de los caracteres que aparecen
+en el texto cifrado.</p>
 
-<h2 id="definiciones-alternativas">Definiciones alternativas</h2>
+<p>Una extensión natural es el conocido como cifrado afı́n: \(f(x)\equiv_{27}ax+b,\) con
+\(a,b\in\mathbb{Z}_{27}\) y \(\operatorname{mcd}(a,27)=1,\) igualmente muy fácil de criptoanalizar.</p>
 
-<p>En los siguientes dos teoremas, se recogen definiciones alternativas para la dimensión box-counting.</p>
+<h2 id="cifrado-de-vigenere">Cifrado de Vigenere</h2>
 
-<dl class="t">
-  <dt>Teorema</dt>
-  <dd>Si \(F\) es un conjunto no vacío y acotado en \(\mathbb{R}^n\), entonces 
-<em class="eq">\[\overline{\mathrm{dim}}_BF:=\underset{\delta\to 0}{\mathrm{lı́m}}\frac{\log N’_{\delta}(F)}{-\log\delta},\qquad\underline{\mathrm{dim}}_BF=\underset{\delta\to 0}{\mathrm{lı́m}}\frac{\log N’_{\delta}(F)}{-\log\delta}.\]</em>
-donde \(N’_{\delta}(F)\) indica alguno de los siguientes valores:
-    <ol>
-      <li>El menor número de bolas cerradas de radio \(\delta\) que recubren a \(F\).</li>
-      <li>El menor número de cubos de lado \(\delta\) que recubren a \(F\).</li>
-      <li>El número de cubos en una rejilla de cubos de lado \(\delta\) que cortan a \(F\).</li>
-      <li>El menor número de conjuntos con diámetro a lo sumo \(\delta\) que recubren a \(F\).</li>
-      <li>El mayor número de bolas disjuntas de diámetro \(\delta\) cuyos centros pertenecen a \(F\).</li>
-    </ol>
-  </dd>
-</dl>
+<p><strong>Blaise de Vigenere</strong>, en el siglo XVI propone una extensión del cifrado de César,
+representado matemáticamente por la función \(f:\mathbb{Z}_{27}^n\to\mathbb{Z}_{27}^n\) definida como
+    <em class="eq">\[ f(x)\equiv_{27}x+k, \]</em>
+donde \(k\in\mathbb{Z}_{27}^n.\)</p>
 
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>El <strong>\(\delta\)-cuerpo</strong> de un conjunto \(F\) en \(\mathbb{R}^n\) es
-<em class="eq">\[F_{\delta}:=\{y\in\mathbb{R}^n:(\exists x\in F)(d(x,y)\leq\delta)\},\]</em>
-donde \(d\) es la distancia euclídea sobre \(\mathbb{R}^n\).</dd>
-</dl>
+<p>El criptoanálisis se lleva a cabo como en el caso del de César.</p>
+
+<h2 id="principio-de-kerckhoff">Principio de Kerckhoff</h2>
+
+<p><strong>Auguste Kerckhoff</strong>, criptógrafo holandés establece sus principios básicos para un
+sistema criptográfico en su artı́culo de 1883 “La cryptographie militaire”. Entre ellos
+destaca el conocido actualmente como Principio de Kerckhoff.</p>
 
 <dl class="t">
-  <dt>Teorema</dt>
-  <dd>Si \(F\) es un conjunto no vacío y acotado en \(\mathbb{R}^n\), entonces
-<em class="eq">\[\underline{\mathrm{dim}}_BF=n-\underset{\delta\to 0}{\overline{\mathrm{lı́m}}}\frac{\log(\mathrm{vol}^n(F))}{\log\delta},
-\qquad\overline{\mathrm{dim}}_BF=n-\underset{\delta\to 0}{\underline{\mathrm{lı́m}}}\frac{\log(\mathrm{vol}^n(F))}{\log\delta}.\]</em></dd>
+  <dt>Principio de Kerckhoff</dt>
+  <dd>La seguridad de un sistema de clave secreta debe recaer únicamente en el secreto de
+dicha clave.</dd>
 </dl>
 
-<dl class="e">
-  <dt>Ejemplo</dt>
-  <dd>La dimension box-counting del conjunto de Cantor es \(\frac{\log2}{\log3}\).</dd>
-</dl>
+<h2 id="cifrador-de-vernam">Cifrador de Vernam</h2>
+<p>En 1917, Gilbert S. Vernam, ingeniero del Massachusset Institute of Technology,
+propone su cifrador, conocido como <strong>cifrador de Vernam</strong> o <strong>cifrador de clave de un solo uso</strong> (one time pad):
+<em class="eq">\[C:=f(M)=f(M_1M_2\cdots M_n)=C_1C_2\cdots C_n,\]</em>
+<em class="eq">\[M:=f(C)=f(C_1C_2\cdots C_n)=M_1M_2\cdots M_n,\]</em>
+donde \(C_i\equiv_2M_i+k_i\) y \(M_i\equiv_2C_i+k_i,\) para todo \(i\in\{1,\ldots,n\}.\)</p>
 
-<h2 id="propiedades">Propiedades</h2>
+<p>Aquí, la clave es una cadena de ceros y unos aleatorios tan larga al menos como el
+mensaje y de un solo uso. El cifrado de Vernam es demostrablemente seguro, pero
+poco útil debido a la naturaleza de la clave.</p>
 
-<dl class="t">
-  <dt>Teorema</dt>
-  <dd>
-    <ol>
-      <li>\(\underline{\dim}_B\) y \(\overline{\dim}_B\) son monótonas, es decir, si \(A\subseteq B\), entonces \(\dim_BA\leq\dim_BB\).</li>
-      <li>\(\overline{\dim}_B\) es finitamente estable, es decir, 
-<em class="eq">\[\overline{\mathrm{dim}}_B(A\cup B)=\mathrm{máx}\{\overline{\dim}_B(A),\overline{\dim}_B(B)\},\]</em> 
-pero \(\underline{\dim}_B\) no lo es.</li>
-      <li>Si \(f:F\to\mathbb{R}^m\) es una aplicación de Lipschitz, entonces \(\overline{\dim}_Bf(F)\leq\overline{\dim}_BF\) y \(\underline{\dim}_Bf(F)\leq\underline{\dim}_BF\).</li>
-      <li>\(\overline{\dim}_B\) y \(\underline{\dim}_B\) son bi-Lipschitz invariantes, es decir, si \(f:\mathbb{R}^n\to\mathbb{R}^n\) es una aplicación bi-Lipschitz, entonces \(\overline{\dim}_Bf(F)\leq\overline{\dim}_BF\) y \(\underline{\dim}_Bf(F)\leq\underline{\dim}_BF\). En particular, son invariantes por aplicaciones bi-Lipschitz</li>
-      <li>\(\overline{\dim}_BF=\overline{\dim}_B\bar{F}\) y \(\underline{\dim}_BF=\underline{\dim}_B\bar{F}\).</li>
-      <li>Si \(\overline{\dim}_B\) o \(\underline{\dim}_B\) tiene una propiedad, entonces \(\dim_B\) también la tiene.</li>
-    </ol>
-  </dd>
-</dl>
+<!--Figure: George S. Vernam-->
 
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>Una aplicación \(f\) es una <strong>similaridad</strong> si, y solo si, existe \(c\in\mathbb{R}^+\) satisfaciendo \(d(f(x),f(y))=c\,d(x,y)\). En tal caso, se dice que \(c\) es la <strong>constante de similaridad</strong> de \(f.\)</dd>
-</dl>
+<h2 id="cifrado-de-hill">Cifrado de Hill</h2>
 
-<dl class="c">
-  <dt>Corolario</dt>
-  <dd>La dimensión box-counting se conserva por similaridades.</dd>
-</dl>
+<p>En 1929, el matemático Lester S. Hill propone una aplicación algebraica para su uso
+en Criptografı́a: \(f:\mathbb{Z}_{27}\to\mathbb{Z}_{27}\), dada por
+    <em class="eq">\[ f(m)=Am+k, \]</em>
+donde \(A\) es una matriz invertible con entradas en \(\mathbb{Z}_{27}\) y \(k\in\mathbb{Z}_{27}^n.\)</p>
 
-<dl class="e">
-  <dt>Ejemplo</dt>
-  <dd>Si \(F:=\{0\}\cup\left\{\frac{1}{2^{n}}:n\in\mathbb{N}\right\} \), entonces \(\dim_BF=\frac{1}{2}.\)</dd>
-</dl>
+<p>Conocidos suficientes pares de la forma \((m,f(m))\), el uso de Álgebra Lineal básica
+permite el criptoanálisis del sistema.</p>
+
+<h2 id="enigma">Enigma</h2>
+
+<p>Durante la II Guerra Mundial aparecen muchos sistemas, el más famoso de los cuales
+es Enigma:</p>
+<ol>
+  <li>Enigma</li>
+  <li>Marian Rejewski</li>
+  <li>Alan Turing</li>
+  <li>Colossus</li>
+</ol>
+
+<h2 id="claude-shannon">Claude Shannon</h2>
+
+<p>En 1949, el matemático Claude E. Shannon publica su artı́culo «Communication
+Theory of Secrecy Systems», donde demuestra la existencia de criptosistemas
+demostrablemente seguros.</p>
+
+<!--Figure: Claude E. Shannon-->
+
+<h2 id="problema-del-intercambio-de-clave">Problema del intercambio de clave</h2>
+
+<p>A pesar del amplio uso de la Criptografía, un problema seguía abierto y sin solución
+hasta los años 70: ¿Es posible el intercambio de un secreto de forma confidencial a través de un
+canal inseguro?</p>
 
   </div>
 
