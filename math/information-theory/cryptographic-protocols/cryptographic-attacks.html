@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Ataques criptográficos | SK Source</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="Ataques criptográficos" />
+<meta property="og:locale" content="es_ES" />
+<meta name="description" content="Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante." />
+<meta property="og:description" content="Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante." />
+<link rel="canonical" href="https://sksourcedata.github.io//math/information-theory/cryptographic-protocols/cryptographic-attacks.html" />
+<meta property="og:url" content="https://sksourcedata.github.io//math/information-theory/cryptographic-protocols/cryptographic-attacks.html" />
+<meta property="og:site_name" content="SK Source" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Ataques criptográficos" />
+<script type="application/ld+json">
+{"headline":"Ataques criptográficos","@type":"WebPage","url":"https://sksourcedata.github.io//math/information-theory/cryptographic-protocols/cryptographic-attacks.html","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://sksourcedata.github.io//feed.xml" title="SK Source" /><link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-183860687-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-183860687-1');
+</script></head>
+
+
+<body>
+
+    <header class="site-header">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/">SK Source</a><nav class="site-nav">
+            <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+            <label for="nav-trigger">
+                <span class="menu-icon">
+                    <svg viewBox="0 0 18 15" width="18px" height="15px">
+                        <path
+                            d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                    </svg>
+                </span>
+            </label>
+
+            <div class="trigger">
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <a class="page-link" href="/art/">Arte</a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <a class="page-link" href="/math/">Matemáticas</a>
+                
+                
+                
+                
+                
+                    <a class="page-link" href="/programming/">Programación</a>
+                
+                
+                
+                
+                
+                
+                
+                    <a class="page-link" href="/about/">Sobre mí</a>
+                
+                
+                
+                
+                
+                
+            </div>
+        </nav></div>
+</header>
+
+    <main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            
+                <div style="color:rgb(120, 120, 121);border: 2px solid rgb(247, 204, 17);padding: 2px">
+                    &#9888;Esta página aún se encuentra en desarrollo.
+                </div>
+                <!--<div style="color:rgb(120, 120, 121);border: 2px solid rgb(10, 154, 250);padding: 2px">
+                    &#8505;Información
+                </div>-->
+            
+
+            <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Ataques criptográficos</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="ataques-sobre-un-encriptado">Ataques sobre un encriptado</h2>
+
+<dl class="d">
+  <dt>Ataque con solo texto cifrado</dt>
+  <dd>Ataque en el que tan solo se dispone de un texto cifrado y se trata de obtener, bien el texto original, bien la clave de descrifrado mediante la única observación del texto cifrado. Un esquema vulnerable a este tipo de ataque es completamente inseguro.</dd>
+</dl>
+
+<dl class="d">
+  <dt>Ataque con texto claro conocido</dt>
+  <dd>Ataque en el que se dispone de varias parejas de texto cifrado y sus correspondientes texto sin cifrar.</dd>
+</dl>
+
+<dl class="d">
+  <dt>Ataque con texto claro escogido</dt>
+  <dd>Ataque en el que el adversario puede escoger un texto en claro y acceder a su correspondiente texto cifrado.</dd>
+</dl>
+
+<dl class="d">
+  <dt>Ataque con texto claro escogido adaptado</dt>
+  <dd>Ataque con texto en claro escogido en el que la elección del texto en claro puede depender del texto cifrado recibido en previas peticiones.</dd>
+</dl>
+
+<dl class="d">
+  <dt>Ataque con texto cifrado escogido</dt>
+  <dd>Ataque en el que el adversario escoge el texto cifrado para obtener a continuación el correspondiente texto en claro. Una forma de montar este ataque es el de obtener acceso al algoritmo de descifrado, pero no a la clave. El objetivo es el de obtener el descifrado de algún texto a partir de la información obtenida de un descifrado distinto.</dd>
+</dl>
+
+<dl class="d">
+  <dt>Ataque con texto cifrado escogido adaptado</dt>
+  <dd>es análogo al correspondiente con texto en claro, pero la elección se realiza sobre el texto cifrado.</dd>
+</dl>
+
+<h2 id="ataques-sobre-protocolos">Ataques sobre protocolos</h2>
+
+<dl class="d">
+  <dt>Ataque con clave conocida</dt>
+  <dd>El adversario, a partir de una clave usada anteriormente, trata de obtener información sobre claves nuevas.</dd>
+</dl>
+
+<dl class="d">
+  <dt>Ataque por repetición</dt>
+  <dd>El adversario graba una sesión de comunicación y la repite, completamente o en parte, en un momento posterior en el tiempo.</dd>
+</dl>
+
+<dl class="d">
+  <dt>Ataque por impersonación</dt>
+  <dd>El adversario asume la identidad de una parte legı́tima
+en una comunicación.</dd>
+</dl>
+
+<dl class="d">
+  <dt>Ataque con diccionarios</dt>
+  <dd>Se trata, usualmente, de un ataque contra contraseñas. Una contaseña se suele almacenar encriptada de algún modo. El atacante toma una lista de posibles contraseñas, calcula sus encriptados y los compara con el valor almacenado.</dd>
+</dl>
+
+<dl class="d">
+  <dt>Búsqueda hacia adelante</dt>
+  <dd>Similar al anterior, pero con el objetivo de descifrar mensajes.</dd>
+</dl>
+
+<dl class="d">
+  <dt>Ataques de inserción</dt>
+  <dd>Consiste en la inserción de información en una comunicación con objeto de impersonar una identidad.</dd>
+</dl>
+
+<h2 id="protocolo-de-diffie-hellman">Protocolo de Diffie-Hellman</h2>
+
+<ol>
+  <li>Alice y Bob se ponen de acuerdo en un grupo G y un elemento g ∈ G de orden finito.</li>
+  <li>Alice escoge \(a\in\mathbb{N}\) y calcula \(g^a\).</li>
+  <li>Bob escoge \(b\in\mathbb{N}\) y calcula \(g^b\).</li>
+  <li>Alice y Bob intercambian \(g^a\) y \(g^b\).</li>
+  <li>Alice y Bob calculan \(g^{ab}=(g^a)^b=(g^b)^a\).</li>
+</ol>
+
+<h2 id="ataque-man-in-the-middle">Ataque man-in-the-middle</h2>
+
+<p>Eve es un adversario poderoso que es capaz de interceptar la comunicación entre Alice y Bob, que se han puesto de acuerdo en un grupo \(G\) y un elemento \(g\in G\) de orden finito.</p>
+<ol>
+  <li>Alice escoge \(a\in\mathbb{N}\), calcula \(g^a\) y se lo envı́a a Bob.</li>
+  <li>Eve escoge intercepta el mensaje y lo sustituye por \(g^e\), para algún \(e\in\mathbb{N}\), que es lo que Bob recibe.</li>
+  <li>Bob escoge \(b\in\mathbb{N}\), calcula \(g^b\) y se lo envı́a a Alice.</li>
+  <li>Eve intercepta el mensaje y lo sustituye por \(g^e\), que es lo que Alice recibe.</li>
+  <li>Alice calcula \((g^e)^a\).</li>
+  <li>Bob calcula \((g^e)^b\).</li>
+  <li>Eve calcula \((g^a)^e\) y \((g^b)^e\).</li>
+</ol>
+
+<p>Alice y Eve comparten \(k_1=g^{ae}\), y Bob y Eve comparten \(k_2=g^{be}.\) Cuando Alice envía un mensaje a Bob, usa \(k_1.\) Eve lo intercepta, lo descifra, lo lee y/o lo transforma, y se
+lo envía a Bob encriptado usando \(k_2\) y viceversa.</p>
+
+<h2 id="ataque-por-impersonación">Ataque por impersonación</h2>
+
+<p>Cuando se quiere usar una función de una vı́a con puerta trasera para enviar un secreto a través de un canal público inseguro, se hace necesario el hacer pública cierta información, que denominamos la clave pública.</p>
+
+<p>¿Qué impide a un atacante suplantar la personalidad de alguien que dice que está publicando una función de una vı́a y publicar en realidad una función de clave pública cuya puerta trasera esté controlada por él mismo?</p>
+
+<h2 id="protocolo-de-diffie-hellman-para-más-de-2-usuarios-cliques-i">Protocolo de Diffie-Hellman para más de 2 usuarios: CLIQUES I</h2>
+
+<ol>
+  <li>Un conjunto de n usuarios {Ui }ni=1 se ponen de acuerdo en un grupo G y un
+elemento \(g\in G\) de orden finito.</li>
+  <li>Cada usuario escoge una clave privada \(x_i\in\mathbb{N}\), \(i\in{1,\ldots,n}\).</li>
+  <li>El usuario \(U_1\) envı́a \(g^{x_1}\) a \(U_2\).</li>
+  <li>El usuario U2 envı́a \({g^{x_2},g^{x_1},(g^{x_1})^{x_2}}\) a \(U_3\).</li>
+  <li>El usuario \(U_3\) envı́a \(\{(g^{x_2})^{x_3},(g^{x^1})^{x^3},g^{x_1x_2},((g^{x_1})^{x_2})^{x_3}\}\) a \(U_4\).</li>
+  <li>El usuario \(U_i\) envı́a a Ui+1 {hj }ij=1 para i2 ≤ i ≤ n, donde hj = g
+Qn−1
+k =1,k6=j
+xk
+.
+xk xn
+) .</li>
+  <li>El usuario Un calcula (g</li>
+  <li>El usuario Un envı́a al resto de usuarios
+n Qn
+on
+x
+g k =1,k 6=j k
+k=1,k6=j
+Qi
+j=1</li>
+  <li>El usuario Ui calcula (g
+Qn
+k=1,k6=i xk )xi .</li>
+</ol>
+
+<h2 id="protocolo-de-diffie-hellman-para-más-de-2-usuarios-cliques-ii">Protocolo de Diffie-Hellman para más de 2 usuarios: CLIQUES II</h2>
+
+<ol>
+  <li>Un conjunto de n usuarios {Ui }ni=1 se ponen de acuerdo en un grupo G y un
+elemento g ∈ G de orden finito.</li>
+  <li>Cada usuario escoge una clave privada xi ∈ N, i = 1, . . . , n.</li>
+  <li>El usuario U1 envı́a g x1 a U2 .</li>
+  <li>El usuario Ui envı́a a Ui+1 g</li>
+  <li>El usuario Un−1 envı́a al resto de usuarios (incluyendo Un ) g
+Qn
+k=1 xk
+Qi
+k =1 xk
+para 2 ≤ i ≤ n − 2.</li>
+  <li>Un calcula g</li>
+  <li>Cada usuario Ui , i = 1, . . . , n − 1, calcula y envı́a a Un (g</li>
+  <li>El usuario Un envı́a al resto de usuarios
+n Qn
+on
+x
+g k =1,k 6=j k
+Qn−1
+k =1
+xk
+.
+.
+Qn−1
+k =1
+xk −xi
+) .
+j=1
+1
+El usuario Ui calcula (g
+Qn
+k=1,k6=i
+xk xi
+) .</li>
+</ol>
+
+<h2 id="un-ataque-a-cliques-ii">Un ataque a CLIQUES II</h2>
+
+<ol>
+  <li>Los pasos 1 y 2 transcurren sin ser alterados.</li>
+  <li>El atacante \(\mathcal{M}\) intercepta \(g^{\prod_{k=1}^{n-1}.\)</li>
+  <li>\(U_{n-1}\) envı́a a \(U_{n-1} \left( g^{\prod_{k=1}^{n-1}x_k}\right)^{-x_{n-1}} = g^{\prod_{k=1}^{n-2}x_k}.\) \(\mathcal{M}\) intercept también este mensaje.</li>
+  <li>\(\mathcal{M}\) envı́a a Un (g
+k =1
+xk
+Qn−1
+x
+k =1 k )−xn−1
+Qn−1
+k =1
+Qn−1
+Qn−1
+.
+=g
+Qn−2
+k =1
+xk
+. M intercepta también este
+xk m
+) .
+xk m xn
+) ) .</li>
+  <li>Un calcula ((g</li>
+  <li>\(\mathcal{M}\) envı́a, haciéndose pasar por todo el resto de usuarios,
+<em class="eq">\[ \left\{ g \right\} \]</em></li>
+  <li>Un envı́a a todo el resto de usuarios
+n
+o
+Qn−2
+Qn−1
+(g r1 )xn , (g r2 )xn , . . . , (g rn−3 )xn , (g k =1 xk )xn , (g k=1 xk )xn
+pero \(\mathcal{M}\) vuelve a interceptar este mensaje.</li>
+  <li>\(\mathcal{M}\) calcula ((g
+Qn−1
+k =1
+xk xn m
+) ) .</li>
+  <li>Hasta ahora U1 , . . . , Un−2 están esperando el mensaje de Un−1 , pero M,
+haciéndose pasar por este, les envı́a (g
+Qn−1
+xk xn
+) .
+k =1</li>
+  <li>Ahora \(U_i\), \(i\in\{1,\ldots,n-2\}\) devuelve a \(U_{n-1}((g^{\prod_{k=1}^{n-1}x_k})^{x_n})^{-x_i},\) pero \(\mathcal{M}\) los intercepta.</li>
+  <li>\(\mathcal{M}\) envı́a a \(U_i\), \(i\in\{1,\ldots,n-2\}\)
+<em class="eq">\[ \left\{ (((g^{\prod_{k=1}^{n-1}x_k})^{x_n})^{-x_i})^m \right\}_{i=1}^{n-1} \cup \left\{ (g^{\prod_{k=1}^{n-1}x_k})^{x_n} \right\} \]</em>
+y a \(U_n\) el mismo mensaje, pero sustituye \( \left\{ (g^{\prod_{k=1}^{n-1}x_k})^{x_n} \right\} \) por \( \left\{ g^{\prod_{k=1}^{n-1}x_k} \right\} \)</li>
+  <li>\(U_i\), usando \(x_i\), \(i\in\{1,\ldots,n-1\}\) calcula \(((g^{\prod_{k=1}^{n-1}x_k})^m)^{x_n}.\)</li>
+</ol>
+
+<p>La diferencia con el ataque man-in-the-middle clásico es que ¡todos los usuarios comparten la misma clave!</p>
+
+<p>La consecuencia, como puede observarse, es que debemos tener un método que
+permita autentificar la procedencia de la información.</p>
+
+  </div>
+
+</article>
+
+        </div>
+    </main>
+
+    
+        <div id="disqus_thread"></div>
+        <script>
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+            /*
+            var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            */
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://sksource.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    <footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">SK Source</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">SK Source</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/sksourcedata"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">sksourcedata</span></a></li><li><a href="https://instagram.com/sksource_art"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#instagram"></use></svg> <span class="username">sksource_art</span></a></li><li><a href="https://www.twitter.com/sksource_art"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">sksource_art</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido  sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer  pero espero que me apoyéis a seguir adelante.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+
+</html>
+
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://example.com/mathjax/MathJax.js?config=TeX-AMS_CHTML&locale=fr"></script>

@@ -5,19 +5,19 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Introducción | SK Source</title>
+<title>Protocolos criptográficos | SK Source</title>
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Introducción" />
+<meta property="og:title" content="Protocolos criptográficos" />
 <meta property="og:locale" content="es_ES" />
 <meta name="description" content="Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante." />
 <meta property="og:description" content="Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante." />
-<link rel="canonical" href="https://sksourcedata.github.io//math/information-theory/cryptography/intro.html" />
-<meta property="og:url" content="https://sksourcedata.github.io//math/information-theory/cryptography/intro.html" />
+<link rel="canonical" href="https://sksourcedata.github.io//math/information-theory/cryptographic-protocols/cryptographic-protocols.html" />
+<meta property="og:url" content="https://sksourcedata.github.io//math/information-theory/cryptographic-protocols/cryptographic-protocols.html" />
 <meta property="og:site_name" content="SK Source" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Introducción" />
+<meta property="twitter:title" content="Protocolos criptográficos" />
 <script type="application/ld+json">
-{"headline":"Introducción","@type":"WebPage","url":"https://sksourcedata.github.io//math/information-theory/cryptography/intro.html","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
+{"headline":"Protocolos criptográficos","@type":"WebPage","url":"https://sksourcedata.github.io//math/information-theory/cryptographic-protocols/cryptographic-protocols.html","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://sksourcedata.github.io//feed.xml" title="SK Source" /><link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -166,136 +166,160 @@
     <main class="page-content" aria-label="Content">
         <div class="wrapper">
             
+                <div style="color:rgb(120, 120, 121);border: 2px solid rgb(247, 204, 17);padding: 2px">
+                    &#9888;Esta página aún se encuentra en desarrollo.
+                </div>
+                <!--<div style="color:rgb(120, 120, 121);border: 2px solid rgb(10, 154, 250);padding: 2px">
+                    &#8505;Información
+                </div>-->
+            
 
             <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Introducción</h1>
+    <h1 class="post-title">Protocolos criptográficos</h1>
   </header>
 
   <div class="post-content">
-    <h2 id="criptologı́a">Criptologı́a</h2>
+    <h2 id="el-problema-de-la-distribución-de-claves-públicas">El problema de la distribución de claves públicas</h2>
 
-<p>La <strong>Criptologı́a</strong> es un área de la ciencia que contiene muchas disciplinas aunque las
-tres básicas son:</p>
+<p>Problema
+¿Cómo podemos hacer pública una función de una vía con puerta trasera de modo
+que podamos asegurar que no pertenece realmente a un impostor?</p>
+
+<h2 id="concepto-de-protocolo">Concepto de protocolo</h2>
+
+<p>Definition
+Un protocolo es un sistema de reglas que permiten llevar a cabo el desarrollo de un
+algoritmo de forma apropiada.
+En el caso de los protocolos criptográficos, el sistema de reglas afecta a la
+representación de la información, la estructura de datos y una serie de pasos que
+describan de forma clara el modo en que el algoritmo criptográfico correspondiente ha
+de ser ejectuado para que consiga los objetivos perseguidos.</p>
+
+<h2 id="certificado-de-clave-pública">Certificado de clave pública</h2>
+
+<p>Un certificado de clave pública es un protocolo que permite distribuir una función de
+una vía de modo autentificado.</p>
+
+<p>Las partes que componen un certificado son las siguientes:</p>
 <ol>
-  <li><strong>Criptografı́a:</strong> disciplina matemática encargada del diseño de cifradores y
-protocolos.</li>
-  <li><strong>Criptoanálisis:</strong> disciplina que trata el análisis y búsqueda de métodos para romper
-cifradores y/o protocolos criptográficos.</li>
-  <li><strong>Esteganografı́a:</strong> disciplina que trata de encontrar métodos para ocultar
-información.</li>
+  <li>Una autoridad certificadora, confiable por parte de los usuarios y que emite los
+certificados de clave pública.</li>
+  <li>Una función de una vía con puerta trasera propiedad de la autoridad certificadora.</li>
+  <li>Un conjunto de mensajes, creados por la autoridad certificadora, que contiene
+información sobre la función de una vía propiedad de su legítimo poseedor, así
+como otra información relativa al mismo y una información que permite
+autentificar el certificado mediante la función de una vía de la autoridad emisora.</li>
 </ol>
 
-<h2 id="criptografı́a">Criptografı́a</h2>
+<h2 id="protocolo-de-distribución-de-clave-pública">Protocolo de distribución de clave pública</h2>
 
-<p>La <strong>Criptografía</strong> es una disciplina matemática cuyo interés se centra en distintos
-aspectos de la Teoría de la Información relacionados con la seguridad de esta. Sus
-objetivos principales son:</p>
 <ol>
-  <li><strong>Confidencialidad.</strong> La información sea solo accesible por partes
-autorizadas a ello.</li>
-  <li><strong>Autentificacón.</strong> Hace posible determinar sin
-género de duda la fuente que crea una información determinada.</li>
-  <li><strong>Integridad.</strong> Hace posible comprobar que la información a la
-que se accede en un momento determinado no ha sido alterada desde el
-momento de su creación.</li>
-  <li><strong>No repudio.</strong> La información creadora de una información no pueda
-posteriormente negar la autoría de la misma.</li>
+  <li>Alice se autentica (verifica su identidad) con la autoridad certificadora y obtiene
+una función de una vía (con puerta trasera) publicada por la autoridad.</li>
+  <li>La autoridad certificadora emite un certificado que contiene, básicamente:
+Identidad de Alice.
+Validez del certificado.
+Función de una vía correspondiente a Alice.
+Firma digital del certificado realizada por la autoridad certificadora.</li>
+  <li>Alice envía a Bob su certificado.</li>
+  <li>Bob utiliza la función de una vía de la autoridad certificadora para verificar la
+autenticidad del certificado y comprueba su validez.</li>
+  <li>Bob utiliza la función de una vía contenida en el certificado para enviar un
+mensaje a Alice.</li>
 </ol>
 
-<h2 id="escítala">Escítala</h2>
+<h2 id="el-problema-del-almacenamiento-de-clave">El problema del almacenamiento de clave</h2>
 
-<p>La escítala usada por los lacedemonios o espartanos en el siglo V antes de Cristo, es
-un método constituido por un basto, alrededor del que se enrollaba una cinta de cuero
-sobre la que se escribía. Tras desenrollar la cinta, el mensaje podía leerse únicamente
-volviendo a ser enrollada sobre un bastón de igual grosor.</p>
+<p>Problema: ¿Es posible almacenar una clave de forma confidencial y que no se corra peligro de
+perderla o que se nos impida el acceso a la misma?</p>
 
-<!--Figure: escítala-->
+<h2 id="interpolación-de-lagrange">Interpolación de Lagrange</h2>
 
-<h2 id="cifrado-de-césar">Cifrado de César</h2>
-
-<p>Usado por Julio César en el siglo I antes de Cristo, consiste en el desplazamiento del
-alfabeto un número determinado de caracteres. Matemáticamente puede
-representarse como la función \(f:\mathbb{Z}_{27}\to\mathbb{Z}_{27},\) dada por
-<em class="eq">\[ f(x)\equiv_{27}x+k, \]</em>
-donde \(k\in\mathbb{Z}_{27}.\)</p>
-
-<p>El criptoanálisis es muy básico, pues basta conocer como se cifra una letra. Esto
-puede conocerse mediante el análisis de frecuencias de los caracteres que aparecen
-en el texto cifrado.</p>
-
-<p>Una extensión natural es el conocido como cifrado afı́n: \(f(x)\equiv_{27}ax+b,\) con
-\(a,b\in\mathbb{Z}_{27}\) y \(\operatorname{mcd}(a,27)=1,\) igualmente muy fácil de criptoanalizar.</p>
-
-<h2 id="cifrado-de-vigenere">Cifrado de Vigenere</h2>
-
-<p><strong>Blaise de Vigenere</strong>, en el siglo XVI propone una extensión del cifrado de César,
-representado matemáticamente por la función \(f:\mathbb{Z}_{27}^n\to\mathbb{Z}_{27}^n\) definida como
-    <em class="eq">\[ f(x)\equiv_{27}x+k, \]</em>
-donde \(k\in\mathbb{Z}_{27}^n.\)</p>
-
-<p>El criptoanálisis se lleva a cabo como en el caso del de César.</p>
-
-<h2 id="principio-de-kerckhoff">Principio de Kerckhoff</h2>
-
-<p><strong>Auguste Kerckhoff</strong>, criptógrafo holandés establece sus principios básicos para un
-sistema criptográfico en su artı́culo de 1883 “La cryptographie militaire”. Entre ellos
-destaca el conocido actualmente como Principio de Kerckhoff.</p>
-
-<dl class="t">
-  <dt>Principio de Kerckhoff</dt>
-  <dd>La seguridad de un sistema de clave secreta debe recaer únicamente en el secreto de
-dicha clave.</dd>
+<dl class="l">
+  <dt>Lema</dt>
+  <dd>Sea \(F\) un cuerpo y sean (xi , yi ) ∈ F2 , i = 1, . . . , n + 1con xi 6= xj , j 6= i. Entonces
+existe un único \(f\in F[x ]\) de grado n tal que f (xi ) = yi , para todo i = 1, . . . , n.</dd>
 </dl>
 
-<h2 id="cifrador-de-vernam">Cifrador de Vernam</h2>
-<p>En 1917, Gilbert S. Vernam, ingeniero del Massachusset Institute of Technology,
-propone su cifrador, conocido como <strong>cifrador de Vernam</strong> o <strong>cifrador de clave de un solo uso</strong> (one time pad):
-<em class="eq">\[C:=f(M)=f(M_1M_2\cdots M_n)=C_1C_2\cdots C_n,\]</em>
-<em class="eq">\[M:=f(C)=f(C_1C_2\cdots C_n)=M_1M_2\cdots M_n,\]</em>
-donde \(C_i\equiv_2M_i+k_i\) y \(M_i\equiv_2C_i+k_i,\) para todo \(i\in\{1,\ldots,n\}.\)</p>
+<dl class="p">
+  <dt>Demostración</dt>
+  <dd>Sea fi =
+x−xj
+j6=i xi −xj
+Q
+∈ F[x]. Es claro que fi tiene grado n y que fi (xj ) = δi,j para todo
+Pn+1
+i=1 yi fi .
+i = 1, . . . , n + 1. Sea pues f =
+Supongamos que f 0 ∈ F[x] es un segundo polinomio tal que f 0 (xi ) = yi para todo
+i = 1, . . . , n + 1. Entonces f − f 0 ∈ F[x] es un polinomio de grado n y tal que
+(f − f 0 )(xi ) = 0 para todo i = 1, . . . , n + 1. Por tanto f − f 0 = 0 y, de este modo, f es
+único.</dd>
+</dl>
 
-<p>Aquí, la clave es una cadena de ceros y unos aleatorios tan larga al menos como el
-mensaje y de un solo uso. El cifrado de Vernam es demostrablemente seguro, pero
-poco útil debido a la naturaleza de la clave.</p>
+<h2 id="esquema-umbral-de-shamir">Esquema umbral de Shamir</h2>
 
-<!--Figure: George S. Vernam-->
+<p>Sea S ∈ F un secreto que quiere almacenarse de forma segura. El esquema “divide”
+S en N participaciones, k de las cuales son requeridas para la recuperación de S.
+Pk−1
+1 Se escogen k ∈ F, i = 1, . . . , k − 1 y se considera f = S +
+k x i ∈ F[x].
+i
+i=1 i
+2</p>
 
-<h2 id="cifrado-de-hill">Cifrado de Hill</h2>
+<p>Se escogen xi ∈ F, i = 1, . . . , N y se calculan las participaciones yi = f (xi ) ∈ F,
+i = 1, . . . , N.</p>
 
-<p>En 1929, el matemático Lester S. Hill propone una aplicación algebraica para su uso
-en Criptografı́a: \(f:\mathbb{Z}_{27}\to\mathbb{Z}_{27}\), dada por
-    <em class="eq">\[ f(m)=Am+k, \]</em>
-donde \(A\) es una matriz invertible con entradas en \(\mathbb{Z}_{27}\) y \(k\in\mathbb{Z}_{27}^n.\)</p>
+<p>3</p>
 
-<p>Conocidos suficientes pares de la forma \((m,f(m))\), el uso de Álgebra Lineal básica
-permite el criptoanálisis del sistema.</p>
+<p>Se reparten las participaciones yi , i = 1, . . . , N y se destruye el polinomio f .</p>
 
-<h2 id="enigma">Enigma</h2>
+<p>4</p>
 
-<p>Durante la II Guerra Mundial aparecen muchos sistemas, el más famoso de los cuales
-es Enigma:</p>
+<p>Cuando se desea recuperar el secreto S, se reúnen k de las N participaciones,
+(xi1 , yi1 ), . . . , (xik , yik ) y se calcula
+ik
+X</p>
+
+<p>yj</p>
+
+<p>j=i1</p>
+
+<p>ik
+Y
+j=i1</p>
+
+<p>xj
+xj − xi</p>
+
+<p>Nota
+El esquema funciona dado que f (0) = S.</p>
+
+<h2 id="distribución-de-clave-común-en-grupo">Distribución de clave común en grupo</h2>
+
+<p>Problema
+Distribuir un secreto común a un grupo de usuarios en un único mensaje.</p>
+
+<p>El siguiente protocolo se conoce como “Secure Lock”:</p>
 <ol>
-  <li>Enigma</li>
-  <li>Marian Rejewski</li>
-  <li>Alan Turing</li>
-  <li>Colossus</li>
+  <li>El servidor comparte con con cada usuario un par (fki , mi ), i = 1, . . . , n, donde fki
+es una función de una vía (correspondiente a un criptosistema de clave simétrica)
+y mi es un entero positivo grande (del tamaño determinado por el criptosistema)
+i = 1, . . . , n tales que mcd(mi , mj ) = 1 para i 6= j.
+2
+Si s es el secreto a distribuir, el servidor calcula ri = fki (s), para todo i = 1, . . . , n.
+3
+El servidor calcula una solución del sistema de congruencias x ≡mi ri ,
+i = 1, . . . , n, L.
+Q
+El servidor envía L mod ni=1 mi .
+4</li>
+  <li>Cada usuario calcula L ≡mi ri = fki (m).</li>
+  <li>Cada usuario calcula fk−1 (ri ) = d.i</li>
 </ol>
-
-<h2 id="claude-shannon">Claude Shannon</h2>
-
-<p>En 1949, el matemático Claude E. Shannon publica su artı́culo «Communication
-Theory of Secrecy Systems», donde demuestra la existencia de criptosistemas
-demostrablemente seguros.</p>
-
-<!--Figure: Claude E. Shannon-->
-
-<h2 id="problema-del-intercambio-de-clave">Problema del intercambio de clave</h2>
-
-<p>A pesar del amplio uso de la Criptografía, un problema seguía abierto y sin solución
-hasta los años 70: ¿Es posible el intercambio de un secreto de forma confidencial a través de un
-canal inseguro?</p>
 
   </div>
 

@@ -5,19 +5,19 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Introducción | SK Source</title>
+<title>Funciones hash | SK Source</title>
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Introducción" />
+<meta property="og:title" content="Funciones hash" />
 <meta property="og:locale" content="es_ES" />
 <meta name="description" content="Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante." />
 <meta property="og:description" content="Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante." />
-<link rel="canonical" href="https://sksourcedata.github.io//math/information-theory/cryptography/intro.html" />
-<meta property="og:url" content="https://sksourcedata.github.io//math/information-theory/cryptography/intro.html" />
+<link rel="canonical" href="https://sksourcedata.github.io//math/information-theory/cryptographic-protocols/hash-function.html" />
+<meta property="og:url" content="https://sksourcedata.github.io//math/information-theory/cryptographic-protocols/hash-function.html" />
 <meta property="og:site_name" content="SK Source" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Introducción" />
+<meta property="twitter:title" content="Funciones hash" />
 <script type="application/ld+json">
-{"headline":"Introducción","@type":"WebPage","url":"https://sksourcedata.github.io//math/information-theory/cryptography/intro.html","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
+{"headline":"Funciones hash","@type":"WebPage","url":"https://sksourcedata.github.io//math/information-theory/cryptographic-protocols/hash-function.html","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://sksourcedata.github.io//feed.xml" title="SK Source" /><link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -170,132 +170,124 @@
             <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Introducción</h1>
+    <h1 class="post-title">Funciones hash</h1>
   </header>
 
   <div class="post-content">
-    <h2 id="criptologı́a">Criptologı́a</h2>
+    <p><em>Función hash</em> o <em>función resumen</em> es otra forma de llamar a la función de una vía.</p>
 
-<p>La <strong>Criptologı́a</strong> es un área de la ciencia que contiene muchas disciplinas aunque las
-tres básicas son:</p>
-<ol>
-  <li><strong>Criptografı́a:</strong> disciplina matemática encargada del diseño de cifradores y
-protocolos.</li>
-  <li><strong>Criptoanálisis:</strong> disciplina que trata el análisis y búsqueda de métodos para romper
-cifradores y/o protocolos criptográficos.</li>
-  <li><strong>Esteganografı́a:</strong> disciplina que trata de encontrar métodos para ocultar
-información.</li>
-</ol>
-
-<h2 id="criptografı́a">Criptografı́a</h2>
-
-<p>La <strong>Criptografía</strong> es una disciplina matemática cuyo interés se centra en distintos
-aspectos de la Teoría de la Información relacionados con la seguridad de esta. Sus
-objetivos principales son:</p>
-<ol>
-  <li><strong>Confidencialidad.</strong> La información sea solo accesible por partes
-autorizadas a ello.</li>
-  <li><strong>Autentificacón.</strong> Hace posible determinar sin
-género de duda la fuente que crea una información determinada.</li>
-  <li><strong>Integridad.</strong> Hace posible comprobar que la información a la
-que se accede en un momento determinado no ha sido alterada desde el
-momento de su creación.</li>
-  <li><strong>No repudio.</strong> La información creadora de una información no pueda
-posteriormente negar la autoría de la misma.</li>
-</ol>
-
-<h2 id="escítala">Escítala</h2>
-
-<p>La escítala usada por los lacedemonios o espartanos en el siglo V antes de Cristo, es
-un método constituido por un basto, alrededor del que se enrollaba una cinta de cuero
-sobre la que se escribía. Tras desenrollar la cinta, el mensaje podía leerse únicamente
-volviendo a ser enrollada sobre un bastón de igual grosor.</p>
-
-<!--Figure: escítala-->
-
-<h2 id="cifrado-de-césar">Cifrado de César</h2>
-
-<p>Usado por Julio César en el siglo I antes de Cristo, consiste en el desplazamiento del
-alfabeto un número determinado de caracteres. Matemáticamente puede
-representarse como la función \(f:\mathbb{Z}_{27}\to\mathbb{Z}_{27},\) dada por
-<em class="eq">\[ f(x)\equiv_{27}x+k, \]</em>
-donde \(k\in\mathbb{Z}_{27}.\)</p>
-
-<p>El criptoanálisis es muy básico, pues basta conocer como se cifra una letra. Esto
-puede conocerse mediante el análisis de frecuencias de los caracteres que aparecen
-en el texto cifrado.</p>
-
-<p>Una extensión natural es el conocido como cifrado afı́n: \(f(x)\equiv_{27}ax+b,\) con
-\(a,b\in\mathbb{Z}_{27}\) y \(\operatorname{mcd}(a,27)=1,\) igualmente muy fácil de criptoanalizar.</p>
-
-<h2 id="cifrado-de-vigenere">Cifrado de Vigenere</h2>
-
-<p><strong>Blaise de Vigenere</strong>, en el siglo XVI propone una extensión del cifrado de César,
-representado matemáticamente por la función \(f:\mathbb{Z}_{27}^n\to\mathbb{Z}_{27}^n\) definida como
-    <em class="eq">\[ f(x)\equiv_{27}x+k, \]</em>
-donde \(k\in\mathbb{Z}_{27}^n.\)</p>
-
-<p>El criptoanálisis se lleva a cabo como en el caso del de César.</p>
-
-<h2 id="principio-de-kerckhoff">Principio de Kerckhoff</h2>
-
-<p><strong>Auguste Kerckhoff</strong>, criptógrafo holandés establece sus principios básicos para un
-sistema criptográfico en su artı́culo de 1883 “La cryptographie militaire”. Entre ellos
-destaca el conocido actualmente como Principio de Kerckhoff.</p>
-
-<dl class="t">
-  <dt>Principio de Kerckhoff</dt>
-  <dd>La seguridad de un sistema de clave secreta debe recaer únicamente en el secreto de
-dicha clave.</dd>
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Una <strong>función hash libre de colisiones débiles</strong> es una función hash \(h:X\to Y\) tal que para todo \(x\in X\), resulta imposible calcular computacionalmente \(x_1\in X\setminus\{x\}\) satisfaciendo \(h(x_1)=h(x).\)</dd>
 </dl>
 
-<h2 id="cifrador-de-vernam">Cifrador de Vernam</h2>
-<p>En 1917, Gilbert S. Vernam, ingeniero del Massachusset Institute of Technology,
-propone su cifrador, conocido como <strong>cifrador de Vernam</strong> o <strong>cifrador de clave de un solo uso</strong> (one time pad):
-<em class="eq">\[C:=f(M)=f(M_1M_2\cdots M_n)=C_1C_2\cdots C_n,\]</em>
-<em class="eq">\[M:=f(C)=f(C_1C_2\cdots C_n)=M_1M_2\cdots M_n,\]</em>
-donde \(C_i\equiv_2M_i+k_i\) y \(M_i\equiv_2C_i+k_i,\) para todo \(i\in\{1,\ldots,n\}.\)</p>
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Una <strong>función hash libre de colisiones fuertes</strong> es una función hash \(h:X\to Y\) para la cual resulta imposible calcular computacionalmente \(x_1,x_2\in X\) satisfaciendo \(h(x_1)=h(x_2).\)</dd>
+</dl>
 
-<p>Aquí, la clave es una cadena de ceros y unos aleatorios tan larga al menos como el
-mensaje y de un solo uso. El cifrado de Vernam es demostrablemente seguro, pero
-poco útil debido a la naturaleza de la clave.</p>
+<p>Si \(h\) es libre de colisiones débiles y los valores están uniformemente distribuídos,
+encontrar \(x_1\) mediante una búsqueda aleatoria requiere \(O(|Y|)\) intentos.</p>
 
-<!--Figure: George S. Vernam-->
+<p>Para el caso de funciones libres de colisiones fuertes, el número de intentos es \(O(\sqrt{|Y|}).\)</p>
 
-<h2 id="cifrado-de-hill">Cifrado de Hill</h2>
+<h2 id="la-función-hash-de-chaum-van-heijst-pftizmann">La función hash de Chaum-van Heijst-Pftizmann</h2>
 
-<p>En 1929, el matemático Lester S. Hill propone una aplicación algebraica para su uso
-en Criptografı́a: \(f:\mathbb{Z}_{27}\to\mathbb{Z}_{27}\), dada por
-    <em class="eq">\[ f(m)=Am+k, \]</em>
-donde \(A\) es una matriz invertible con entradas en \(\mathbb{Z}_{27}\) y \(k\in\mathbb{Z}_{27}^n.\)</p>
+<dl class="l">
+  <dt>Lema</dt>
+  <dd>Sean \(p\) y \(q\) dos primos tales que \(p=2q+1,\) y \(\alpha\) y \(\beta\) dos generadores de \(\mathbb{Z}_p.\)
+Identificando \(\mathbb{Z}_q\) con el conjunto \(\{0,1,\ldots,q-1\}\subseteq\mathbb{N},\) la función \(\mathbb{Z}_q\times\mathbb{Z}_q\to\mathbb{Z}_p^\ast\) definida por \((x_1,x_2)\mapsto\alpha^{x_1}\beta^{x_2}\) es una función hash tal que encontrar una colisión es equivalente a resolver el logaritmo discreto \(\log_{\alpha}(\beta).\)</dd>
+</dl>
 
-<p>Conocidos suficientes pares de la forma \((m,f(m))\), el uso de Álgebra Lineal básica
-permite el criptoanálisis del sistema.</p>
+<dl class="p">
+  <dt>Demostración</dt>
+  <dd>Sea \(s = log_{\alpha}(\beta).\) Entonces, \(\alpha x_1 \beta x_2=\alpha^{x_1}\alpha^{sx_2}\) y
+<em class="eq">\[\alpha^{x_1+s}\beta^{x_2−1}=\alpha^{x_1}\alpha^{s}\alpha^{sx_2}\alpha^{-s}=\alpha^{x_1}\alpha^ {sx_2},\]</em> 
+por lo que \((x_1,x_2)\) tiene la misma imagen que \((x_1+s,x_2-1).\)
+    <blockquote>
+      <p>Recíprocamente, sean \((x_1,x_2)\neq(x_3,x_4)\) tales que \(h(x_1,x_2)=h(x_3,x_4).\) Luego, \(\alpha x_1-x_3=\beta x_4-x_2.\) Si \(x_2=x_4,\) entonces \(x_1=x_3,\) por identificar \(\mathbb{Z}_q\) con \(\{0,1,\ldots,q-1\}.\) De aquí, \(x_1\neq x_3\) y \(x_2\neq x_4.\) Supongamos que \(x_4 &gt; x_2\) y sea \(d:=\operatorname{mcd}(x_4-x_2,p-1).\) Como \(q &gt; x_4-x_2\leq 1\) y \(p-1=2q\), entonces \(d\in\{1,2\}.\)
+En caso de que \(d = 1\), para \(y\equiv_{p-1}(x_4 − x_2 )−1,\) \((\beta^{x_4-x_2})^y=\beta.\) Además,
+\((\beta^{x_4-x_2})^y=(\alpha^{x_1 −x_3})^y\), de donde \((x_1-x_3)y=log_{\alpha}(\beta).\)
+Si \(d=2\), entonces \(\operatorname{mcd}(x_4-x_2,q)=1\), dado que \(p-1=2q.\) Sea \(y\equiv_q(x_4-x_2)-1.\)
+Si escribamos \(y(x_4-x_2)=1+kq,\) con \(k\in\mathbb{Z},\) entonces
+<em class="eq">\[ \beta^{qk}\beta\equiv_p\beta^{qk+1}\equiv_p\beta^{y(x_4-x_2)} \]</em>
+y \(\beta^{kq}\equiv_p\pm1\) (en realidad es \((-1)^k\)), ya que \((\beta^q)^2\equiv_p \beta^{p−1}\equiv_p1.\) De este modo, \(log_{\alpha}(\beta)\in\{(x_4-x_2)y,(x_4-x_2)y+q\},\) dependiendo de si \(\beta^{kq}\equiv_p1\) o \(\beta^{kq}\equiv_{p-1},\) respectivamente.</p>
+    </blockquote>
+  </dd>
+</dl>
 
-<h2 id="enigma">Enigma</h2>
+<h2 id="construcciones-de-funciones-hash">Construcciones de funciones hash</h2>
 
-<p>Durante la II Guerra Mundial aparecen muchos sistemas, el más famoso de los cuales
-es Enigma:</p>
+<dl class="t">
+  <dt>Construcción recursiva</dt>
+  <dd>Sea \(h:X\to X\) una función hash y sea \(X^{\ast}=\bigcup_{i=0}^{\infty}X\) y supongamos que \(X\) tiene definida una operación interna \(\ast.\) Si se define la sucesión \((h_n(x_1,\ldots,x_n))_{n\in\mathbb{N}}\) como \(h_0(x_1):=h(x_1)\) y \(h_{n+1}(x_1,\ldots,x_n,x_{n+1}):=h(x_{n+1}\ast h_n(x_1,\ldots,x_n ))\) para todo \(n\in\mathbb{N},\) entonces \(h^{\ast}:X^{\ast}\to X\) es una función hash.</dd>
+</dl>
+
+<dl class="t">
+  <dt>Construcción basada en un criptosistema de clave simétrica</dt>
+  <dd>Sean \(\mathcal{M}\), \(\mathcal{C}\) y \(\mathcal{K}\) conjuntos biyectivos y sea \(f:\mathcal{M}\times\mathcal{K}\to\mathcal{C}\) una función de encriptado. Entonces, la función \(f_m:K\to\mathcal{C}\), dada por \(f_m(k):=f(m,k)\), es una función de una vía.
+    <blockquote>
+      <p>Sea \((k_1,\ldots,k_n)\in\mathcal{K}^n.\) Definimos la función \(h_n:\mathcal{K}^n\to\mathcal{C}\) como \(h_n(k_1,\ldots,k_n):=y_{n+1},\) donde \(y_1:=m\) y \(y_{i+1}:=f(y_i,k_i).\) Entonces, \(h^\ast\) es una función hash.</p>
+    </blockquote>
+  </dd>
+</dl>
+
+<h2 id="usos-de-la-función-hash">Usos de la función hash</h2>
+
+<dl class="d">
+  <dt>Message Authentication Code</dt>
+  <dd>Sea \(f:\mathcal{M}\times\mathcal{K}\to\mathcal{C}\) la función de encriptado de un criptosistema de clave simétrica y \(h:\mathcal{M}\to\mathcal{M}\) una función hash. Entonces, \(f\circ h\) produce, lo que se conoce como
+un Message Authentication Code o MAC.
+La verificación de un MAC se lleva a cabo exactamente de la misma forma que se
+construye el mismo a partir del mensaje original.</dd>
+</dl>
+
+<dl class="d">
+  <dt>Funcionamiento de firmas digitales</dt>
+  <dd>Sea \(f:X\to Y\) una función de una vía con puerta trasera y \(h:X\to Y\) una función
+hash. Entonces, \(f^{-1}\circ h\) reproduce el verdadero funcionamiento de una firma digital.
+Para verificar una firma digital, se calcula el valor hash del mensaje, \(m\) y este se
+comprueba que \((f\circ f^{-1}\circ h)(m)=h(m)\).</dd>
+</dl>
+
+<h2 id="la-paradoja-del-cumpleaños">La paradoja del cumpleaños</h2>
+
+<dl class="prob">
+  <dt>Problema</dt>
+  <dd>Encontrar el valor mínimo \(k\) para el que la probabilidad de que en un grupo de \(k\)
+personas haya dos que tengan la misma fecha de cumpleaños.</dd>
+</dl>
+
 <ol>
-  <li>Enigma</li>
-  <li>Marian Rejewski</li>
-  <li>Alan Turing</li>
-  <li>Colossus</li>
+  <li>Para que no exista duplicidad, \(k\leq 365.\)</li>
+  <li>Sea \(N\) el número de formas distintas en las que pueden obtenerse k\) valores
+distintos. Entonces \(N=365\cdot364\cdots(365-k+1),\) es decir,
+\(N=\frac{365!}{(365-k)!.}\)</li>
+  <li>Si hubiera duplicidades, entonces las posibilidades serían \(365k.\)</li>
+  <li>De este modo, la probabilidad de que en una reunión con \(k\) personas no existan
+dos con el mismo cumpleaños es \(N/365k,\) es decir, que la probabilidad de que
+haya dos personas con la misma fecha de cumpleaños es
+<em class="eq">\[ 1-\frac{N}{365^k}=1-\frac{365!}{(365-k)!\,365^k} \]</em></li>
+  <li>Para \(k=23\), dicha probabilidad es \(0.5073.\) Para \(k=100\) es de \(0.9999997.\)</li>
 </ol>
 
-<h2 id="claude-shannon">Claude Shannon</h2>
+<p>Como podemos observar, entre una cantidad de 100 personas, se obtiene una probabilidad sorprendentemente alta.</p>
 
-<p>En 1949, el matemático Claude E. Shannon publica su artı́culo «Communication
-Theory of Secrecy Systems», donde demuestra la existencia de criptosistemas
-demostrablemente seguros.</p>
-
-<!--Figure: Claude E. Shannon-->
-
-<h2 id="problema-del-intercambio-de-clave">Problema del intercambio de clave</h2>
-
-<p>A pesar del amplio uso de la Criptografía, un problema seguía abierto y sin solución
-hasta los años 70: ¿Es posible el intercambio de un secreto de forma confidencial a través de un
-canal inseguro?</p>
+<dl class="d ol-number">
+  <dt>Un ataque basado en la paradoja del cumpleaños</dt>
+  <dd>
+    <ol>
+      <li>La fuente va a firmar un mensaje añadiendo un resumen de m bits.</li>
+      <li>El atacante genera \(2^{\frac{m}{2}}\) variaciones del mensaje, todas ellas teniendo
+esencialmente el mismo significado que el mensaje original. Prepara al mismo
+tiempo un mismo número de mensajes, variaciones del fraudulento y que
+sustituirá por el real.</li>
+      <li>Se comparan ambos conjuntos de mensajes para encontrar una pareja de
+mensajes que produzcan el mismo hash.</li>
+      <li>El atacante ofrece la variación válida a la fuente para que la firme y se añade a la versión fraudulenta encontrada del mensaje.</li>
+    </ol>
+  </dd>
+</dl>
 
   </div>
 

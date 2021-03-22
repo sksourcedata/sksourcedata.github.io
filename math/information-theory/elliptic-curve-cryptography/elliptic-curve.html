@@ -5,19 +5,19 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Introducción | SK Source</title>
+<title>Curva elíptica | SK Source</title>
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Introducción" />
+<meta property="og:title" content="Curva elíptica" />
 <meta property="og:locale" content="es_ES" />
 <meta name="description" content="Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante." />
 <meta property="og:description" content="Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante." />
-<link rel="canonical" href="https://sksourcedata.github.io//math/information-theory/cryptography/intro.html" />
-<meta property="og:url" content="https://sksourcedata.github.io//math/information-theory/cryptography/intro.html" />
+<link rel="canonical" href="https://sksourcedata.github.io//math/information-theory/elliptic-curve-cryptography/elliptic-curve.html" />
+<meta property="og:url" content="https://sksourcedata.github.io//math/information-theory/elliptic-curve-cryptography/elliptic-curve.html" />
 <meta property="og:site_name" content="SK Source" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Introducción" />
+<meta property="twitter:title" content="Curva elíptica" />
 <script type="application/ld+json">
-{"headline":"Introducción","@type":"WebPage","url":"https://sksourcedata.github.io//math/information-theory/cryptography/intro.html","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
+{"headline":"Curva elíptica","@type":"WebPage","url":"https://sksourcedata.github.io//math/information-theory/elliptic-curve-cryptography/elliptic-curve.html","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://sksourcedata.github.io//feed.xml" title="SK Source" /><link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -166,136 +166,289 @@
     <main class="page-content" aria-label="Content">
         <div class="wrapper">
             
+                <div style="color:rgb(120, 120, 121);border: 2px solid rgb(247, 204, 17);padding: 2px">
+                    &#9888;Esta página aún se encuentra en desarrollo.
+                </div>
+                <!--<div style="color:rgb(120, 120, 121);border: 2px solid rgb(10, 154, 250);padding: 2px">
+                    &#8505;Información
+                </div>-->
+            
 
             <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Introducción</h1>
+    <h1 class="post-title">Curva elíptica</h1>
   </header>
 
   <div class="post-content">
-    <h2 id="criptologı́a">Criptologı́a</h2>
+    <h2 id="curvas-afines">Curvas afines</h2>
 
-<p>La <strong>Criptologı́a</strong> es un área de la ciencia que contiene muchas disciplinas aunque las
-tres básicas son:</p>
-<ol>
-  <li><strong>Criptografı́a:</strong> disciplina matemática encargada del diseño de cifradores y
-protocolos.</li>
-  <li><strong>Criptoanálisis:</strong> disciplina que trata el análisis y búsqueda de métodos para romper
-cifradores y/o protocolos criptográficos.</li>
-  <li><strong>Esteganografı́a:</strong> disciplina que trata de encontrar métodos para ocultar
-información.</li>
-</ol>
-
-<h2 id="criptografı́a">Criptografı́a</h2>
-
-<p>La <strong>Criptografía</strong> es una disciplina matemática cuyo interés se centra en distintos
-aspectos de la Teoría de la Información relacionados con la seguridad de esta. Sus
-objetivos principales son:</p>
-<ol>
-  <li><strong>Confidencialidad.</strong> La información sea solo accesible por partes
-autorizadas a ello.</li>
-  <li><strong>Autentificacón.</strong> Hace posible determinar sin
-género de duda la fuente que crea una información determinada.</li>
-  <li><strong>Integridad.</strong> Hace posible comprobar que la información a la
-que se accede en un momento determinado no ha sido alterada desde el
-momento de su creación.</li>
-  <li><strong>No repudio.</strong> La información creadora de una información no pueda
-posteriormente negar la autoría de la misma.</li>
-</ol>
-
-<h2 id="escítala">Escítala</h2>
-
-<p>La escítala usada por los lacedemonios o espartanos en el siglo V antes de Cristo, es
-un método constituido por un basto, alrededor del que se enrollaba una cinta de cuero
-sobre la que se escribía. Tras desenrollar la cinta, el mensaje podía leerse únicamente
-volviendo a ser enrollada sobre un bastón de igual grosor.</p>
-
-<!--Figure: escítala-->
-
-<h2 id="cifrado-de-césar">Cifrado de César</h2>
-
-<p>Usado por Julio César en el siglo I antes de Cristo, consiste en el desplazamiento del
-alfabeto un número determinado de caracteres. Matemáticamente puede
-representarse como la función \(f:\mathbb{Z}_{27}\to\mathbb{Z}_{27},\) dada por
-<em class="eq">\[ f(x)\equiv_{27}x+k, \]</em>
-donde \(k\in\mathbb{Z}_{27}.\)</p>
-
-<p>El criptoanálisis es muy básico, pues basta conocer como se cifra una letra. Esto
-puede conocerse mediante el análisis de frecuencias de los caracteres que aparecen
-en el texto cifrado.</p>
-
-<p>Una extensión natural es el conocido como cifrado afı́n: \(f(x)\equiv_{27}ax+b,\) con
-\(a,b\in\mathbb{Z}_{27}\) y \(\operatorname{mcd}(a,27)=1,\) igualmente muy fácil de criptoanalizar.</p>
-
-<h2 id="cifrado-de-vigenere">Cifrado de Vigenere</h2>
-
-<p><strong>Blaise de Vigenere</strong>, en el siglo XVI propone una extensión del cifrado de César,
-representado matemáticamente por la función \(f:\mathbb{Z}_{27}^n\to\mathbb{Z}_{27}^n\) definida como
-    <em class="eq">\[ f(x)\equiv_{27}x+k, \]</em>
-donde \(k\in\mathbb{Z}_{27}^n.\)</p>
-
-<p>El criptoanálisis se lleva a cabo como en el caso del de César.</p>
-
-<h2 id="principio-de-kerckhoff">Principio de Kerckhoff</h2>
-
-<p><strong>Auguste Kerckhoff</strong>, criptógrafo holandés establece sus principios básicos para un
-sistema criptográfico en su artı́culo de 1883 “La cryptographie militaire”. Entre ellos
-destaca el conocido actualmente como Principio de Kerckhoff.</p>
-
-<dl class="t">
-  <dt>Principio de Kerckhoff</dt>
-  <dd>La seguridad de un sistema de clave secreta debe recaer únicamente en el secreto de
-dicha clave.</dd>
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Sea p = i,j aij x i y j ∈ F[x, y] un polinomio en dos variables, con F un cuerpo.
+Entonces
+C = V (p) = {(x, y) ∈ F2 : p(x, y) = 0}
+se denomina curva afı́n de grado deg(C) = max{i + j : aij 6= 0}.</dd>
 </dl>
 
-<h2 id="cifrador-de-vernam">Cifrador de Vernam</h2>
-<p>En 1917, Gilbert S. Vernam, ingeniero del Massachusset Institute of Technology,
-propone su cifrador, conocido como <strong>cifrador de Vernam</strong> o <strong>cifrador de clave de un solo uso</strong> (one time pad):
-<em class="eq">\[C:=f(M)=f(M_1M_2\cdots M_n)=C_1C_2\cdots C_n,\]</em>
-<em class="eq">\[M:=f(C)=f(C_1C_2\cdots C_n)=M_1M_2\cdots M_n,\]</em>
-donde \(C_i\equiv_2M_i+k_i\) y \(M_i\equiv_2C_i+k_i,\) para todo \(i\in\{1,\ldots,n\}.\)</p>
+<dl class="e">
+  <dt>Ejemplo</dt>
+  <dd>La curva
+x2
+a2
++
+y2
+b2
+− 1 = 0 es una curva afı́n de grado 2.
+2</dd>
+</dl>
 
-<p>Aquí, la clave es una cadena de ceros y unos aleatorios tan larga al menos como el
-mensaje y de un solo uso. El cifrado de Vernam es demostrablemente seguro, pero
-poco útil debido a la naturaleza de la clave.</p>
+<h2 id="tipos-de-curvas-afines">Tipos de curvas afines</h2>
 
-<!--Figure: George S. Vernam-->
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Se dice que una curva p(x, y) = 0 es irreducible si p(x, y) ∈ F[x, y] es irreducible.</dd>
+</dl>
 
-<h2 id="cifrado-de-hill">Cifrado de Hill</h2>
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Un una curva p(x, y) = 0 se dice no singular si
+ punto (a, b) de 
+δp
+δp
+(a,
+b),
+(a,
+b)
+6= (0, 0). En caso contrario se denomina punto singular. Una
+δx
+δy
+curva se dice no singular (o smooth) si todos sus puntos son no singulares.</dd>
+</dl>
 
-<p>En 1929, el matemático Lester S. Hill propone una aplicación algebraica para su uso
-en Criptografı́a: \(f:\mathbb{Z}_{27}\to\mathbb{Z}_{27}\), dada por
-    <em class="eq">\[ f(m)=Am+k, \]</em>
-donde \(A\) es una matriz invertible con entradas en \(\mathbb{Z}_{27}\) y \(k\in\mathbb{Z}_{27}^n.\)</p>
+<h2 id="el-plano-proyectivo">El plano proyectivo</h2>
 
-<p>Conocidos suficientes pares de la forma \((m,f(m))\), el uso de Álgebra Lineal básica
-permite el criptoanálisis del sistema.</p>
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Sea F un cuerpo y sea P2 = P2F = {(a, b, c) ∈ F3 {(0, 0, 0)}}/R, donde R es la
+relación de equivalencia dada por
+(a, b, c) R (a0 , b0 , c 0 ) si y solo si existe λ ∈ F∗ : (λa, λb, λc) = (a0 , b0 , c 0 )
+P2F se denomina plano proyectivo sobre F. Un punto [(a, b, c)]R se escribe
+simplemente como (a, b, c). Si c 6= 0 se dice que (a, b, c) es un punto finito. En caso
+contrario se dice que es un punto infinito o punto del infinito.</dd>
+</dl>
 
-<h2 id="enigma">Enigma</h2>
+<h2 id="homogeneización">Homogeneización</h2>
 
-<p>Durante la II Guerra Mundial aparecen muchos sistemas, el más famoso de los cuales
-es Enigma:</p>
-<ol>
-  <li>Enigma</li>
-  <li>Marian Rejewski</li>
-  <li>Alan Turing</li>
-  <li>Colossus</li>
-</ol>
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Sea p ∈ F[x, y] de grado d. La homogeneización de p, p̂ ∈ F[x, y, z] se define como
+el polinomio p̂(x, y, z) = z d p( xz , yz ).</dd>
+</dl>
 
-<h2 id="claude-shannon">Claude Shannon</h2>
+<dl class="r">
+  <dt>Observación</dt>
+  <dd>
+    <ol>
+      <li>Para todo λ, x, y, z ∈ Z se tiene que p̂(λx, λy, λz) = λd p̂(x, y, z).</li>
+      <li>Si se sustituye z 7→ 1, p̂ se reduce a p, esto es, p̂(x, y, 1) = p(x, y) para todo
+x, y ∈ F.</li>
+    </ol>
+  </dd>
+</dl>
 
-<p>En 1949, el matemático Claude E. Shannon publica su artı́culo «Communication
-Theory of Secrecy Systems», donde demuestra la existencia de criptosistemas
-demostrablemente seguros.</p>
+<dl class="e">
+  <dt>Ejemplo</dt>
+  <dd>
+    <ol>
+      <li>La parábola y = x 2 se define por p = y − x 2 ∈ F[x, y]. La homogeneización de p
+es p̂ = yz − x 2 .</li>
+      <li>Si p = 3y 2 + x 3 + xy + 5, entonces p̂ = 3y 2 z + x 3 + xyz + 5z 3 .</li>
+    </ol>
+  </dd>
+</dl>
 
-<!--Figure: Claude E. Shannon-->
+<h2 id="la-forma-homogénea-p̂-define-la-curva-proyectiva">La forma homogénea p̂ define la curva proyectiva</h2>
 
-<h2 id="problema-del-intercambio-de-clave">Problema del intercambio de clave</h2>
+<p>C = V (p̂) = {(a, b, c) ∈ P2 : p̂(a, b, c) = 0}
+Notemos que p̂(a, b, c) está bien para todo (a, b, c) ∈ P ya que para
+p̂(λx, λy, λz) = λd p̂(x, y, z) para todo λ 6= 0.
+Por otro lado, los puntos finitos de V (p̂) son precisamente los puntos de V (p) ya que
+V (p̂) = V (p) ∪ {(a, b, 0) ∈ P2 : p̂(a, b, 0) = 0}</p>
 
-<p>A pesar del amplio uso de la Criptografía, un problema seguía abierto y sin solución
-hasta los años 70: ¿Es posible el intercambio de un secreto de forma confidencial a través de un
-canal inseguro?</p>
+<dl class="e">
+  <dt>Ejemplo</dt>
+  <dd>Sean p = y − x 2 y su homogeneización p̂ = yz − x 2 . Entonces
+V (p̂) = V (p) ∪ {(0, 1, 0)}</dd>
+</dl>
+
+<h2 id="teorema-de-bezout">Teorema de Bezout</h2>
+
+<dl class="e">
+  <dt>Teorema</dt>
+  <dd>Sean p̂1 , p̂2 ∈ F[x, y, z] dos formas homogéneas de grados d1 y d2 respectivamente,
+que definen dos curvas distintas C1 = V (p̂1 ) y C2 = V (p̂2 ). Entonces (contando con
+la multiplicidad), C1 y C2 se intersecan exactamente en d1 d2 puntos sobre la clausura
+algebraica de F.</dd>
+  <dt>Ejemplo</dt>
+  <dd>
+    <ol>
+      <li>Sean la parábola p = y − x 2 y la recta q = x. De este modo, dadas p̂ = yz − x 2
+y q̂ = x, las curvas del plano proyectivo que definen V (p̂) y V (q̂) intersecan en
+(0, 0, 1) y (0, 1, 0).</li>
+      <li>Sean p = x + 2y y q = x + 2y + 1 dos rectas paralelas. Entonces p̂ = x + 2y y
+q̂ = x + 2y + z son sus homogeneizaciones y las curvas que definen en P2 se
+intersecan en el punto del infinito (2, −1, 0).
+Geométricamente, los puntos del infinito pueden interpretarse como direcciones, o
+como puntos que se encuentran infinitamente lejos del origen en una dirección.</li>
+    </ol>
+  </dd>
+</dl>
+
+<h2 id="resultante">Resultante</h2>
+
+<dl class="l">
+  <dt>Lema</dt>
+  <dd>Sean f =
+Pn
+i=0 fi x
+i, g
+=
+Pm
+
+fn
+..
+.
+..
+.
+0
+
+
+
+
+
+
+
+
+S(f , g) = 
+
+
+
+
+
+
+
+
+f0
+0
+..
+.
+0
+i=0
+fn
+..
+.
+..
+.
+f0
+..
+.
+…
+gi x i ∈ F[x] y sea
+…
+..
+.
+..
+.
+..
+.
+0
+0
+..
+.
+0
+fn
+..
+.
+..
+.
+f0
+gm
+..
+.
+..
+.
+..
+.
+…
+..
+.
+g0
+..
+0
+.
+
+0
+.. 
+
+. 
+
+
+gm 
+
+.. 
+ ∈ F(n+m)×(n+m)
+. 
+
+.. 
+
+. 
+
+.. 
+. 
+g0
+El determinante de S(f,g) se denomina resultante de f y g y se denota por Res(f , g).
+Entonces Res(f , g) = 0 si y solo si gcd(f , g) 6= 1.</dd>
+</dl>
+
+<dl class="p">
+  <dt>Demostración</dt>
+  <dd>La matriz S(f , g) define una aplicación Fm × Fn → Fm×n dada por (a, b) 7→ af + bg,
+donde Fk se interpreta como el espacio vectorial de los polinomios con coeficientes en
+F y de grado menor estricto que k.
+En caso de que f y g sean coprimos, entonces existen a, b, con deg(a) &lt; m y
+deg(b) &lt; n tales que af + bg = 1. De este modo, 1, que se interpreta como
+(0, . . . , 0, 1) está en la imagen de S(f , g).
+    <blockquote>
+      <p>Recı́procamente, si gcd(f , g) 6= 1, entonces no existen a, b como los anteriores, con lo
+que 1 no está en la imagen de S(f , g).
+La demostración del lema se concluye demostrando que (0, . . . , 0, 1) no está en la
+imagen de S(f , g) si y solo si el determinante de S(f , g) es cero (el sistema formado
+por las columnas de la matriz, que generan la imagen de la aplicación tiene matriz de
+coeficientes de rango menor que la matriz ampliada por la columna (0, . . . , 0, 1)t ).</p>
+    </blockquote>
+  </dd>
+</dl>
+
+<h2 id="demostración-del-teorema-de-bezout">Demostración del teorema de Bezout</h2>
+
+<p>Pdi
+pij x j , donde pij ∈ F[y, z], i = 1, 2 y consideremos la resultante de p̂1 y
+Sea p̂i = j=0
+p̂2 , que es un polinomio de grado d1 · d2 en F[y, z]. Por el Teorema Fundamental del
+Álgebra, la resultante puede entonces factorizarse
+d1 d2</p>
+
+<p>Res(p̂1 , p̂2 ) =</p>
+
+<p>Y</p>
+
+<p>(βi z − γi y)</p>
+
+<p>i=1</p>
+
+<p>de donde se tienen d1 · d2 soluciones para (y, z) tales que existe una solución αi ,
+donde (αi , βi , γi ) ∈ V (p̂1 ) ∩ V (p̂2 ).</p>
 
   </div>
 
