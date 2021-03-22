@@ -5,19 +5,19 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Conjunto | SK Source</title>
+<title>Criptosistema de ElGamal | SK Source</title>
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Conjunto" />
+<meta property="og:title" content="Criptosistema de ElGamal" />
 <meta property="og:locale" content="es_ES" />
 <meta name="description" content="Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante." />
 <meta property="og:description" content="Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante." />
-<link rel="canonical" href="https://sksourcedata.github.io//math/set-theory/set.html" />
-<meta property="og:url" content="https://sksourcedata.github.io//math/set-theory/set.html" />
+<link rel="canonical" href="https://sksourcedata.github.io//math/information-theory/cryptography/elgamal-cryptosystem.html" />
+<meta property="og:url" content="https://sksourcedata.github.io//math/information-theory/cryptography/elgamal-cryptosystem.html" />
 <meta property="og:site_name" content="SK Source" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Conjunto" />
+<meta property="twitter:title" content="Criptosistema de ElGamal" />
 <script type="application/ld+json">
-{"headline":"Conjunto","@type":"WebPage","url":"https://sksourcedata.github.io//math/set-theory/set.html","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
+{"headline":"Criptosistema de ElGamal","@type":"WebPage","url":"https://sksourcedata.github.io//math/information-theory/cryptography/elgamal-cryptosystem.html","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://sksourcedata.github.io//feed.xml" title="SK Source" /><link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -180,94 +180,144 @@
     <main class="page-content" aria-label="Content">
         <div class="wrapper">
             
+                <div style="color:rgb(120, 120, 121);border: 2px solid rgb(247, 204, 17);padding: 2px">
+                    &#9888;Esta página aún se encuentra en desarrollo.
+                </div>
+                <!--<div style="color:rgb(120, 120, 121);border: 2px solid rgb(10, 154, 250);padding: 2px">
+                    &#8505;Información
+                </div>-->
+            
 
             <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Conjunto</h1>
+    <h1 class="post-title">Criptosistema de ElGamal</h1>
   </header>
 
   <div class="post-content">
-    <!--Set-->
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>Un <strong>conjunto</strong> es una colección de objetos bien definida. Los objetos de un conjunto son llamados <strong>elementos</strong>. Cuando \(a\) es un elemento de un conjunto \(A\), se dice que \(a\) <strong>pertenece</strong> a \(A\), y se escribe \(a\in A\). Se dice que un conjunto <strong>contiene</strong> a sus elementos.</dd>
-</dl>
+    <h2 id="el-logartimo-discreto">El logartimo discreto</h2>
 
-<p>Bien definida quiere decir que no hay duda de si un elemento pertenece o no al conjunto.</p>
+<p>Definición
+Sea G un grupo finito, g ∈ G y consideremos el grupo cı́clico generado por g, hgi.
+Para h ∈ G, se define el logaritmo discreto de h con base g como el entero a (si es
+que existe), tal que g a = h. En tal caso, se escribe a = logg h.</p>
 
-<p>Los elementos pueden ser cualquier cosa: números, letras, colores, otros conjuntos, etc.</p>
-
-<p>Los conjuntos se suelen denotar por letras mayúsculas y no importa el orden de sus elementos. Se pueden definir de dos maneras:</p>
-<ul>
-  <li><strong>Por enumeración.</strong> Enumerando o listando todos sus elementos separándolos por comas y entre llaves.</li>
-  <li><strong>Por compresión.</strong> Declarando la propiedad o propiedades que deben tener todos sus elementos.</li>
-</ul>
-
-<dl class="e">
-  <dt>Ejemplo</dt>
-  <dd>El conjunto de las vocales del alfabeto se puede escribir:
-    <ul>
-      <li>Por enumeración: \(\{a,e,i,o,u\}\).</li>
-      <li>Por compresión: \(\{x:x\text{ es una vocal del alfabeto}\}\).</li>
-    </ul>
+<dl class="r">
+  <dt>Observación</dt>
+  <dd>
+    <ol>
+      <li>El logaritmo discreto a = logg h existe si y solo si h ∈ hgi.</li>
+      <li>Si ord(g)= n y a = logg h, entonces a + kn también es un logartimo discreto con
+base g de h, para k ∈ Z.</li>
+      <li>Usualmente nos referimos al logartimo de h con base g, como el menor entero
+positivo a tal que g a = h.</li>
+    </ol>
   </dd>
 </dl>
 
-<p>En la anterior, expresión los dos puntos, «:», significan «tal que».</p>
+<dl class="l">
+  <dt>Lema</dt>
+  <dd>Sea G un grupo finito y sea g ∈ G con ord(g)= n. Entonces:
+    <ol>
+      <li>logg hk ≡n k logg h.</li>
+      <li>logg (h1 h2 ) ≡n logg h1 + logg h2 .</li>
+    </ol>
+  </dd>
+</dl>
 
-<!--Equals-->
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>Dos conjuntos \(A\) y \(B\) son <strong>iguales</strong> si, y solo si, cada elemento de \(A\) está en \(B\), y viceversa. En tal caso, se escribirá \(A=B\).</dd>
+<h2 id="diffie-hellman-y-el-problema-del-logaritmo-discreto">Diffie-Hellman y el problema del logaritmo discreto</h2>
+
+<p>El protocolo fundacional propuesto por W. Diffie y M. Hellman se puede extender a
+cualquier grupo finito:</p>
+<ol>
+  <li>Alice y Bob se ponen de acuerdo en un grupo G y un elemento g ∈ G de orden
+finito.</li>
+  <li>Alice escoge a ∈ N y calcula g a .</li>
+  <li>Bob escoge b ∈ N y calcula g b .</li>
+  <li>Alice y Bob intercambian g a y g b .</li>
+  <li>Alice y Bob calculan g ab = (g a )b = (g b )a .</li>
+</ol>
+
+<p>Para calcular g ab conociendo únicamente G, g, g a y g b implica resolver uno de los
+logaritmos discretos logg g a o logg g b .
+Si se toman a, b suficientemente grandes (actualmente el NIST recomienda, en el
+caso de Zp , p ≥ 22048 ), buscar a y b de forma exhaustiva es inconcebible desde el
+punto de vista computacional. Por otro lado, mediante el uso del algoritmo de la
+potencia rápida, entonces calcular g a usando O(log a) operaciones en el grupo G.</p>
+
+<h2 id="taher-elgamal">Taher ElGamal</h2>
+
+<p>En 1985, Taher ElGamal propone el uso de una función de una vı́a con puerta trasera
+basada en la dificultad del problema del logaritmo discreto.</p>
+
+<!--Figure: Taher ElGamal-->
+
+<p>Taher ElGamal introduce la base del algoritmo de firma electrónica DSS en el mismo
+trabajo y es además uno de los desarrolladores del protocolo SSL.</p>
+
+<h2 id="el-criptosistema-de-elgamal">El criptosistema de ElGamal</h2>
+
+<ol>
+  <li>Alice elige un grupo G, un elemento g ∈ G de orden finito n y h = g a para algún
+a ∈ N.</li>
+  <li>Alice hace pública la terna (G, g, g a ), manteniendo a en secreto.</li>
+  <li>Un mensaje m ∈ G se encripta mediante la función: f : G → G definida por
+f (m) = (g k , mhk ), donde k ∈ Z es aleatoriamente escogido tal que
+1 &lt; k &lt; n − 1.</li>
+</ol>
+
+<p>Para recuperar el mensaje original se calcula (g k )−a (mhk ) = g −ak mg ak = m.</p>
+
+<h2 id="implementación-elgamal">Implementación ElGamal</h2>
+
+<p>Un aspecto importante de la implementación de ElGamal es que un mensaje m no se
+cifra dos veces de la misma forma dado que f (m) = (g k , mhk ), donde k ∈ Z es
+aleatoriamente escogido tal que 1 &lt; k &lt; n − 1.
+Pero, ¿qué sucede si ciframos dos mensajes distintos con el mismo valor aleatorio k?
+Supongamos que f (m1 ) = (g k , m1 hk ) y f (m2 ) = (g k , m2 hk ).
+Se observa rápidamente que el primer elemento del par es el mismo, lo que significa
+que el k escogido es el mismo. Supongamos ahora que conocemos m2 . Entonces sea
+y = (m1 hk ) · (m2 hk )−1 = m1 m2−1 , con lo que conociendo m1 o m2 , se tendrı́a acceso
+al otro.</p>
+
+<h2 id="el-criptosistema-de-elgamal-y-diffie-hellman">El criptosistema de ElGamal y Diffie-Hellman</h2>
+
+<p>Puede probarse que romper el criptosistema de ElGamal es equivalente computacionalmente a romper el intercambio de clave de Diffie-Hellman:</p>
+
+<p>Supongamos que existe un algoritmo A que es capaz de calcular g ab a partir de
+G, g, g a y g b y que queremos encontrar m a partir del par (h, d) = (g k , m(g a )k ).
+Hemos de tener en cuenta que G, g y g a son públicos tal y como establece el
+criptosistema de ElGamal. Entonces, mediante el uso de A podemos obtener g ak , con
+lo que m = d · (g ak )−1.</p>
+
+<p>Supongamos ahora que existe un algoritmo G que es capaz de romper el
+criptosistema de ElGamal, es decir, conocidos G, g, g a y el par (h, d) = (g k , m(g a )k ),
+G ofrece como salida m. De lo que se trata ahora es, conocidos G, g, g a y g b , ser
+capaces de calcular g ab .
+De este modo, proporcionamos a nuestro algoritmo G los siguientes datos: G, g, g a ,
+correspondientes a la clave pública y el par (h, d) = (g b , 1), que serı̀a el equivalente a
+encriptar el mensaje (que no conocemos) (g ab )−1 usando como parámetro aleatorio
+g b . El resultado que nos va a proporcionar G es m = (g ab )−1 , con lo que, calculando
+m−1 , obtenemos g ab .</p>
+
+<dl class="r">
+  <dt>Observación</dt>
+  <dd>El problema de, dados G, g, g a , g b para ciertos a, b ∈ Z, calcular g ab se conoce usualmente en criptografı́a como el problema computacional de Diffie-Hellman.</dd>
 </dl>
 
 <dl class="e">
   <dt>Ejemplo</dt>
-  <dd>Los conjuntos \(\{1,3\}\) y \(\{x\in\mathbb{R}:x^2-4x+3=0\}\) son iguales.</dd>
-</dl>
-
-<dl class="e">
-  <dt>Ejemplo</dt>
-  <dd>Como las soluciones reales de la ecuación \(x^2-4x+3\) son \(1\) y \(3\), entonces 
-<em class="eq">\[\{x\in\mathbb{R}:x^2-4x+3=0\}=\{1,3\}. \]</em></dd>
-</dl>
-
-<dl class="e">
-  <dt>Ejemplo</dt>
-  <dd>Los conjuntos \(\{1,2\}\) y \(\{1,\{2\}\}\) no son iguales, ya que \(2\not\in\{1,\{2\}\}\) (y \(\{2\}\not\in\{1,2\}\)).</dd>
-</dl>
-
-<!--Universal set-->
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>El <strong>conjunto universal</strong>, denotado por \(\mathbb{U}\), es el conjunto que contiene todos los objetos considerados.</dd>
-</dl>
-
-<!--Empty set-->
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>El <strong>conjunto vacío</strong>, denotado por \(\varnothing\), es el conjunto que no tiene elementos.</dd>
-</dl>
-
-<!--Cardinality-->
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>El <strong>cardinal</strong> de un conjunto \(A\), denotado por \(|A|\), es el número de elementos de \(A\).</dd>
-</dl>
-
-<p>Según el número de elementos de un conjunto, se puede clasificar en dos tipos.</p>
-
-<!--Finite set-->
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>Un <strong>conjunto finito</strong> es un conjunto \(A\) que satisface \(|A|&lt;\aleph_0\).</dd>
-</dl>
-
-<!--Infinite set-->
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>Un <strong>conjunto infinito</strong> es un conjunto que no es finito.</dd>
+  <dd>El criptosistema de ElGamal ha sido considerado en la literatura en diversos grupos,
+como por ejemplo:
+    <ol>
+      <li>Z∗p , grupo cı́clico de orden p − 1.</li>
+      <li>GF (pn ), grupo cı́clico de orden pn − 1.</li>
+      <li>GLn (GF (pn )), el grupo de matrices cuadradas de orden n invertibles con
+entradas en G(pn ).</li>
+      <li>E(GF (pn )), el grupo de puntos racionales de una curva elı́ptica definida sobre GF (pn ).</li>
+      <li>Jacobianos de variedades.</li>
+    </ol>
+  </dd>
 </dl>
 
   </div>

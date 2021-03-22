@@ -5,19 +5,19 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Conjunto | SK Source</title>
+<title>Problemas de seguridad del RSA | SK Source</title>
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Conjunto" />
+<meta property="og:title" content="Problemas de seguridad del RSA" />
 <meta property="og:locale" content="es_ES" />
 <meta name="description" content="Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante." />
 <meta property="og:description" content="Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante." />
-<link rel="canonical" href="https://sksourcedata.github.io//math/set-theory/set.html" />
-<meta property="og:url" content="https://sksourcedata.github.io//math/set-theory/set.html" />
+<link rel="canonical" href="https://sksourcedata.github.io//math/information-theory/cryptography/security-issues-in-rsa-algorithm.html" />
+<meta property="og:url" content="https://sksourcedata.github.io//math/information-theory/cryptography/security-issues-in-rsa-algorithm.html" />
 <meta property="og:site_name" content="SK Source" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Conjunto" />
+<meta property="twitter:title" content="Problemas de seguridad del RSA" />
 <script type="application/ld+json">
-{"headline":"Conjunto","@type":"WebPage","url":"https://sksourcedata.github.io//math/set-theory/set.html","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
+{"headline":"Problemas de seguridad del RSA","@type":"WebPage","url":"https://sksourcedata.github.io//math/information-theory/cryptography/security-issues-in-rsa-algorithm.html","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://sksourcedata.github.io//feed.xml" title="SK Source" /><link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -180,95 +180,130 @@
     <main class="page-content" aria-label="Content">
         <div class="wrapper">
             
+                <div style="color:rgb(120, 120, 121);border: 2px solid rgb(247, 204, 17);padding: 2px">
+                    &#9888;Esta página aún se encuentra en desarrollo.
+                </div>
+                <!--<div style="color:rgb(120, 120, 121);border: 2px solid rgb(10, 154, 250);padding: 2px">
+                    &#8505;Información
+                </div>-->
+            
 
             <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Conjunto</h1>
+    <h1 class="post-title">Problemas de seguridad del RSA</h1>
   </header>
 
   <div class="post-content">
-    <!--Set-->
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>Un <strong>conjunto</strong> es una colección de objetos bien definida. Los objetos de un conjunto son llamados <strong>elementos</strong>. Cuando \(a\) es un elemento de un conjunto \(A\), se dice que \(a\) <strong>pertenece</strong> a \(A\), y se escribe \(a\in A\). Se dice que un conjunto <strong>contiene</strong> a sus elementos.</dd>
-</dl>
+    <h2 id="selección-de-primos">Selección de primos</h2>
 
-<p>Bien definida quiere decir que no hay duda de si un elemento pertenece o no al conjunto.</p>
+<p>Los primos escogidos han de ser aleatorios.
+Si un atacante se dedicase a almacenar mensajes encriptados c e con las
+correspondientes claves públicas usadas (n, e), podrı́a intentar calcular mcd(n1 , n2 )
+con cada pareja de claves públicas guardadas. Si n1 y n2 tuviesen un factor común,
+entonces ello permitirı́a encontrar las correspondientes claves privadas d1 y d2 y
+obtener todos los mensajes cifrados con las claves (n1 , e1 ) y (n2 , e2 ).</p>
 
-<p>Los elementos pueden ser cualquier cosa: números, letras, colores, otros conjuntos, etc.</p>
+<p>Los primos deben estar suficientemente alejados
+Si p − q no es suficientemente grande, entonces p, q ≈
+√n.</p>
 
-<p>Los conjuntos se suelen denotar por letras mayúsculas y no importa el orden de sus elementos. Se pueden definir de dos maneras:</p>
-<ul>
-  <li><strong>Por enumeración.</strong> Enumerando o listando todos sus elementos separándolos por comas y entre llaves.</li>
-  <li><strong>Por compresión.</strong> Declarando la propiedad o propiedades que deben tener todos sus elementos.</li>
-</ul>
+<h2 id="ataque-p--1-de-factorización-de-pollard">Ataque p − 1 de factorización de Pollard</h2>
 
-<dl class="e">
-  <dt>Ejemplo</dt>
-  <dd>El conjunto de las vocales del alfabeto se puede escribir:
-    <ul>
-      <li>Por enumeración: \(\{a,e,i,o,u\}\).</li>
-      <li>Por compresión: \(\{x:x\text{ es una vocal del alfabeto}\}\).</li>
-    </ul>
-  </dd>
-</dl>
+<p>Definition
+Sean m y B enteros positivos. Se dice que m es B-suave (B-smooth) si todos los
+factores primos de m son menores o iguales que B.
+Example
+48 es 3-suave pues 48 = 24 · 3.
+Supongamos que n = pq y que p − 1 es B-suave (B pequeño), pero q − 1, no. Sea
+Q E( log n )
+k = r r log r , donde r ≤ B es primo. Por hipótesis, q − 1 no divide a k, pero p − 1,
+sı́. Por el Pequeño Teorema de Fermat, ak ≡p 1 y ak 6≡q 1 para más de la mitad de los
+elementos a (esto lo probaremos más adelante en los tests de primalidad). En este
+caso, mcd(ak − 1, n) = p.
+Example
+Sea n = 511 y tomemos B = 4. Sea k = 29 · 35 = 62208.
+Entonces,mcd(262208 − 1, 511) = 511, mientras que mcd(762208 − 1, 511) = 73.</p>
 
-<p>En la anterior, expresión los dos puntos, «:», significan «tal que».</p>
+<h2 id="primos-seguros">Primos seguros</h2>
 
-<!--Equals-->
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>Dos conjuntos \(A\) y \(B\) son <strong>iguales</strong> si, y solo si, cada elemento de \(A\) está en \(B\), y viceversa. En tal caso, se escribirá \(A=B\).</dd>
-</dl>
+<p>Como consecuencia de los comentarios sobre la seguridad del RSA anteriores, la
+elección de los primos suele hacerse del siguiente modo:</p>
+<ol>
+  <li>p y q han de verificar que p − q es un entero bastante grande (para evitar que √ ambos se encuentren en un entorno pequeño de pq.</li>
+  <li>p (y q) es tal que p − 1 tiene un factor primo grande, r (para evitar el ataque p − 1
+de Pollard).</li>
+  <li>r es un número primo tal que r − 1 tiene un factor primo grande.</li>
+  <li>p (y q) es tal que p + 1 tiene un factor primo grande (para evitar un ataque similar
+al anterior).</li>
+</ol>
 
-<dl class="e">
-  <dt>Ejemplo</dt>
-  <dd>Los conjuntos \(\{1,3\}\) y \(\{x\in\mathbb{R}:x^2-4x+3=0\}\) son iguales.</dd>
-</dl>
+<p>El hecho de usar este tipo de primos no significa que se aumente la seguridad, pero al
+menos, se evitan los ataques anteriormente citados.</p>
 
-<dl class="e">
-  <dt>Ejemplo</dt>
-  <dd>Como las soluciones reales de la ecuación \(x^2-4x+3\) son \(1\) y \(3\), entonces 
-<em class="eq">\[\{x\in\mathbb{R}:x^2-4x+3=0\}=\{1,3\}. \]</em></dd>
-</dl>
+<h2 id="el-espacio-de-mensajes">El espacio de mensajes</h2>
 
-<dl class="e">
-  <dt>Ejemplo</dt>
-  <dd>Los conjuntos \(\{1,2\}\) y \(\{1,\{2\}\}\) no son iguales, ya que \(2\not\in\{1,\{2\}\}\) (y \(\{2\}\not\in\{1,2\}\)).</dd>
-</dl>
+<p>En caso de que el espacio de mensajes sea pequeño o predecible, por ejemplo, un
+PIN de 4 dı́gitos de una tarjeta, o el encriptado carácter a carácter de un texto,
+entonces es posible encriptar todos los posibles mensajes y realizar una búsqueda
+directa.
+En el caso de encriptar carácter a carácter, dado que RSA siempre cifra m por el
+mismo valor, podemos llevar a cabo un ataque por estadı́sticas del lenguaje.</p>
 
-<!--Universal set-->
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>El <strong>conjunto universal</strong>, denotado por \(\mathbb{U}\), es el conjunto que contiene todos los objetos considerados.</dd>
-</dl>
+<h2 id="exponente-de-encriptado-pequeño">Exponente de encriptado pequeño</h2>
 
-<!--Empty set-->
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>El <strong>conjunto vacío</strong>, denotado por \(\varnothing\), es el conjunto que no tiene elementos.</dd>
-</dl>
+<p>Mensajes cortos
+Sea (n, e) la clave púlblica, con e tal que para m pequeño, c = me mod n = me ∈ N.
+Entonces la raı́z e-ésima de c proporciona m. Por ejemplo, si n ≈ 21024 y e = 3,
+entonces un mensaje m ≤ 2300 es cifrado por c ≤ 2900 y el cálculo de la raı́z cública
+de c nos darı́a el mensaje cifrado.
+Alternativa 1: si queremos usar tal exponente de encriptado hemos de usar “padding”.
+Mensajes comunes
+Otro peligro del uso de e pequeño es enviar un mismo mensaje m a, al menos, e
+destinatarios, con módulos distintos (¡¡y coprimos!!). Entonces, el sistema x ≡ni ci ,
+i = 1, . . . , e, nos produce como solución única (módulo el producto de los ni ), me . El
+cálculo entonces de la raı́z e-ésima nos proporciona m.
+Alternativa 2: no enviar el mismo mensaje a varios usuarios (usar “padding” distinto
+para cada uno) o bien usar un exponente de cifrado muy grande con muchos ceros en
+sus expresión binaria (para facilitar el proceso de encriptado), como por ejemplo
+65537.</p>
 
-<!--Cardinality-->
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>El <strong>cardinal</strong> de un conjunto \(A\), denotado por \(|A|\), es el número de elementos de \(A\).</dd>
-</dl>
+<h2 id="ataques-con-módulo-común">Ataques con módulo común</h2>
 
-<p>Según el número de elementos de un conjunto, se puede clasificar en dos tipos.</p>
+<p>Compromiso de una clave
+Supongamos que se utiliza un módulo n = pq común para un sistema de parejas de
+clave pública privada {(ei , di ) : i = 1, . . . , k}. El compromiso de una de las claves
+privadas dj para algún j = 1, . . . , k permite la aplicación de un lema anterior que
+afirmaba que es equivalente conocer la factorización de n a conocer di . De ese modo
+quedarı́an comprometidas todas las claves di , i = 1, . . . , k, dado que se conocen
+entonces Φ(n) y ei , i = 1, . . . , k.</p>
 
-<!--Finite set-->
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>Un <strong>conjunto finito</strong> es un conjunto \(A\) que satisface \(|A|&lt;\aleph_0\).</dd>
-</dl>
+<p>Ataques internos
+Como caso particular, un usuario del sistema anterior podrı́a comprometer las claves
+privadas del resto de usuarios de dicho sistema.
+Ataques con exponentes coprimos
+Supongamos que (e1 , d1 ) y (e2 , d2 ) son dos parejas de exponentes de clave pública y
+privada, que mcd(e1 , e2 ) = 1 y que se envı́a un mismo mensaje m usando ambas
+claves, es decir, c1 ≡n me1 y c2 ≡n me2 . Sean ahora s, t ∈ Z tales que 1 = e1 s + e2 t.
+Entonces c1s c2t ≡n (me1 )s (me2 )t = me1 s+e2 t = m.</p>
 
-<!--Infinite set-->
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>Un <strong>conjunto infinito</strong> es un conjunto que no es finito.</dd>
-</dl>
+<h2 id="propiedad-homomórfica">Propiedad homomórfica</h2>
+
+<p>Propiedad
+f (m1 · m2 ) = (m1 · m2 )e ≡n m1e · m2e = f (m1 ) · f (m2 ).
+Longitud del mensaje
+Supongamos que enviamos un mensaje de longitud menor de 240 . Vamos a suponer
+m = m1 · m2 , con m1 , m2 ≤ 222 . Entonces c ≡n me ≡n (m1 )e (m2 )e . Se puede
+calcular una lista de valores c · (m1e )−1 para 1 ≤ m1 ≤ 222 y almacenamos únicamente
+los últimos 50 bits. Ahora se calcula, para 1 ≤ m2 ≤ 222 , m2e y se comparan los
+resultados con la lista almacenada para obtener una lista de candidatos m1 m2 = m.
+Ataque con texto cifrado escogido
+Supongamos que interceptamos c ≡n me y podemos acceder al descifrado de otro
+mensaje distinto. Escogemos x ∈ U(Zn ) y proporcionamos el mensaje c 0 ≡n c · x e .
+Obtendrı́amos entonces c 0d ≡n (cx e )d ≡n mx. Usando x −1 obtenemos m. Este tipo
+de argumento fue usado contra una implementación del RSA en la que el servidor
+devolvı́a el mensaje descifrado al emisor si el mensaje recibido por el emisor no tenı́a
+la forma apropiada (ataque de Bleichenbacher 1998).</p>
 
   </div>
 
