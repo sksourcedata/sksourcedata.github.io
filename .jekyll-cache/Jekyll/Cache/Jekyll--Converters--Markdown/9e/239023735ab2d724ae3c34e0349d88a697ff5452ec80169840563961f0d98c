@@ -1,0 +1,43 @@
+I"S<h2 id="introducción">Introducción</h2>
+
+<dl class="prob">
+  <dt>Problema 1: Cambio de base</dt>
+  <dd>Define una función que tenga como entrada un número real entre 0 y 1 y devuelva una lista (o un array de <code class="language-plaintext highlighter-rouge">numpy</code> o similar) con las primeras 20 coordenadas de la representación del número en la base indicada.</dd>
+</dl>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">convert</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">20</span><span class="p">):</span>
+    <span class="s">"""Devuelve un número decimal entre 0 y 1 en la base especificada."""</span>
+    <span class="n">output</span><span class="o">=</span><span class="p">[]</span>
+    <span class="n">remainder</span><span class="o">=</span><span class="n">x</span>
+    <span class="n">a</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">remainder</span> <span class="o">*</span> <span class="n">base</span><span class="p">)</span>
+        <span class="n">salida</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+        <span class="n">remainder</span> <span class="o">=</span> <span class="n">remainder</span> <span class="o">*</span> <span class="n">base</span> <span class="o">-</span> <span class="n">a</span>
+    <span class="k">return</span> <span class="n">output</span>
+</code></pre></div></div>
+
+<h2 id="dimmensión-box-counting">Dimmensión box-counting</h2>
+
+<p>Los objetivos básicos a perseguir en esta práctica son los siguientes:</p>
+<ul>
+  <li>Calcular la dimensión box-counting de un conjunto de puntos.</li>
+  <li>Calcular la dimensión box-counting de una imagen.</li>
+</ul>
+
+<p>Para abrir un archivo se usa el comando <code class="language-plaintext highlighter-rouge">open</code> y para cerrarlo (lo cual es aconsejable una vez que hayamos finalizado las operaciones necesarias con él) <code class="language-plaintext highlighter-rouge">close</code>.</p>
+
+<p>Pongamos en práctica estos comandos utilizando <a href="sierpinski.txt">este archivo</a>, llamado <code class="language-plaintext highlighter-rouge">sierpinski.txt</code>. Observemos que este archivo texto contiene una gran lista de puntos en el plano.</p>
+
+<p>Vamos a almacenar todas las líneas que contiene dicho archivo en una variable como lista. Para ello, usaremos el siguiente código:</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'sierpinski.txt'</span><span class="p">)</span>
+<span class="n">lines</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="n">readlines</span><span class="p">()</span>
+<span class="n">f</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>Ya que tenemos los datos de este archivo, sigamos trabajando con él. Si usamos el comando <code class="language-plaintext highlighter-rouge">lines[:5]</code>, nos mostrará las primeras cinco líneas.</p>
+
+<p>Pongamos como objetivo extraer los puntos de cada línea. Comencemos con la primera línea. Si escribimos</p>
+
+:ET

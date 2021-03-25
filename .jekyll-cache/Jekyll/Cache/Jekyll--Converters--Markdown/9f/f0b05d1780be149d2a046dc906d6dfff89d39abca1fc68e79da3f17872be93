@@ -1,0 +1,31 @@
+I"G<table>
+  <thead>
+    <tr>
+      <th>Variables</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>site</td>
+      <td>Información general del sitio + ajustes en <code class="language-plaintext highlighter-rouge">_config.yml</code></td>
+    </tr>
+    <tr>
+      <td>page</td>
+      <td>Información específica de la página + preámbulo</td>
+    </tr>
+    <tr>
+      <td>layout</td>
+      <td>d</td>
+    </tr>
+    <tr>
+      <td>content</td>
+      <td>d</td>
+    </tr>
+    <tr>
+      <td>paginator</td>
+      <td>d</td>
+    </tr>
+  </tbody>
+</table>
+:ET

@@ -197,14 +197,9 @@
   <div class="post-content">
     <h2 id="primer-criptosistema-de-clave-pública">Primer criptosistema de clave pública</h2>
 
-<p>En 1978, los matemáticos Ron Rivest, Adi Shamir y Len Addleman publican su artículo
-«A method for Obtaining Digital Signatures and Public Key Cryptosystems» en el que
-introducen el primer criptosistema de clave pública basado en la conjetura publicada
-dos años antes por Whitfield Diffie y Martin Hellman.</p>
+<p>En 1978, los matemáticos Ron Rivest, Adi Shamir y Len Addleman publican su artículo «A method for Obtaining Digital Signatures and Public Key Cryptosystems» en el que introducen el primer criptosistema de clave pública basado en la conjetura publicada dos años antes por Whitfield Diffie y Martin Hellman.</p>
 
-<p>La función de una vı́a con puerta trasera viene definida por una aplicación
-f : Zn → Zn , con n = p · q, para p y q números primos, definida por f (g) = g e , siendo
-g un elemento invertible en Zn y mcd(e, (p − 1)(q − 1)) = 1.</p>
+<p>La función de una vía con puerta trasera viene definida por una aplicación \(f:\mathbb{Z}_n\to\mathbb{Z}_n,\) con \(n=p\cdot q,\) para \(p\) y \(q\) números primos, definida por \(f(g)=g^e,\) siendo \(g\) un elemento invertible en \(\mathbb{Z}_n\) y \(\operatorname{mcd}(e,(p-1)(q-1))=1.\)</p>
 
 <!--Figure: R. Rivest, A. Shamir y L. Addleman-->
 
@@ -212,106 +207,66 @@ g un elemento invertible en Zn y mcd(e, (p − 1)(q − 1)) = 1.</p>
 
 <dl class="d">
   <dt>Definición</dt>
-  <dd>La <strong>función indicatriz de Euler</strong> es la función \(\varphi:\mathbb{N}^{\ast}\to\mathbb{N}\), dada por
+  <dd>La <strong>función indicatriz de Euler</strong> o <strong>función \(varphi\) de Euler</strong> es la función \(\varphi:\mathbb{N}^{\ast}\to\mathbb{N}\), dada por
 <em class="eq">\[ \varphi(n):=|\mathbb{Z}_n^{\times}|, \]</em>
 donde \(\mathbb{Z}_n^{\times}\) es el grupo multiplicativo de las unidades de \(\mathbb{Z}_n.\)</dd>
 </dl>
 
-<dl class="t">
-  <dt>Teorema</dt>
-  <dd>Sea \(k\in\mathbb{N}\), \(p_1,\ldots,p_k\in\mathbb{P}\) distintos y \(e_1,\ldots,e_k\in\mathbb{N}^{\ast}\). Si \(n:=\prod_{i=1}^kp_i^{e_i}\), entonces
-<em class="eq">\[ \varphi(n)=n\prod_{i=1}^k\frac{p_i-1}{p_i}. \]</em></dd>
-</dl>
-
-<h2 id="el-teorema-del-resto-chino">El teorema del resto chino</h2>
-
-<p>Vamos a probar la fórmula que permite el cálculo de la función Φ de Euler haciendo
-uso de otro resultado clásico y conocido de la Teorı́a de Números.</p>
+<p>El siguiente teorema de teoría de números nos servirá para obtener una fórmula que nos permita el cálculo de la función indicatriz de Euler.</p>
 
 <dl class="t">
-  <dt>Teorema</dt>
-  <dd>Sean n1 , . . . , nk enteros mayores que 2, primos relativos dos a dos, y sea
-n = n1 · · · · · nk . Entonces
-Zn ∼
-= Zn1 × · · · × Znk</dd>
+  <dt>Teorema chino del resto</dt>
+  <dd>Si \(n_1,\ldots,n_k\in\mathbb{Z}\) tales que \(n_1,\ldots,n_k&gt;2\) y son primos relativos dos a dos, entonces
+<em class="eq">\[ \mathbb{Z}_{n_1\cdots n_k}\cong\mathbb{Z}_{n_1}\times\cdots\times\mathbb{Z}_{n_k}.\]</em></dd>
 </dl>
 
 <dl class="p">
   <dt>Demostración</dt>
-  <dd>Sea la función f : Z → Zn1 × · · · × Znk definida por
-a 7→ (a + n1 Z, . . . , a + nk Z)
-f es claramente un morfismo de anillos y es fácil ver que
-Ker (f ) = ∩ki=1 Ker (x 7→ x + ni Z) = ∩ki=1 ni Z = nZ
-Por tanto, por el primer teorema de isomorfı́a, Z/nZ = Z/Ker (f ) ∼
-= Im(f ). De este
-Q
-modo, |Im(f )| = n. Por otro lado, |Zn1 × · · · × Znk | = ki=1 ni = n y dado que n es
-finito y que Im(f ) ⊆ Zn1 × · · · × Znk y ambos conjuntos tiene el mismo cardinal, n,
-entonces Im(f ) = Zn1 × · · · × Znk , lo que completa la prueba.</dd>
+  <dd>Sean \(n_1,\ldots,n_k\in\mathbb{Z}\) tales que \(n_1,\ldots,n_k&gt;2\) y son primos relativos dos a dos. Definamos \(n:=n_1\cdots n_k\) y la función \(f:\mathbb{Z}\to\mathbb{Z}_{n_1}\times\cdots\times\mathbb{Z}_{n_k} \) dada por
+<em class="eq">\[ f(a):=(a+n_1\mathbb{Z},\ldots,a+n_k\mathbb{Z}) \]</em>
+Observemos que \(f\) es un homomorfismo de anillos y
+<em class="eq">\[ \ker(f)=\bigcap_{i=1}^{k}\ker(f_i)=\bigcap_{i=1}^kn_i\mathbb{Z}=n\mathbb{Z}, \]</em>
+donde \(f_i\) es la componente \(i\)-ésima de \(f\). Aplicando el primer teorema de isomorfía, 
+<em class="eq">\[ \mathbb{Z}_n=\frac{\mathbb{Z}}{n\mathbb{Z}}=\frac{\mathbb{Z}}{\ker(f)}\cong\operatorname{Im}(f). \]</em>
+Luego, \(|\operatorname{Im}(f)|=n\). Por otro lado, 
+\(|\mathbb{Z}_{n_1}\times\cdots\times\mathbb{Z}_{n_k}|=\prod_{i=1}^kn_i=n.\)
+Como \(n\) es finito, \(\operatorname{Im}(f)\subseteq\mathbb{Z}_{n_1}\times\cdots\times\mathbb{Z}_{n_k}\) y ambos conjuntos tienen cardinal \(n\), entonces \(\operatorname{Im}(f)=\mathbb{Z}_{n_1}\times\cdots\times\mathbb{Z}_{n_k},\) lo que completa la prueba.</dd>
 </dl>
 
 <dl class="t">
   <dt>Teorema</dt>
-  <dd>Sea n = ki=1 pi i ∈ N&gt;0 , donde pi son primos distintos y ei ∈ N&gt;0 . Entonces
-Φ(n) =
-k
-Y
-e −1
-pi i
-(pi − 1) = n ·
-i=1
-k
-Y
-pi − 1
-pi
-i=1</dd>
+  <dd>Sea \(k\in\mathbb{Z}^+,\) \(p_1,\ldots,p_k\in\mathbb{P}\) distintos y \(e_1,\ldots,e_k\in\mathbb{Z}^+.\) Si \(n:=\prod_{i=1}^kp_i,\) entonces
+<em class="eq">\[ \varphi(n)=n\prod_{i=1}^k\frac{p_i-1}{p_i} \]</em></dd>
 </dl>
 
 <dl class="p">
   <dt>Demostración</dt>
-  <dd>Como por el Teorema del resto chino se tiene que
-Zn ∼
-= Zn1 × · · · × Znk
-se sigue que
-U(Zn ) ∼
-= U(Zn1 ) × · · · × U(Znk )
-e
-de donde, para el caso ni = pi i con pi con primos distintos y ei ∈ N&gt;0 , se tiene que
-Φ(n) =
-k
-Y
-e
-Φ(pi i )
-i=1
-Ahora bien,
-e
-mcd(a, pi i )
-= 1 si y solo si mcd(a, pi ) = 1, con lo que
-e
-e −1
-|U(Zpei )| = pi i − pi i
-i
-e −1
-= pi i
-(pi − 1)</dd>
+  <dd>Por el teorema del resto chino,
+<em class="eq">\[ \mathbb{Z}_n\cong\mathbb{Z}_{n_1}\times\cdots\times\mathbb{Z}_{n_k}, \]</em>
+donde \(n_i=p_i^{e_i}\) para cada \(i\in\{1,\ldots,k\}.\) De aquí, se deduce
+<em class="eq">\[ \mathbb{Z}_n^{\times}\cong\mathbb{Z}_{n_1}^{\times}\times\cdots\times\mathbb{Z}_{n_k}^{\times}. \]</em>
+Luego,
+<em class="eq">\[ \varphi(n)=\prod_{i=1}^n\varphi(p_i^{e_i}). \]</em>
+Como \(\operatorname{mcd}(a,p_i^{e_i})=1\) si y solo si \(\operatorname{mcd}(a,p_i)=1,\) entonces
+<em class="eq">\[ \left|\mathbb{Z}_{p_i^{e_i}}^{\times}\right|=p_i^{e_i}-p_i^{e_i-1}=p_i^{e_i}\frac{p_i-1}{p_i}.\]</em></dd>
 </dl>
 
-<h2 id="el-criptosistema-rsa">El criptosistema RSA</h2>
+<h2 id="criptosistema-rsa">Criptosistema RSA</h2>
 
 <p>El criptosistema de clave pública RSA se construye del siguiente modo:</p>
 <ol>
   <li>Alicia elige dos números primos distintos y muy grandes p, q ≥ 21024.</li>
-  <li>Alicia calcula n = pq y Φ(n) = (p − 1)(q − 1).</li>
+  <li>Alicia calcula n = pq y Φ(n) = (p - 1)(q - 1).</li>
   <li>Alicia escoge e &lt; Φ(n) y tal que mcd(e, Φ(n)) = 1 y calcula d ∈ N, d &lt; Φ(n) tal
 que ed + v Φ(n) = 1 para algún v ∈ Z.</li>
-  <li>Alicia publica la función de una vı́a con puerta trasera f : Zn → Zn dada por m 7→ me , manteniendo p, q, Φ(n) y d en secreto.</li>
+  <li>Alicia publica la función de una vía con puerta trasera f : Zn → Zn dada por m 7→ me , manteniendo p, q, Φ(n) y d en secreto.</li>
 </ol>
 
 <dl>
   <dt>Nota</dt>
-  <dd>Si Bob envı́a a Alice el número m ∈ U(Zn ) usando f , entonces, Alice recupera el
+  <dd>Si Bob envía a Alice el número m ∈ U(Zn ) usando f , entonces, Alice recupera el
 mensaje recibido usando la puerta trasera d ya que:
-(me )d = med (mod n) = m1−Φ(n)v (mod n) = m · (mΦ(n) )−v (mod n) = m (mod n)
+(me )d = med (mod n) = m1-Φ(n)v (mod n) = m · (mΦ(n) )-v (mod n) = m (mod n)
 Teniendo en cuenta que, dado que m ∈ U(Zn ) y |U(Zn )| = Φ(n), entonces
 mΦ(n) = 1 (mod n) .</dd>
 </dl>
@@ -319,12 +274,12 @@ mΦ(n) = 1 (mod n) .</dd>
 <h2 id="preguntas">Preguntas</h2>
 
 <ol>
-  <li>Si Bob envı́a un valor m, que no es una unidad de Zn , ¿puede Alice recuperar m?</li>
-  <li>¿Cómo de difı́cil es calcular me y (me )d ?</li>
-  <li>¿Cómo es de difı́cil encontar números primos como los requeridos para construir
+  <li>Si Bob envía un valor m, que no es una unidad de Zn , ¿puede Alice recuperar m?</li>
+  <li>¿Cómo de difícil es calcular me y (me )d ?</li>
+  <li>¿Cómo es de difícil encontar números primos como los requeridos para construir
 el criptosistema?</li>
-  <li>¿Cómo es de difı́cil encontrar los números primos p y q a partir de la información
-pública? ¿Cómo es de difı́cil factorizar n?</li>
+  <li>¿Cómo es de difícil encontrar los números primos p y q a partir de la información
+pública? ¿Cómo es de difícil factorizar n?</li>
   <li>¿Conocer p y q es equivalente a conocer Φ(n)?</li>
 </ol>
 
@@ -338,10 +293,10 @@ de que m no sea coprimo con n.</dd>
 
 <dl class="d">
   <dt>Respuesta 2</dt>
-  <dd>Sea e un número natural y sea k la longitud de la representación binaria de e.
+  <dd>Sea e un número natural y sea k la longitud de la representación binaria de e.
 Entonces me (mod n) puede calcularse en, a lo sumo, 2k multiplicaciones en Zn .
 P
-Para ello, sea e = ki=1 ei 2i la representación binaria de e. Entonces
+Para ello, sea e = ki=1 ei 2i la representación binaria de e. Entonces
 me =
 k
 Y
@@ -369,13 +324,13 @@ variable aquellos que puedan ser reutilizados, en cuyo caso se tienen, exactamen
 productos.</dd>
 </dl>
 
-<h2 id="complejidad-algorı́tmica">Complejidad algorı́tmica</h2>
+<h2 id="complejidad-algorítmica">Complejidad algorítmica</h2>
 
 <dl class="d">
   <dt>Definición</dt>
   <dd>Sean \(f,g:\mathbb{Z}\to\mathbb{R}^+\) dos funciones. Se dice que \(f\) es:
     <ul>
-      <li>más compleja que \(g\) si, y solo si, <em class="eq">\[ \underset{n\to\infty}{\operatorname{lím}}\frac{f(n)}{g(n)}=+\infty. \]</em></li>
+      <li>más compleja que \(g\) si, y solo si, <em class="eq">\[ \underset{n\to\infty}{\operatorname{lím}}\frac{f(n)}{g(n)}=+\infty. \]</em></li>
       <li>menos compleja que \(g\) si, y solo si, <em class="eq">\[ \underset{n\to\infty}{\operatorname{lím}}\frac{f(n)}{g(n)}=0. \]</em></li>
       <li>equivalente a \(g\) en complejidad si, y solo si, existe \(k\in\mathbb{R}^+\) satisfaciendo <em class="eq">\[ \underset{n\to\infty}{\operatorname{lím}}\frac{f(n)}{g(n)}=k. \]</em></li>
     </ul>
@@ -384,7 +339,7 @@ productos.</dd>
 
 <h2 id="funciones-de-complejidad">Funciones de complejidad</h2>
 
-<p>Las funciones de complejidad más usuales viene dadas por el siguiente cuadro:</p>
+<p>Las funciones de complejidad más usuales viene dadas por el siguiente cuadro:</p>
 
 <table>
   <thead>
@@ -437,7 +392,7 @@ productos.</dd>
 <em class="eq">\[O(f(n))=\left\{g\in(\mathbb{R}^+)^{\mathbb{Z}}:\underset{n\to\infty}{\operatorname{lím}}\frac{g(n)}{f(n)} &lt; \infty\right\}\]</em></dd>
 </dl>
 
-<p>Los órdenes de complejidad más habituales son los siguientes:</p>
+<p>Los órdenes de complejidad más habituales son los siguientes:</p>
 
 <table>
   <tbody>
@@ -459,7 +414,7 @@ productos.</dd>
     </tr>
     <tr>
       <td>\(O(n^2)\)</td>
-      <td>orden cuadrático</td>
+      <td>orden cuadrático</td>
     </tr>
     <tr>
       <td>\(O(n^k)\)</td>
@@ -480,7 +435,7 @@ productos.</dd>
 
 <p>La siguiente tabla muestra el comportamiento en tiempo aproximado (\(1\mu\text{s}=10^{-6}\,\text{s},\) \(1\,\text{ms}=10^{-3}\,s\)) de los distintos órdenes de magnitud para ciertos valores de \(n.\)</p>
 
-<table>
+<table class="eq">
   <tbody>
     <tr>
       <td>\(n\)</td>
@@ -570,8 +525,6 @@ es o no primo es un problema de clase P.</li>
   </dd>
 </dl>
 
-<p>14</p>
-
 <h2 id="problemas-de-clase-np">Problemas de clase NP</h2>
 
 <dl class="d">
@@ -592,20 +545,18 @@ polinomial.</dd>
 sea de clase P.</dd>
 </dl>
 
-<p>15</p>
-
 <h2 id="seguridad-del-rsa">Seguridad del RSA</h2>
 
 <dl class="l">
   <dt>Lema</dt>
-  <dd>Conocer los primos p y q de la factorización de la clave pública del RSA es equivalente
+  <dd>Conocer los primos p y q de la factorización de la clave pública del RSA es equivalente
 computacionalmente a conocer n y Φ(n).</dd>
 </dl>
 
 <dl class="p">
   <dt>Demostración</dt>
-  <dd>Supongamos que conocemos n y Φ(n). Entonces n = pq y Φ(n) = (p − 1)(q − 1),
-sistema de ecuaciones que puede resolverse en tiempo polinomial. El recı́proco es
+  <dd>Supongamos que conocemos n y Φ(n). Entonces n = pq y Φ(n) = (p - 1)(q - 1),
+sistema de ecuaciones que puede resolverse en tiempo polinomial. El recíproco es
 trivial.</dd>
 </dl>
 
@@ -619,35 +570,92 @@ a factorizar.</dd>
 
 <dl class="p">
   <dt>Demostración</dt>
-  <dd>Si p, q y e son conocidos, entonces es obvio que d se calcula muy fácilmente.
-Sea ahora d la clave privada. De este modo, med−1 ≡n 1 (med ≡n m), para todo m tal
-que mcd(m, n) = 1, de donde se tiene que Φ(n) divide a ed − 1. Sea pues
-k = ed − 1 y escribamos k = 2t r , con r impar. Como p y q son impares,
-Φ(n) = (p − 1)(q − 1) es divisible por 4 (al menos) y, de este modo, t ≥ 2. Sea ahora
-g aleatorio tal que mcd(g, n) = 1 aleatorio y consideremos la sucesión:
+  <dd>Si p, q y e son conocidos, entonces es obvio que d se calcula muy fácilmente.
+Sea ahora d la clave privada. De este modo, med-1 ≡n 1 (med ≡n m), para todo m tal
+que mcd(m, n) = 1, de donde se tiene que Φ(n) divide a ed - 1. Sea pues
+k = ed - 1 y escribamos k = 2t r , con r impar. Como p y q son impares,
+Φ(n) = (p - 1)(q - 1) es divisible por 4 (al menos) y, de este modo, t ≥ 2. Sea ahora
+g aleatorio tal que mcd(g, n) = 1 aleatorio y consideremos la sucesión:
 t
 g, g 2r , . . . g 2 r
 i
-i−1
+i-1
 Sea ahora i el menor entero tal que g 2 r ≡n 1, con lo que g 2 r 6≡n 1 si i ≥ 1.
-i−1
+i-1
 Por el Teorema del resto chino, se tiene que Zn ∼
-= Zp × Zq y dado que g 2 r es la raı́z
+= Zp × Zq y dado que g 2 r es la raíz
 i
-i−1
+i-1
 cuadrada de g 2 r , entonces la imagen de g 2
 (1, 1) ∈ Zp × Zq , es decir, (±1, ±1).
 r
-es una de las cuatro raı́ces de
-i−1
+es una de las cuatro raíces de
+i-1
 En primer lugar (1, 1) no puede ser, porque se tiene que g 2 r 6≡n 1. En caso de que
-i−1
-i−1
-sea (−1, −1), entonces mcd(g 2 r + 1, n) = n, ya que g 2 r ≡n −1. Finalmente, en
-i−1
+i-1
+i-1
+sea (-1, -1), entonces mcd(g 2 r + 1, n) = n, ya que g 2 r ≡n -1. Finalmente, en
+i-1
 2
 r
-el caso de ser (−1, 1), se tendrı́a que mcd(g+1, n) = p.</dd>
+el caso de ser (-1, 1), se tendría que mcd(g+1, n) = p.</dd>
+</dl>
+
+<dl class="ex">
+  <dt>Ejercicio</dt>
+  <dd>Determina \(u,v\in\mathbb{Z}\) que satisfacen la identidad \(3120u+251v=\operatorname{mcd}(3120,251).\)</dd>
+</dl>
+
+<dl class="s">
+  <dt>Solución</dt>
+  <dd><em class="eq">\[\begin{align}3120&amp;=251\cdot12+108\Rightarrow108=3120+251\cdot(-12)\\ 251&amp;=108\cdot2+35\Rightarrow35=251+108\cdot(-2)\\ 108&amp;=35\cdot3+3\Rightarrow3=108+35\cdot(-3)\\ 35&amp;=3\cdot11+2\Rightarrow2=35+3\cdot(-11)\\ 3&amp;=2\cdot1+1\Rightarrow1=3+2\cdot(-1)\end{align}\]</em>
+<em class="eq">\[\begin{align}1&amp;=(3\cdot 1+2\cdot (-1))=(3\cdot 1+(35+3\cdot (-11))\cdot (-1))=(3\cdot 1+(35\cdot (-1)+3\cdot 11))\\&amp;=(35\cdot (-1)+3\cdot 12)=(35\cdot (-1)+(108+35\cdot (-3))\cdot 12)=(35\cdot (-1)+(108\cdot 12+35\cdot (-36)))\\&amp;=(108\cdot 12+35\cdot (-37))=(108\cdot 12+(251+108\cdot (-2))\cdot (-37))=(108\cdot 12+(251\cdot (-37)+108\cdot 74))\\&amp;=(251\cdot (-37)+108\cdot 86)=(251\cdot (-37)+(3120+251\cdot (-12))\cdot 86)=(251\cdot (-37)+(3120\cdot 86+251\cdot (-1032)))\\&amp;=(3120\cdot 86+251\cdot (-1069))\end{align}\]</em></dd>
+</dl>
+
+<p><strong>Atención. Los siguientes dos ejemplos están pendientes de ser colocados en su correspondiente sección.</strong></p>
+
+<dl class="e">
+  <dt>Ejemplo sobre otro tema</dt>
+  <dd>Sean \(u_1\), \(u_2\) y \(u_3\) tres usuarios que comparten los siguientes parámetros con un servidor \(s\).
+    <blockquote>
+      <p>Utilizaremos el teorema chino del resto. 
+Crearemos un criptosistema que para cifrar sea multiplicar por un número y describrar multiplicar por el inverso de dicho número.
+Supongamos que para cada \(i\in\{1,2,3\}\), \(u_i\) comparte con \(s\) un mensaje \(m_i\in\mathbb{Z}\), \(m_i\geq2\), y una función \(E_i:\mathbb{Z}_{m_i}\to\mathbb{Z}_{m_i}\) dada por
+<em class="eq">\[ E(x)\equiv_{m_i}a_ix. \]</em>
+Vamos a definir un esquema de envío de mensajes del tipo Secure Locker</p>
+      <ul>
+        <li>\(U_1\) comparte con \(S\): \(m_1=11,\) \(a_1=6.\)</li>
+        <li>\(U_2\) comparte con \(S\): \(m_2=13,\) \(a_2=8.\)</li>
+        <li>\(U_3\) comparte con \(S\): \(m_3=10,\) \(a_3=7.\)
+Supongamos que \(s\) quiere enviar un mensaje \(c=4\) a \(u_1\), \(u_2\) y \(u_3\) de forma confidencial.
+\(s\) calcula:</li>
+        <li>\(E_1(4)\equiv_{11}6\cdot4\equiv_{13}6\equiv_{11}2\)</li>
+        <li>\(E_2(4)\equiv_{13}8\cdot4\equiv_{13}6\equiv_{13}6\)</li>
+        <li>\(E_3(4)\equiv_{10}7\cdot4\equiv_{10}8\)
+<em class="eq">\[\left\{\begin{align} x&amp;\equiv_{11}2 \\ x&amp;\equiv_{13}6 \\ x&amp;\equiv_{10}8 \end{align}\right.\]</em>
+<em class="eq">\[\begin{align} x\end{align}\]</em>
+Entonces, \(s\)</li>
+        <li>\(u_1\) calcula \(838\equiv_{11}\)</li>
+        <li>\(u_2\) calcula \(838\equiv_{13}6\) y descifra \(6\), calculando
+<em>\[ 6\cdot8^{-1}\equiv_{13}6\cdot5\equiv_{13}4 \]</em></li>
+      </ul>
+    </blockquote>
+  </dd>
+</dl>
+
+<dl class="e">
+  <dt>Ejemplo curva elíptica con CrypTool</dt>
+  <dd>ECC Demonstration 1.1.1: Point addition on elliptic curves over discrete groups of prime numbers
+    <blockquote>
+      <p><code class="language-plaintext highlighter-rouge">a=11</code>, <code class="language-plaintext highlighter-rouge">p=20</code>, <code class="language-plaintext highlighter-rouge">p=71</code>
+<code class="language-plaintext highlighter-rouge">29*P</code>
+(28,46)  27  27*P</p>
+      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>P=(28/46)
+11P=(41/5)
+R=11*P=(38/70)
+</code></pre></div>      </div>
+    </blockquote>
+  </dd>
 </dl>
 
   </div>

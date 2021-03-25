@@ -1,0 +1,62 @@
+I"C
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Un <strong>conjunto</strong> es una colección de objetos bien definida. Los objeto de un conjunto son llamados <strong>elementos</strong>.</dd>
+</dl>
+
+<p>Bien definida quiere decir que no hay duda de si un elemento pertenece o no al conjunto.</p>
+
+<p>Los elementos pueden ser cualquier cosa: números, letras, colores, otros conjuntos, etc.</p>
+
+<p>Los conjuntos se suelen denotar por letras mayúsculas y no importa el orden de sus elementos. Se pueden definir de dos maneras:
+<em>Por enumeración.</em> Enumerando o listando todos sus elementos separándolos por comas y entre llaves.
+<em>Por compresión.</em> Declarando la propiedad o propiedades que deben tener todos sus elementos.</p>
+
+<p>El conjunto de las vocales del alfabeto se puede escribir:</p>
+<ul>
+  <li>Por enumeración: \(\{a,e,i,o,u\}\).</li>
+  <li>Por compresión: \(\{x:x\text{ es una vocal del alfabeto}\}\).</li>
+</ul>
+
+<p>En la anterior, expresión los dos puntos, «:», significan «tal que».</p>
+
+<dl>
+  <dt>Definición</dt>
+  <dd>Dos conjuntos \(A\( y \(B\( son <strong>iguales</strong> si, y solo si, cada elemento de \(A\( está en \(B\(, y viceversa. En tal caso, se escribirá \(A=B\(.</dd>
+</dl>
+
+<p>\begin{ejem} % Ejem. Conjunto iguales
+    Los conjuntos \({1,3}\ y \({x\in\R:x^2-4x+3=0}\ son iguales.
+\end{ejem}</p>
+
+<p>\begin{solejem} % Sol.
+    Como las soluciones reales de la ecuación \(x^2-4x+3\ son \(1\ y \(3\, entonces \({x\in\R:x^2-4x+3=0}=\{1,3\}\).
+\end{solejem}</p>
+
+<p>\begin{ejem} % Ejem. Conjuntos no iguales
+    Los conjuntos \(\{1,2\}\) y \({1,{2}}\ no son iguales, ya que \(2\not\in{1,{2}}\ (y \({2}\not\in{1,2}\).
+\end{ejem}</p>
+
+<p>\begin{defi} % Def. Universal set
+    El \tdef{conjunto universal}, denotado por \(\mathbb{U}\(, es el conjunto que contiene todos los objetos considerados.
+\end{defi}</p>
+
+<p>\begin{defi} % Def. Empty set
+    El \tdef{conjunto vacío}, denotado por \(\varnothing\(, es el conjunto que no tiene elementos.
+\end{defi}</p>
+
+<p>\begin{defi} % Def. Cardinality of a set
+    El \tdef{cardinal} de un conjunto \(A\(, denotado por \(\card{A}\(, es el número de elementos de \(A\(.
+\end{defi}</p>
+
+<p>Según el número de elementos de un conjunto, se puede clasificar en dos tipos.</p>
+
+<p>\begin{defi} % Def. Conjunto finito e infinito
+    Sea \(A\( un conjunto. Se dice que:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    \item \\(A\\( es \tdef{finito} si \\(\va A&lt;\infty\\(.
+    \item \\(A\\( es \tdef{infinito} si \\(\va A=\infty\\(.
+</code></pre></div></div>
+
+<p>\end{defi}</p>
+:ET

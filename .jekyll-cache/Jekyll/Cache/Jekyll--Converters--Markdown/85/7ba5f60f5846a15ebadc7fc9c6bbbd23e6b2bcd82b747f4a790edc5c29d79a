@@ -1,0 +1,157 @@
+I"�<h2 id="hiperespacio">Hiperespacio</h2>
+
+<p>En lo sucesivo, dado un espacio métrico \((X,d)\), \(A\subseteq X\) y \(\varepsilon\in\mathbb{R}^+\), consideraremos la siguiente notación:</p>
+<ul>
+  <li>\(\mathcal{P}_0(X)\) es la familia formada por todos los subconjuntos no vacíos de \(X.\)</li>
+  <li>\(\mathcal{C}_0(X)\) es la familia formada por todos los subconjuntos cerrados no vacíos de \(X.\)</li>
+  <li>\(\mathcal{K}_0(X)\) todos los subconjuntos compactos no vacíos de \(X.\)</li>
+  <li>\(d(x,A):=\operatorname{ı́nf}\{d(x,y):y\in A\}.\)</li>
+  <li>\(B_{\varepsilon}(A):=\{x\in X:d(x,A)&lt;\varepsilon\}.\)</li>
+  <li>\(\overline{B}_{\varepsilon}(A):=\{x\in X:d(x,A)\leq\varepsilon\}.\)</li>
+</ul>
+
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Sean A, B ∈ P0 (X ).
+D(A, B) = sup{d(x, B) : x ∈ A}. (casi-pseudo-métrica de
+Hausdorff)
+dH (A, B) = máx{D(A, B), D(B, a)} (pseudo-métrica de
+Hausdorff).</dd>
+</dl>
+
+<dl class="l">
+  <dt>Lema</dt>
+  <dd>Sea \((X,d)\) un espacio métrico y \(A,B,C\in\mathcal{P}_0(X)\).
+Si \(A\subseteq B\) entonces \(D(A,B)=0\)
+D(A, B) = D(A, B).
+Si \(D(A,B)=0\), entonces \(A\subseteq B.\)
+\(D(A,B)\leq D(A,C)+D(C,B).\)</dd>
+</dl>
+
+<dl class="l">
+  <dt>Lema</dt>
+  <dd>Sea \((X,d)\) un espacio métrico, \(A,B,C\in\mathcal{P}_0(X)\) y ε, δ &gt; 0.
+Si \(A\subseteq B_{\varepsilon}(C)\) y C ⊆ B(B, δ) entonces A ⊆ B(B, ε + δ.
+    <ul>
+      <li>\(d_H(A,B) ≤ ε\) si y sólo si A ⊆ B[B, ε]\) y \(B ⊆ B[A, ε]\).</li>
+      <li>\(d_H(A,B)=\operatorname{ı́nf}\{\varepsilon&gt;0:A\subseteq B_\varepilon(B),\;B\subseteq\overline B_\varepilon(A)}\).</li>
+      <li>\(d_H(A,B)=d_H(A,B)\).</li>
+      <li>\(d_H(A,B)=0\) si y solo si \(A = B\).</li>
+      <li>\(d_H(A,B)≤d_H(A,C)+d_H(C,B)\).</li>
+    </ul>
+  </dd>
+</dl>
+
+<dl class="t">
+  <dt>Teorema</dt>
+  <dd>dH es una métrica en C0 (X ) y en K0 (X ) y una pseudo-métrica en
+P0 (X ).
+Definición
+(K0 (X ), dH ): hiperespacio de X .</dd>
+</dl>
+
+<dl class="l">
+  <dt>Lema</dt>
+  <dd>Sea K ∈ K0 (X ) y x ∈ X . Entonces existe y ∈ K tal que
+d(x, K ) = d(x, y ).
+Sea (xn ) una sucesión de Cauchy. Entonces existe una
+1
+subsucesión σ tal que d(xσ(n) , xσ(n−1) ) &lt; 2n−1
+para todo
+n ∈ N.
+1
+Sea (yn ) una sucesión tal que d(yn , yn−1 ) &lt; 2n−1
+para todo
+1
+n ∈ N. Entonces d(yn , yn+h ) &lt; 2n−1 , para todo h ∈ N.</dd>
+</dl>
+
+<dl class="t">
+  <dt>Teorema de Zeron-Morita</dt>
+  <dd>Si \((X,d)\) un espacio métrico completo, entonces \((\mathcal{K}_{0}(X ),d_H)\) es un espacio métrico completo.</dd>
+</dl>
+
+<h2 id="conjuntos-autosimilares">Conjuntos autosimilares</h2>
+
+<p>Recordatorio
+Definición (aplicación contractiva)
+Sean (X , d) e (Y , ρ) dos espacios métricos y f : X → Y una
+aplicación. Se dice que f es contractiva o que f es una contracción
+si existe un número (el factor de contracción) 0 ≤ c &lt; 1 tal que
+ρ(f (x), f (y )) ≤ cd(x, y ), para todo x, y ∈ X.</p>
+
+<p>Definición (punto fijo)
+Sean (X , d) un espacio métrico y f : X → X una aplicación. Se
+dice que x es un punto fijo de f si f (x) = x.
+Teorema (del punto fijo de Banach)
+Sean (X , d) un espacio métrico completo y f : X → X una
+contracción. Entonces f tiene un único punto fijo x0 ∈ X . Además,
+si x ∈ X entonces f n (x) → x0 .</p>
+
+<p>Definición (operador de Hutchinson)
+Sea {f1 , . . . , fm } un conjunto finito de contracciones en un espacio
+métric (X , d). Se llama operador de Hutchinson
+a la aplicación
+S
+f : K0 (X ) → K0 (X ) dada por f (A) = m
+f
+(A).
+i=1 i</p>
+
+<p>Proposición
+El operador de Hutchinson es una contracción en el hiperespacio
+(K0 (X ), dH ).</p>
+
+<p>Definición (sistema de funciones iteradas)
+Sea {f1 , . . . , fm } un conjunto finito de contracciones en un espacio
+métrico completo (X , d). El par (X , {f1 , . . . , fm }) se llama sistema
+de funciones iteradas (IFS).
+Sea (X , {f1 , . . . , fm }) un sistema de funciones iteradas, entonces el
+operador de Hutchinson es una contracción en el hiperespacio
+(K0 (X ), dH ). Por el Teorema de Zenor-Morita, el hiperespacio es
+completo, por lo que aplicando el Teorema del
+S punto fijo de Banach
+existe un único K ∈ K0 (X ) tal que f (K ) = m
+i=1 fi (K ) = K .</p>
+
+<p>Definición (atractor de un sistema de funciones iteradas)
+K se llama atractor del sistema de funciones iteradas. Cuando las
+aplicaciones fi son similaridades (d(fi (x), fi (y )) = ci d(x, y )), se
+dice que K es un conjunto autosimilar.</p>
+
+<p>Observación. Por el Teorema del punto fijo de Banach, sabemos que si \(E\) es cualquier compacto no vacı́o, entonces \(f^n(E)\) converge al atractor \(K\).</p>
+
+<h2 id="dimensión-de-conjuntos-autosimilares">Dimensión de conjuntos autosimilares</h2>
+
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Sea {(X , {f1 , . . . , fm }) un sistema de funciones iteradas. Se dice
+que el sistema de funciones iteradas verifica la condición de
+conjunto abierto (OSC) si existe un abierto V de X tal quei:
+fi (V ) ∩ fj (V ) = ∅ para todo i 6= j.
+S
+f (V ) = m
+i=1 fi (V ) ⊆ V .
+Se dice que {(X , {f1 , . . . , fm }) verifica la propiedad fuerte de
+conjunto abierto (SOSC) si además V ∩ K 6= ∅.</dd>
+</dl>
+
+<dl class="t">
+  <dt>Teorema de Moran</dt>
+  <dd>Sea \(\left(\mathbb{R}^n,\left\{f_i\right\}<em>{i=1}^m\right)\) un sistema de funciones iteradas, donde las \(f_i\) son similaridades con factor de similaridad \(c_i\). Si \(K\) es el conjunto autosimilar asociado, entonces
+*\[\mathrm{dim}_H(K)=\mathrm{dim}_B(K)=s, \]*{: .eq}
+donde \(s\) es la solución de la ecuación \(\sum</em>{i=1}^mc_i^s=1\). Además, \( 0 &lt; H^s(K) &lt; +\infty \).</dd>
+</dl>
+
+<dl class="t">
+  <dt>Teorema del collage</dt>
+  <dd>Sea \(\left(\mathbb{R}^n,\left\{f_i\right\}<em>{i=1}^m\right)\) un sistema de funciones iteradas. Si \(c\) es el máximo de los factores de contracción de las funciones \(\{f_i\}</em>{i=1}^m\), entonces para todo \(E\in\mathcal{K}_0(X)\),
+<em class="eq">\[d_H(E,K)\leq\frac{d_H(E,f(E))}{1-c}, \]</em>
+donde \(K\) es el atractor del sistema de funciones iteradas.</dd>
+</dl>
+
+<dl class="c">
+  <dt>Corolario</dt>
+  <dd>Sea \(E\in\mathcal{K}_0(\mathbb{R}^n)\) y \(\varepsilon\in]0,+\infty[\). Entonces, existen unas similaridades \(S_1,\ldots,S_m\) satisfaciendo \(d_H(E,K)&lt;\varepsilon\), donde \(K\) es el conjunto autosimilar asociado.</dd>
+</dl>
+:ET

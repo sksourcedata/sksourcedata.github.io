@@ -1,0 +1,33 @@
+I"�<p>A continuación, se da una orientación para empezar:
+\begin{itemize}</p>
+<ul>
+  <li><strong>Aprende álgebra lineal.</strong> Es necesario aprender conceptos sobre vectores y matrices como el producto escalar, producto vectorial y transformaciones.</li>
+  <li><strong>Aprende C++ (o cualquier otro lenguaje de programación).</strong> Hay que saber como programar. Se recomienda aprender C++. Será necesario saber sobre clases, métodos, herencia, polimorfismo y encapsulamiento.</li>
+  <li><strong>Desarrolla un motor de cálculo vectorial.</strong> Usa tu conocimiento sobre vectores, matrices y programación para desarrollar un motor de cálculo.</li>
+  <li><strong>Aprende computación gráfica.</strong> Familiarízate con la computación gráfica, sobre todo con la tubería de renderizado (Rendering Pipeline) y sombreadores. Evita el uso de OpenGL al comienzo. Cuesta entender su API si tienes poco conocimiento sobre los conceptos de computación gráfica.</li>
+  <li><strong>Aprende OpenGL y haz muchos proyectos.</strong> Una vez que te sientas cómodo con los conceptos de computación gráfica, aprende sobre la API de OpenGL y sus sombreadores. Haz tantos proyectos como puedas. Aprende tanto renderizar personajes como rotar y trasladar personajes. También, debes saber cómo colocar texturas y cómo funciona las luces. Se recomienda hacer tantos proyectos como se pueda para esta parte.</li>
+  <li><strong>Aprende patrones de diseño.</strong> Es necesario aprender la arquitectura de las API. Un motor de juego es simplemente una API, un entorno de trabajo, que se encarga de todo el renderizado, física y operaciones matemáticas. Es fundamental desarrollar una API que es modular, flexible, sostenible y adaptable.
+    <blockquote>
+      <p>Para el desarrollo, necesitaras aprender patrones de diseño (Design Patterns). La mayoría de patrones comunes de diseño son Singleton, Observer, Strategy, Compositer, Factory entre otros.
+<strong>Desarrolla un motor de renderizado.</strong> Combina tu conocimiento sobre álgebra lineal, computación gráfica, OpenGL y patrones de diseño para desarrollar un motor de renderizado.
+<strong>Revisa las leyes de movimiento de Newton.</strong> La parte complicada del motor es el motor de física. Para desarrollarlo, es necesario conocer primero las leyes de movimiento de Newton y cómo se implementan, usando algoritmos como los métodos de Runge-Kutta.
+<strong>Aprende algoritmos de geometría computacional.</strong> Un motor de juego no puede serlo sin detección de colisiones. Para desarrollar un sistema de detección de colisiones, es necesario aprender algoritmos de geometría computacional tales como GJK, BVH y Sutherland-Hodgman. Estos algoritmos son usados para detectar cuándo y dónde ocurre una colisión, y qué objetos son más propensos a chocar.
+<strong>Desarrolla un motor de física.</strong> Una vez conocidos los algoritmos mencionados anteriormente, deberías ser capaz de desarrollar un motor de física con un sistema de detección de colisiones.
+<strong>Desarrolla un juego. Prueba y error.</strong> Llegado a este punto, tiene un motor de juego. Desarrolla tantos juegos como puedas para probar su funcionamiento y corregir errores que aparezcan. También, puedes implementar nuevas funciones.
+\end{itemize}</p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>Algunos libros útiles para empezar son los siguientes:</p>
+<ul>
+  <li>Fletcher Dunn, Ian Parberry. <em>3D Math Primer for Graphics and Game Development.</em></li>
+  <li>Graham Sellers, Richard S. Wright, Nicholas Haemel. <em>OpenGL Superbible: Comprehensive Tutorial and Reference.</em></li>
+  <li>Mike Bailey, Steve Cunningham. <em>Graphics Shaders: Theory and Practice, Second Edition.</em></li>
+  <li>David M Bourg, Bryan Bywalec. <em>Physics for Game Developers: Science, math, and code for realistic effects.</em></li>
+  <li>Ian Millington. <em>Game Physics Engine Development: How to Build a Robust Commercial-Grade Physics Engine for your Game 2nd Edition.</em></li>
+  <li>Christer Ericson. <em>Real-Time Collision Detection.</em></li>
+</ul>
+
+<p>El primer libro trata la matemática 3D. Los dos siguientes sobre el motor de renderizado, y los últimos, sobre el motor de física.</p>
+:ET

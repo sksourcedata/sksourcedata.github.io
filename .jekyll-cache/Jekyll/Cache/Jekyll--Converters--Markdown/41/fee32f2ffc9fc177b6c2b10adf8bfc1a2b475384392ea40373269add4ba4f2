@@ -1,0 +1,227 @@
+I"�!<h2 id="ataques-sobre-un-encriptado">Ataques sobre un encriptado</h2>
+
+<dl class="d">
+  <dt>Ataque con solo texto cifrado</dt>
+  <dd>Ataque en el que tan solo se dispone de un texto cifrado y se trata de obtener, bien el texto original, bien la clave de descrifrado mediante la única observación del texto cifrado. Un esquema vulnerable a este tipo de ataque es completamente inseguro.</dd>
+</dl>
+
+<dl class="d">
+  <dt>Ataque con texto claro conocido</dt>
+  <dd>Ataque en el que se dispone de varias parejas de texto cifrado y sus correspondientes texto sin cifrar.</dd>
+</dl>
+
+<dl class="d">
+  <dt>Ataque con texto claro escogido</dt>
+  <dd>Ataque en el que el adversario puede escoger un texto en claro y acceder a su correspondiente texto cifrado.</dd>
+</dl>
+
+<dl class="d">
+  <dt>Ataque con texto claro escogido adaptado</dt>
+  <dd>Ataque con texto en claro escogido en el que la elección del texto en claro puede depender del texto cifrado recibido en previas peticiones.</dd>
+</dl>
+
+<dl class="d">
+  <dt>Ataque con texto cifrado escogido</dt>
+  <dd>Ataque en el que el adversario escoge el texto cifrado para obtener a continuación el correspondiente texto en claro. Una forma de montar este ataque es el de obtener acceso al algoritmo de descifrado, pero no a la clave. El objetivo es el de obtener el descifrado de algún texto a partir de la información obtenida de un descifrado distinto.</dd>
+</dl>
+
+<dl class="d">
+  <dt>Ataque con texto cifrado escogido adaptado</dt>
+  <dd>es análogo al correspondiente con texto en claro, pero la elección se realiza sobre el texto cifrado.</dd>
+</dl>
+
+<h2 id="ataques-sobre-protocolos">Ataques sobre protocolos</h2>
+
+<dl class="d">
+  <dt>Ataque con clave conocida</dt>
+  <dd>El adversario, a partir de una clave usada anteriormente, trata de obtener información sobre claves nuevas.</dd>
+</dl>
+
+<dl class="d">
+  <dt>Ataque por repetición</dt>
+  <dd>El adversario graba una sesión de comunicación y la repite, completamente o en parte, en un momento posterior en el tiempo.</dd>
+</dl>
+
+<dl class="d">
+  <dt>Ataque por impersonación</dt>
+  <dd>El adversario asume la identidad de una parte legı́tima
+en una comunicación.</dd>
+</dl>
+
+<dl class="d">
+  <dt>Ataque con diccionarios</dt>
+  <dd>Se trata, usualmente, de un ataque contra contraseñas. Una contaseña se suele almacenar encriptada de algún modo. El atacante toma una lista de posibles contraseñas, calcula sus encriptados y los compara con el valor almacenado.</dd>
+</dl>
+
+<dl class="d">
+  <dt>Búsqueda hacia adelante</dt>
+  <dd>Similar al anterior, pero con el objetivo de descifrar mensajes.</dd>
+</dl>
+
+<dl class="d">
+  <dt>Ataques de inserción</dt>
+  <dd>Consiste en la inserción de información en una comunicación con objeto de impersonar una identidad.</dd>
+</dl>
+
+<h2 id="protocolo-de-diffie-hellman">Protocolo de Diffie-Hellman</h2>
+
+<ol>
+  <li>Alice y Bob se ponen de acuerdo en un grupo G y un elemento g ∈ G de orden finito.</li>
+  <li>Alice escoge \(a\in\mathbb{N}\) y calcula \(g^a\).</li>
+  <li>Bob escoge \(b\in\mathbb{N}\) y calcula \(g^b\).</li>
+  <li>Alice y Bob intercambian \(g^a\) y \(g^b\).</li>
+  <li>Alice y Bob calculan \(g^{ab}=(g^a)^b=(g^b)^a\).</li>
+</ol>
+
+<h2 id="ataque-man-in-the-middle">Ataque man-in-the-middle</h2>
+
+<p>Eve es un adversario poderoso que es capaz de interceptar la comunicación entre Alice y Bob, que se han puesto de acuerdo en un grupo \(G\) y un elemento \(g\in G\) de orden finito.</p>
+<ol>
+  <li>Alice escoge \(a\in\mathbb{N}\), calcula \(g^a\) y se lo envı́a a Bob.</li>
+  <li>Eve escoge intercepta el mensaje y lo sustituye por \(g^e\), para algún \(e\in\mathbb{N}\), que es lo que Bob recibe.</li>
+  <li>Bob escoge \(b\in\mathbb{N}\), calcula \(g^b\) y se lo envı́a a Alice.</li>
+  <li>Eve intercepta el mensaje y lo sustituye por \(g^e\), que es lo que Alice recibe.</li>
+  <li>Alice calcula \((g^e)^a\).</li>
+  <li>Bob calcula \((g^e)^b\).</li>
+  <li>Eve calcula \((g^a)^e\) y \((g^b)^e\).</li>
+</ol>
+
+<p>Alice y Eve comparten \(k_1=g^{ae}\), y Bob y Eve comparten \(k_2=g^{be}.\) Cuando Alice envía un mensaje a Bob, usa \(k_1.\) Eve lo intercepta, lo descifra, lo lee y/o lo transforma, y se
+lo envía a Bob encriptado usando \(k_2\) y viceversa.</p>
+
+<h2 id="ataque-por-impersonación">Ataque por impersonación</h2>
+
+<p>Cuando se quiere usar una función de una vı́a con puerta trasera para enviar un secreto a través de un canal público inseguro, se hace necesario el hacer pública cierta información, que denominamos la clave pública.</p>
+
+<p>¿Qué impide a un atacante suplantar la personalidad de alguien que dice que está publicando una función de una vı́a y publicar en realidad una función de clave pública cuya puerta trasera esté controlada por él mismo?</p>
+
+<h2 id="protocolo-de-diffie-hellman-para-más-de-2-usuarios-cliques-i">Protocolo de Diffie-Hellman para más de 2 usuarios: CLIQUES I</h2>
+
+<ol>
+  <li>Un conjunto de n usuarios {Ui }ni=1 se ponen de acuerdo en un grupo G y un
+elemento \(g\in G\) de orden finito.</li>
+  <li>Cada usuario escoge una clave privada \(x_i\in\mathbb{N}\), \(i\in{1,\ldots,n}\).</li>
+  <li>El usuario \(U_1\) envı́a \(g^{x_1}\) a \(U_2\).</li>
+  <li>El usuario U2 envı́a \({g^{x_2},g^{x_1},(g^{x_1})^{x_2}}\) a \(U_3\).</li>
+  <li>El usuario \(U_3\) envı́a \(\{(g^{x_2})^{x_3},(g^{x^1})^{x^3},g^{x_1x_2},((g^{x_1})^{x_2})^{x_3}\}\) a \(U_4\).</li>
+  <li>El usuario \(U_i\) envı́a a Ui+1 {hj }ij=1 para i2 ≤ i ≤ n, donde hj = g
+Qn−1
+k =1,k6=j
+xk
+.
+xk xn
+) .</li>
+  <li>El usuario Un calcula (g</li>
+  <li>El usuario Un envı́a al resto de usuarios
+n Qn
+on
+x
+g k =1,k 6=j k
+k=1,k6=j
+Qi
+j=1</li>
+  <li>El usuario Ui calcula (g</li>
+</ol>
+
+<p>Qn</p>
+
+<p>k=1,k6=i xk )xi .</p>
+
+<h2 id="protocolo-de-diffie-hellman-para-más-de-2-usuarios-cliques-ii">Protocolo de Diffie-Hellman para más de 2 usuarios: CLIQUES II</h2>
+
+<ol>
+  <li>Un conjunto de n usuarios {Ui }ni=1 se ponen de acuerdo en un grupo G y un
+elemento g ∈ G de orden finito.</li>
+  <li>Cada usuario escoge una clave privada xi ∈ N, i = 1, . . . , n.</li>
+  <li>El usuario U1 envı́a g x1 a U2 .</li>
+  <li>El usuario Ui envı́a a Ui+1 g</li>
+  <li>El usuario Un−1 envı́a al resto de usuarios (incluyendo Un ) g
+Qn
+k=1 xk
+Qi
+k =1 xk
+para 2 ≤ i ≤ n − 2.</li>
+  <li>Un calcula g</li>
+  <li>Cada usuario Ui , i = 1, . . . , n − 1, calcula y envı́a a Un (g</li>
+  <li>El usuario Un envı́a al resto de usuarios
+n Qn
+on
+x
+g k =1,k 6=j k
+Qn−1
+k =1
+xk
+.
+.
+Qn−1
+k =1
+xk −xi
+) .
+j=1
+1
+El usuario Ui calcula (g
+Qn
+k=1,k6=i
+xk xi
+) .</li>
+</ol>
+
+<h2 id="un-ataque-a-cliques-ii">Un ataque a CLIQUES II</h2>
+
+<ol>
+  <li>Los pasos 1 y 2 transcurren sin ser alterados.</li>
+  <li>El atacante \(\mathcal{M}\) intercepta \(g^{\prod_{k=1}^{n-1}.\)</li>
+  <li>\(U_{n-1}\) envı́a a \(U_{n-1} \left( g^{\prod_{k=1}^{n-1}x_k}\right)^{-x_{n-1}} = g^{\prod_{k=1}^{n-2}x_k}.\) \(\mathcal{M}\) intercept también este mensaje.</li>
+  <li>\(\mathcal{M}\) envı́a a Un (g
+k =1
+xk
+Qn−1
+x
+k =1 k )−xn−1
+Qn−1
+k =1
+Qn−1
+Qn−1
+.
+=g
+Qn−2
+k =1
+xk
+. M intercepta también este
+xk m
+) .
+xk m xn
+) ) .</li>
+  <li>Un calcula ((g</li>
+  <li>\(\mathcal{M}\) envı́a, haciéndose pasar por todo el resto de usuarios,
+<em class="eq">\[ \left\{ g \right\} \]</em></li>
+  <li>Un envı́a a todo el resto de usuarios
+n
+o
+Qn−2
+Qn−1
+(g r1 )xn , (g r2 )xn , . . . , (g rn−3 )xn , (g k =1 xk )xn , (g k=1 xk )xn
+pero \(\mathcal{M}\) vuelve a interceptar este mensaje.</li>
+  <li>\(\mathcal{M}\) calcula ((g
+Qn−1
+k =1
+xk xn m
+) ) .</li>
+  <li>Hasta ahora U1 , . . . , Un−2 están esperando el mensaje de Un−1 , pero M,
+haciéndose pasar por este, les envı́a (g
+Qn−1
+xk xn
+) .
+k =1</li>
+  <li>Ahora \(U_i\), \(i\in\{1,\ldots,n-2\}\) devuelve a \(U_{n-1}((g^{\prod_{k=1}^{n-1}x_k})^{x_n})^{-x_i},\) pero \(\mathcal{M}\) los intercepta.</li>
+  <li>\(\mathcal{M}\) envı́a a \(U_i\), \(i\in\{1,\ldots,n-2\}\)
+<em class="eq">\[ \left\{ (((g^{\prod_{k=1}^{n-1}x_k})^{x_n})^{-x_i})^m \right\}_{i=1}^{n-1} \cup \left\{ (g^{\prod_{k=1}^{n-1}x_k})^{x_n} \right\} \]</em>
+y a \(U_n\) el mismo mensaje, pero sustituye \( \left\{ (g^{\prod_{k=1}^{n-1}x_k})^{x_n} \right\} \) por \( \left\{ g^{\prod_{k=1}^{n-1}x_k} \right\} \)</li>
+  <li>\(U_i\), usando \(x_i\), \(i\in\{1,\ldots,n-1\}\) calcula \(((g^{\prod_{k=1}^{n-1}x_k})^m)^{x_n}.\)</li>
+</ol>
+
+<p>La diferencia con el ataque man-in-the-middle clásico es que ¡todos los usuarios comparten la misma clave!</p>
+
+<p>La consecuencia, como puede observarse, es que debemos tener un método que
+permita autentificar la procedencia de la información.</p>
+:ET

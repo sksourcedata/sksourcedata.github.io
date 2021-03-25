@@ -195,10 +195,10 @@
   </header>
 
   <div class="post-content">
-    <h2 id="el-logartimo-discreto">El logartimo discreto</h2>
+    <h2 id="logaritmo-discreto">Logaritmo discreto</h2>
 
-<p>Definición
-Sea G un grupo finito, g ∈ G y consideremos el grupo cı́clico generado por g, hgi.
+<p class="d">Definición
+Sea G un grupo finito, g ∈ G y consideremos el grupo cíclico generado por g, hgi.
 Para h ∈ G, se define el logaritmo discreto de h con base g como el entero a (si es
 que existe), tal que g a = h. En tal caso, se escribe a = logg h.</p>
 
@@ -238,7 +238,7 @@ finito.</li>
   <li>Alice y Bob calculan g ab = (g a )b = (g b )a .</li>
 </ol>
 
-<p>Para calcular g ab conociendo únicamente G, g, g a y g b implica resolver uno de los
+<p>Para calcular g ab conociendo únicamente G, g, g a y g b implica resolver uno de los
 logaritmos discretos logg g a o logg g b .
 Si se toman a, b suficientemente grandes (actualmente el NIST recomienda, en el
 caso de Zp , p ≥ 22048 ), buscar a y b de forma exhaustiva es inconcebible desde el
@@ -247,7 +247,7 @@ potencia rápida, entonces calcular g a usando O(log a) operaciones en el grupo
 
 <h2 id="taher-elgamal">Taher ElGamal</h2>
 
-<p>En 1985, Taher ElGamal propone el uso de una función de una vı́a con puerta trasera
+<p>En 1985, Taher ElGamal propone el uso de una función de una vía con puerta trasera
 basada en la dificultad del problema del logaritmo discreto.</p>
 
 <!--Figure: Taher ElGamal-->
@@ -258,9 +258,9 @@ trabajo y es además uno de los desarrolladores del protocolo SSL.</p>
 <h2 id="el-criptosistema-de-elgamal">El criptosistema de ElGamal</h2>
 
 <ol>
-  <li>Alice elige un grupo G, un elemento g ∈ G de orden finito n y h = g a para algún
+  <li>Alice elige un grupo G, un elemento g ∈ G de orden finito n y h = g a para algún
 a ∈ N.</li>
-  <li>Alice hace pública la terna (G, g, g a ), manteniendo a en secreto.</li>
+  <li>Alice hace pública la terna (G, g, g a ), manteniendo a en secreto.</li>
   <li>Un mensaje m ∈ G se encripta mediante la función: f : G → G definida por
 f (m) = (g k , mhk ), donde k ∈ Z es aleatoriamente escogido tal que
 1 &lt; k &lt; n − 1.</li>
@@ -277,7 +277,7 @@ Pero, ¿qué sucede si ciframos dos mensajes distintos con el mismo valor aleat
 Supongamos que f (m1 ) = (g k , m1 hk ) y f (m2 ) = (g k , m2 hk ).
 Se observa rápidamente que el primer elemento del par es el mismo, lo que significa
 que el k escogido es el mismo. Supongamos ahora que conocemos m2 . Entonces sea
-y = (m1 hk ) · (m2 hk )−1 = m1 m2−1 , con lo que conociendo m1 o m2 , se tendrı́a acceso
+y = (m1 hk ) · (m2 hk )−1 = m1 m2−1 , con lo que conociendo m1 o m2 , se tendría acceso
 al otro.</p>
 
 <h2 id="el-criptosistema-de-elgamal-y-diffie-hellman">El criptosistema de ElGamal y Diffie-Hellman</h2>
@@ -286,7 +286,7 @@ al otro.</p>
 
 <p>Supongamos que existe un algoritmo A que es capaz de calcular g ab a partir de
 G, g, g a y g b y que queremos encontrar m a partir del par (h, d) = (g k , m(g a )k ).
-Hemos de tener en cuenta que G, g y g a son públicos tal y como establece el
+Hemos de tener en cuenta que G, g y g a son públicos tal y como establece el
 criptosistema de ElGamal. Entonces, mediante el uso de A podemos obtener g ak , con
 lo que m = d · (g ak )−1.</p>
 
@@ -295,14 +295,14 @@ criptosistema de ElGamal, es decir, conocidos G, g, g a y el par (h, d) = (g k ,
 G ofrece como salida m. De lo que se trata ahora es, conocidos G, g, g a y g b , ser
 capaces de calcular g ab .
 De este modo, proporcionamos a nuestro algoritmo G los siguientes datos: G, g, g a ,
-correspondientes a la clave pública y el par (h, d) = (g b , 1), que serı̀a el equivalente a
+correspondientes a la clave pública y el par (h, d) = (g b , 1), que sería el equivalente a
 encriptar el mensaje (que no conocemos) (g ab )−1 usando como parámetro aleatorio
 g b . El resultado que nos va a proporcionar G es m = (g ab )−1 , con lo que, calculando
 m−1 , obtenemos g ab .</p>
 
 <dl class="r">
   <dt>Observación</dt>
-  <dd>El problema de, dados G, g, g a , g b para ciertos a, b ∈ Z, calcular g ab se conoce usualmente en criptografı́a como el problema computacional de Diffie-Hellman.</dd>
+  <dd>El problema de, dados G, g, g a , g b para ciertos a, b ∈ Z, calcular g ab se conoce usualmente en criptografía como el problema computacional de Diffie-Hellman.</dd>
 </dl>
 
 <dl class="e">
@@ -310,11 +310,11 @@ m−1 , obtenemos g ab .</p>
   <dd>El criptosistema de ElGamal ha sido considerado en la literatura en diversos grupos,
 como por ejemplo:
     <ol>
-      <li>Z∗p , grupo cı́clico de orden p − 1.</li>
-      <li>GF (pn ), grupo cı́clico de orden pn − 1.</li>
+      <li>Z∗p , grupo cíclico de orden p − 1.</li>
+      <li>GF (pn ), grupo cíclico de orden pn − 1.</li>
       <li>GLn (GF (pn )), el grupo de matrices cuadradas de orden n invertibles con
 entradas en G(pn ).</li>
-      <li>E(GF (pn )), el grupo de puntos racionales de una curva elı́ptica definida sobre GF (pn ).</li>
+      <li>E(GF (pn )), el grupo de puntos racionales de una curva elíptica definida sobre GF (pn ).</li>
       <li>Jacobianos de variedades.</li>
     </ol>
   </dd>
