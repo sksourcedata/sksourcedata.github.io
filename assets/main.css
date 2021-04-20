@@ -322,7 +322,7 @@ table td { border: 1px solid #e8e8e8; }
 
 @font-face { font-family: "Computer Modern"; src: url("http://mirrors.ctan.org/fonts/cm-unicode/fonts/otf/cmunbxo.otf"); font-weight: bold; font-style: italic, oblique; }
 
-body { font-family: "Computer Modern", sans-serif; }
+article { font-family: "Computer Modern Sans"; }
 
 dl { display: block; box-sizing: border-box; border-left: solid 5px; border-right: solid 5px; border-radius: 5px; width: 100%; }
 

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Código lineal | SK Source</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="Código lineal" />
+<meta property="og:locale" content="es_ES" />
+<meta name="description" content="Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante." />
+<meta property="og:description" content="Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante." />
+<link rel="canonical" href="https://sksourcedata.github.io//math/information-theory/coding-theory/linear-code.html" />
+<meta property="og:url" content="https://sksourcedata.github.io//math/information-theory/coding-theory/linear-code.html" />
+<meta property="og:site_name" content="SK Source" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Código lineal" />
+<script type="application/ld+json">
+{"headline":"Código lineal","@type":"WebPage","url":"https://sksourcedata.github.io//math/information-theory/coding-theory/linear-code.html","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://sksourcedata.github.io//feed.xml" title="SK Source" /><link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-183860687-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-183860687-1');
+</script></head>
+
+
+<body>
+
+    <header class="site-header">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/">SK Source</a><nav class="site-nav">
+            <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+            <label for="nav-trigger">
+                <span class="menu-icon">
+                    <svg viewBox="0 0 18 15" width="18px" height="15px">
+                        <path
+                            d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                    </svg>
+                </span>
+            </label>
+
+            <div class="trigger">
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <a class="page-link" href="/art/">Arte</a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <a class="page-link" href="/math/">Matemáticas</a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <a class="page-link" href="/programming/">Programación</a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <a class="page-link" href="/about/">Sobre mí</a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </div>
+        </nav></div>
+</header>
+
+    <main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            
+                <div style="color:rgb(120, 120, 121);border: 2px solid rgb(247, 204, 17);padding: 2px">
+                    &#9888;Esta página aún se encuentra en desarrollo.
+                </div>
+                <!--<div style="color:rgb(120, 120, 121);border: 2px solid rgb(10, 154, 250);padding: 2px">
+                    &#8505;Información
+                </div>-->
+            
+
+            <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Código lineal</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="motivación">Motivación</h2>
+
+<p>Cada vez que se establece una comunicación, la información se codifica antes de enviarse, lo que produce un retraso.</p>
+
+<p>En una conversación telefónica una acumulación de retrasos puede hacer inviable dicha comunicación.</p>
+
+<p>El hecho de que la información pueda codificarse y decodificarse por medio de alguna estructura puede servir para hacer la comunicación más eficiente.</p>
+
+<h2 id="concepto-de-código-lineal">Concepto de código lineal</h2>
+
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Un código lineal de dimensión k y longitud n sobre un cuerpo F (el alfabeto) es un subespacio vectorial de dimensión k de Fn . En tal caso hablamos de (n, k)-código. Si la distancia mínima del código es d, entonces el código se denomina un
+(n, k, d)-código.</dd>
+</dl>
+
+<dl class="e">
+  <dt>Ejemplo</dt>
+  <dd>El código de repetición {(0, 0, 0), (1, 1, 1)} es un (3, 1, 3)-código lineal sobre Z2.</dd>
+</dl>
+
+<h2 id="distancia-mínima">Distancia mínima</h2>
+
+<dl class="l">
+  <dt>Lema</dt>
+  <dd>Sea C un código lineal. Entonces la distancia mínima de C es
+d = min{w(u) : u ∈ C}</dd>
+</dl>
+
+<dl class="p">
+  <dt>Demostración</dt>
+  <dd>Como w(u) = d(u, 0) es la distancia Hamming entre u ∈ C y 0, entonces w(u) ≥ d
+para todo u ∈ C. Por otro lado, d(u, v ) = w(u - v ) para cualesquiera u, v ∈ C. Sean
+pues u, v ∈ C tales que d(u, v ) = d, con lo que, por ser C un espacio vectorial,
+u - v ∈ C y así min{w(u) : u ∈ C} = d.</dd>
+</dl>
+
+<dl class="r">
+  <dt>Observación</dt>
+  <dd>Para calcular la distancia mínima de un (n, M)-código hay que realizar comparaciones. En un (n, M)-código lineal, símplemente M - 1.</dd>
+</dl>
+
+<p>Para describir un código lineal basta con indicar su base.</p>
+
+<h2 id="matriz-generadora">Matriz generadora</h2>
+
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Una <strong>matriz generadora</strong> de un \((n, k)\)-código lineal \(C\) sobre \(F\) es una matriz con \(k\) filas y
+\(n\) columnas en las que las filas representan una base de \(C.\)</dd>
+</dl>
+
+<dl class="r">
+  <dt>Observación</dt>
+  <dd>Sea \(G\) la matriz de un \((n,k)\)-código lineal \(C\) sobre \(F.\) Entonces \(C\) está formado por el
+conjunto de vectores de la forma \(vG,\) donde \(v\in F_k.\)</dd>
+</dl>
+
+<h2 id="códigos-equivalentes">Códigos equivalentes</h2>
+
+<dl class="t">
+  <dt>Teorema</dt>
+  <dd>Sea \(G\) una matriz con \(k\) filas y \(n\) columnas tal que sus filas son linealmente independientes. Entonces dicha matriz es equivalente por filas a una matriz de la forma
+<em class="eq">\[(I_k|A) \]</em>
+donde \(I_k\) es la matriz identidad de orden \(k\) y \(A\) es una matriz con \(k\) filas y \(n-k\) columnas.</dd>
+</dl>
+
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Se dice que un \((n,k)\)-código lineal está en forma estándar o que es sistemático si su matriz generadora es de la forma
+<em class="eq">\[(I_k|A) \]</em>
+En este caso, los \(k\) primeros bits de una palabra del código se denominan bits de información y los \(n-k\) restantes, bits de paridad.</dd>
+</dl>
+
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Dos códigos lineales se dicen equivalentes si se pueden obtener uno a partir del otro por medio de permutaciones de las posiciones de los símbolos de las palabras del código y multiplicaciones por un escalar no nulo.</dd>
+</dl>
+
+<h2 id="codificación-con-códigos-lineales">Codificación con códigos lineales</h2>
+
+<p>Sea \(C\) un \((n,k)\)-código lineal definido sobre el cuerpo finito \(F\) con \(q=p^n\) elementos y con matriz generadora \(G.\) Entonces, \(C\) contiene \(q k\) palabras y, por tanto, se pueden usar para transmitir \(q k\) mensajes. Si \(u = (u_1,\ldots,u_k)\) un mensaje. Entonces, la palabra del código \(C\) correspondiente es \(uG.\)</p>
+
+<dl>
+  <dt>Ejemplo</dt>
+  <dd>
+1 0 2 1
+la matriz generadora de un (4, 2)-código lineal definido
+0 1 2 2
+sobre Z3 . La siguiente tabla muestra las palabras del código y los correspondientes
+mensajes que resultan en dichas palabras al ser codificados:
+</dd>
+</dl>
+
+<p>Sea G =
+d0
+0
+1
+2
+0
+0
+1
+2
+1
+2</p>
+
+<p>d1
+0
+0
+0
+1
+2
+1
+1
+2
+2</p>
+
+<p>u0
+0
+1
+2
+0
+0
+1
+2
+1
+2</p>
+
+<p>u1
+0
+0
+0
+1
+2
+1
+1
+2
+2</p>
+
+<p>u2
+0
+2
+1
+2
+1
+1
+0
+0
+2</p>
+
+<p>u3
+0
+1
+2
+2
+1
+0
+1
+2
+0</p>
+
+<h2 id="decodificación-por-clases">Decodificación por clases</h2>
+
+<p>Sea \(C\) un \((n,k)\)-código lineal definido sobre \(\mathbb{F}.\) Entonces \(C\) es un subespacio vectorial de \(\mathbb{F}^n.\) Sea pues el espacio vectorial cociente \(\mathbb{F}^n/C.\) Si \(x\in\mathbb{F}^n,\) entonces \(x+C\) tiene exactamente \(q^k\) elementos.</p>
+
+<dl class="d">
+  <dt>Algoritmo de decodificación</dt>
+  <dd>
+    <ol>
+      <li>Formamos una tabla donde cada fila corresponde a una clase del espacio vectorial cociente \(\mathbb{F}^n/C,\) tomando como representante de la clase, la palabra de menor peso Hamming.</li>
+      <li>Recibida una palabra y, encontramos su clase de equivalencia \(y+C\) y consideramos el representante de la clase \(e,\) como el error cometido.</li>
+      <li>Dado que \(e+C=y+C,\) se sigue que \(y-e\in C,\) con lo que decodificamos por \(x=y-e.\)</li>
+    </ol>
+  </dd>
+</dl>
+
+<dl class="e">
+  <dt>Ejemplo</dt>
+  <dd>Sea \(C\) el código definido sobre \(\mathbb{Z}_2\) dado por la matriz generadora
+<em class="eq">\[G=\begin{pmatrix}1 &amp; 0 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 0 &amp; 1\end{pmatrix}.\]</em> 
+Entonces, el array de decodificación es
+<em class="eq">\[\begin{align}(0,0,0,0)+C&amp;=(0,0,0,0)(1,0,1,1)(0,1,0,1)(1,1,1,0) \\(0,0,0,1)+C&amp;=(0,0,0,1)(1,0,1,0)(0,1,0,0)(1,1,1,1) \\(0,0,1,0)+C&amp;=(0,0,1,0)(1,0,0,1)(0,1,1,1)(1,1,0,0) \\(1,0,0,0)+C&amp;=(1,0,0,0)(0,0,1,1)(1,1,0,1)(0,1,1,0)\end{align}\]</em>
+    <blockquote>
+      <p>Si recibimos la palabra \((1,1,0,0),\) considerando su clase de equivalencia en \(\mathbb{Z}_2/C,\) se tiene que \((1,1,0,0)+C=(0,0,1,0)+C,\) de donde el mensaje original es
+<em class="eq">\[(1,1,0,0)+(0,0,1,0)=(1,1,1,0). \]</em></p>
+    </blockquote>
+  </dd>
+</dl>
+
+<h2 id="ejemplo-de-decodificación-errónea">Ejemplo de decodificación errónea</h2>
+
+<p>Sea \(C\) anterior y cuyo array de decodificación es el siguiente
+(0,0,0,0)+C=(0,0,0,0)(1,0,1,1)(0,1,0,1)(1,1,1,0)
+(0,0,0,1)+C=(0,0,0,1)(1,0,1,0)(0,1,0,0)(1,1,1,1)
+(0,0,1,0)+C=(0,0,1,0)(1,0,0,1)(0,1,1,1)(1,1,0,0)
+(1,0,0,0)+C=(1,0,0,0)(0,0,1,1)(1,1,0,1)(0,1,1 0)</p>
+
+<p>Si recibimos la palabra \((1,0,1,0),\) considerando su clase de equivalencia en \(\mathbb{Z}_2/C,\) se tiene que \((1,0,1,0)+C=(0,0,0,1)+C,\) de donde el mensaje original es 
+<em class="eq">\[(1,0,1,0)+(0,0,0,1)=(1,0,1,1). \]</em></p>
+
+<p>Pero hemos de observar que \((0,0,0,1)\) no es la única palabra de menor peso y, por tanto, no la única candidata a ser representante de la clase, pues \((0,1,0,0)\) está en la
+misma clase.</p>
+
+<p>De este modo, la decodificación habría sido 
+<em class="eq">\[(1,0,1,0)+(0,1,0,0)=(1,1,1,0). \]</em></p>
+
+<h2 id="ejemplos">Ejemplos</h2>
+
+<!--20210420-->
+<dl class="e">
+  <dt>Ejemplo</dt>
+  <dd>Por tanto, la distancia mínima del código \(C\) es \(2\) dado que el peso más pequeño de caulquier palabra de \(C\) es \(2\). Otra forma:
+<em class="eq">\[G=\begin{pmatrix}1&amp;0&amp;2\\0&amp;1&amp;1\end{pmatrix}\Rightarrow H=\begin{pmatrix}\end{pmatrix}\]</em>
+<em class="eq">\[\begin{pmatrix}1&amp;0&amp;2\end{pmatrix} \]</em>
+<em class="eq">\[\begin{pmatrix}1&amp;0&amp;2\end{pmatrix} \]</em>
+Efectivamente, \(H\) es una matriz de paridad para \(C\).
+    <blockquote>
+      <p>Por tanto, calculamos
+<em class="eq">\[\begin{pmatrix}0&amp;0&amp;0\end{pmatrix}+C=\{\begin{pmatrix}0&amp;0&amp;0\end{pmatrix},\begin{pmatrix}0&amp;1&amp;1\end{pmatrix}\} \]</em>
+<em class="eq">\[\begin{pmatrix}0&amp;0&amp;1\end{pmatrix}+C=\{\begin{pmatrix}0&amp;0&amp;1\end{pmatrix},\begin{pmatrix}0&amp;1&amp;2\end{pmatrix},\begin{pmatrix}0&amp;2&amp;0\end{pmatrix},\begin{pmatrix}1&amp;0&amp;0\end{pmatrix},\begin{pmatrix}1&amp;1&amp;1\end{pmatrix},\begin{pmatrix}1&amp;2&amp;2\end{pmatrix},\begin{pmatrix}2&amp;0&amp;2\end{pmatrix},\begin{pmatrix}2&amp;1&amp;0\end{pmatrix},\begin{pmatrix}2&amp;2&amp;1\end{pmatrix}\} \]</em>
+<em class="eq">\[\begin{pmatrix}0&amp;1&amp;0\end{pmatrix}+C=\{\begin{pmatrix}0&amp;1&amp;0\end{pmatrix},\begin{pmatrix}0&amp;2&amp;1\end{pmatrix},\begin{pmatrix}0&amp;0&amp;2\end{pmatrix},\begin{pmatrix}1&amp;1&amp;2\end{pmatrix},\begin{pmatrix}1&amp;2&amp;0\end{pmatrix},\begin{pmatrix}1&amp;0&amp;1\end{pmatrix},\begin{pmatrix}2&amp;1&amp;1\end{pmatrix},\begin{pmatrix}2&amp;2&amp;2\end{pmatrix},\begin{pmatrix}2&amp;0&amp;0\end{pmatrix}\} \]</em>
+Si me envían \(\begin{pmatrix}1&amp;1&amp;0\end{pmatrix}\) y me llega \(\begin{pmatrix}1&amp;1&amp;2\end{pmatrix},\) entonces decodificamos por
+<em class="eq">\[\begin{pmatrix}1&amp;1&amp;2\end{pmatrix}-\begin{pmatrix}0&amp;1&amp;0\end{pmatrix}=\begin{pmatrix}1&amp;0&amp;2\end{pmatrix}. \]</em>
+Se debe a que el representante d
+Tabla de síndromes:
+Si recibimos \(\begin{pmatrix}1&amp;1&amp;2\end{pmatrix}\), entonces
+<em class="eq">\[s\begin{pmatrix}1&amp;1&amp;2\end{pmatrix}=\begin{pmatrix}1&amp;1&amp;2\end{pmatrix} \]</em>
+De aquí,</p>
+    </blockquote>
+  </dd>
+</dl>
+
+<p>Ejemplo:
+Sea el código \(C\) tal que su matriz de paridad viene dada por
+<em class="eq">\[s\begin{pmatrix}1&amp;1&amp;2\end{pmatrix}=\begin{pmatrix}1&amp;1&amp;1&amp;0&amp;0\\0&amp;1&amp;0&amp;1&amp;0\\1&amp;1&amp;0&amp;0&amp;1\end{pmatrix} \]</em> con alfabeto en \(\mathbb{Z}_2.\)</p>
+<blockquote class="e">
+  <p>\(\operatorname{long}(C)=5,\;\operatorname{dim}(C)=2,\;d(C)\geq3\) porque cualquier subconjunto de columnas de \(H\) es linealmente independiente. No puede ser \(4\) porque las columnas 1, 3 y 5 son dependientes. Por tanto, \(d(C)=3\).
+<em>\[G=\begin{pmatrix}I_2&amp;A\end{pmatrix}=\begin{pmatrix}1&amp;0&amp;1&amp;0&amp;1\\0&amp;1&amp;1&amp;1&amp;1\end{pmatrix} \]</em>
+es la matriz generadora.
+<em class="eq">\[\begin{align}\begin{pmatrix}0&amp;1\end{pmatrix}\end{align} \]</em>
+y como puede comprobarse  la palabra de peso mínimo tiene peso 3, es decir, <br />
+para lo que calcularemos
+<em class="eq">\[s(x)=xH^t=x\begin{pmatrix}1&amp;0&amp;1\\1&amp;1&amp;1\\1&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;0&amp;1\end{pmatrix}. \]</em></p>
+</blockquote>
+
+  </div>
+
+</article>
+
+        </div>
+    </main>
+
+    
+        <div id="disqus_thread"></div>
+        <script>
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+            /*
+            var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            */
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://sksource.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    <footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">SK Source</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">SK Source</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://instagram.com/sksource_art"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#instagram"></use></svg> <span class="username">sksource_art</span></a></li><li><a href="https://www.twitter.com/sksource_art"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">sksource_art</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido  sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer  pero espero que me apoyéis a seguir adelante.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+
+</html>
+
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://example.com/mathjax/MathJax.js?config=TeX-AMS_CHTML&locale=fr"></script>

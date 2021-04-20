@@ -128,7 +128,23 @@
                 
                 
                 
+                
+                
+                
+                
                     <a class="page-link" href="/art/">Arte</a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 
                 
                 
@@ -148,15 +164,21 @@
                 
                 
                 
-                
-                
-                
-                
                     <a class="page-link" href="/programming/">Programación</a>
                 
                 
                 
+                
+                
+                
+                
+                
+                
+                
+                
                     <a class="page-link" href="/about/">Sobre mí</a>
+                
+                
                 
                 
                 
@@ -199,8 +221,7 @@
 
 <dl class="d">
   <dt>Definición</dt>
-  <dd>Sea p = i,j aij x i y j ∈ F[x, y] un polinomio en dos variables, con F un cuerpo.
-Entonces
+  <dd>Sea p = i,j aij x i y j ∈ F[x, y] un polinomio en dos variables, con F un cuerpo. Entonces,
 C = V (p) = {(x, y) ∈ F2 : p(x, y) = 0}
 se denomina curva afı́n de grado deg(C) = max{i + j : aij 6= 0}.</dd>
 </dl>
@@ -463,6 +484,50 @@ d1 d2</p>
 
 <p>de donde se tienen d1 · d2 soluciones para (y, z) tales que existe una solución αi ,
 donde (αi , βi , γi ) ∈ V (p̂1 ) ∩ V (p̂2 ).</p>
+
+<p><strong>Los siguientes ejemplos están pendientes de trasladarlos a sus secciones correspondientes.</strong></p>
+
+<dl class="e">
+  <dt>Ejemplo 06/04/2021</dt>
+  <dd>Sea \(s=8\in\mathbb{Z}_{13}\) un secreto a almacenar de forma compartida y \(3\) el umbral compartido para recuperar \(s\). De este modo, generamos un polinomio de grado \(2\) en \(\mathbb{Z}_{13}[x ]\) en el que el término indpeendiente es \(s.\) Por ejemplo, el polinomio \(P(x):=8+7x+2x^2.\) Generemos las participaciones:
+<em class="eq">\[P(1)\equiv_{13}4, \quad P(3)\equiv_{13}, \quad P(4)\equiv_{13}, \quad P(10)\equiv_{13}.\]</em>
+    <blockquote>
+      <p>Las participaciones de \(s\) serían \((1,4),(3,8),(4,3),(10,5).\)
+3 de las participaciones para reconstruir \(s.\)
+<em class="eq">\[\begin{align}
+\begin{cases}
+P(x)\equiv_{x-1}4\Leftrightarrow P(1)=4, \\\<br />
+P(x)\equiv_{x-1}
+\end{cases}
+\end{align}\]</em>
+<em class="eq">\[\begin{align}
+(x-4)(x-10)&amp;=x^2-14x+40=x^2+12x+1, \\\<br />
+(x-1)(x-10)&amp;=x^2-11x+10=x^2+2x+10, \\\<br />
+(x-1)(x-4)&amp;=x^2-5x+4=x^2+8x+4.
+\end{align}\]</em>
+<em class="eq">\[\begin{align}
+(x^2+12x+1)^{-1}&amp;\equiv_{x-1}1^{-1}\equiv_{x-1}, \\\<br />
+(x^2+2x+10)^{-1}&amp;, \\\<br />
+(x^2+8x+4)^{-1}&amp;.
+\end{align}\]</em></p>
+    </blockquote>
+  </dd>
+</dl>
+
+<dl class="e">
+  <dt>Ejemplo 06/04/2021</dt>
+  <dd>\(x\equiv_{m_1}a_1,\ldots,x\equiv_{m_n}a_n\)
+\(s=\sum_{i=1}^n\)
+Otra forma:
+<em class="eq">\[P(x)=(x-1)q(x)+4\Rightarrow(x-1)q(x)+4\equiv_{x-4}3\Rightarrow3q(x)+4\equiv_{x-4}3,\; 3q(x)\equiv_{x-4}-1\]</em>
+<em class="eq">\[P(x)\equiv_{(x-4)(x-1)}(x-1)\cdot4+4\equiv_{(x-4)(x-1)}4x \]</em>
+<em class="eq">\[ \]</em></dd>
+</dl>
+
+<dl>
+  <dt>Ejemplo 06/04/2021</dt>
+  <dd><em class="eq">\[\left(\frac{15}{71}\right) \]</em></dd>
+</dl>
 
   </div>
 

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Definiciones básicas | SK Source</title>
+<meta name="generator" content="Jekyll v4.2.0" />
+<meta property="og:title" content="Definiciones básicas" />
+<meta property="og:locale" content="es_ES" />
+<meta name="description" content="Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante." />
+<meta property="og:description" content="Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante." />
+<link rel="canonical" href="https://sksourcedata.github.io//math/information-theory/coding-theory/basic-definitions.html" />
+<meta property="og:url" content="https://sksourcedata.github.io//math/information-theory/coding-theory/basic-definitions.html" />
+<meta property="og:site_name" content="SK Source" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Definiciones básicas" />
+<script type="application/ld+json">
+{"headline":"Definiciones básicas","@type":"WebPage","url":"https://sksourcedata.github.io//math/information-theory/coding-theory/basic-definitions.html","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://sksourcedata.github.io//feed.xml" title="SK Source" /><link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-183860687-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-183860687-1');
+</script></head>
+
+
+<body>
+
+    <header class="site-header">
+
+    <div class="wrapper"><a class="site-title" rel="author" href="/">SK Source</a><nav class="site-nav">
+            <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+            <label for="nav-trigger">
+                <span class="menu-icon">
+                    <svg viewBox="0 0 18 15" width="18px" height="15px">
+                        <path
+                            d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" />
+                    </svg>
+                </span>
+            </label>
+
+            <div class="trigger">
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <a class="page-link" href="/art/">Arte</a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <a class="page-link" href="/math/">Matemáticas</a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <a class="page-link" href="/programming/">Programación</a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                    <a class="page-link" href="/about/">Sobre mí</a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </div>
+        </nav></div>
+</header>
+
+    <main class="page-content" aria-label="Content">
+        <div class="wrapper">
+            
+                <div style="color:rgb(120, 120, 121);border: 2px solid rgb(247, 204, 17);padding: 2px">
+                    &#9888;Esta página aún se encuentra en desarrollo.
+                </div>
+                <!--<div style="color:rgb(120, 120, 121);border: 2px solid rgb(10, 154, 250);padding: 2px">
+                    &#8505;Información
+                </div>-->
+            
+
+            <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Definiciones básicas</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="alfabeto-y-código">Alfabeto y código</h2>
+
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Un alfabeto es un conjunto de signos que son usados para construir mensajes.
+Si un alfabeto consta únicamente de los signos 0 y 1, se denomina binario. En caso de
+que se usen tres signos, se dice ternario. En general, si se usan q signos, se habla de
+alfabeto q-ario.</dd>
+</dl>
+
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Sea A un alfabeto y consideremos el conjunto An , con n ≥ 1. Un código C de longitud n es un subconjunto no vacı́o del conjunto An .
+Las n-tuplas que constituyen un código C ⊆ An se denominan palabras código.</dd>
+</dl>
+
+<dl class="e">
+  <dt>Ejemplo</dt>
+  <dd>Sea A = {0, 1} y consideremos la repetición de cada signo exactamente tres veces.
+Entonces el código viene dado por:
+C = {(0, 0, 0), (1, 1, 1)}</dd>
+</dl>
+
+<dl class="e">
+  <dt>Ejemplo</dt>
+  <dd>Sea A = {0, 1} y consideremos el código de paridad de longitud 4. Entonces el código viene dado por
+C = {(0, 0, 0, 0), (0, 0, 1, 1), (0, 1, 0, 1), (0, 1, 1, 0), (1, 0, 0, 1), (1, 0, 1, 0),
+(1, 1, 0, 0), (1, 1, 1, 1)}</dd>
+</dl>
+
+<dl class="e">
+  <dt>Ejemplo</dt>
+  <dd>Sea C el código Hamming [7, 4] definido por la matriz
+
+1 0 0 0 0 1
+0 1 0 0 1 0
+G=
+0 0 1 0 1 1
+0 0 0 1 1 1
+
+1
+1
+
+0
+1
+Entonces
+C = {(0, 0, 0, 0, 0, 0, 0), (0, 0, 0, 1, 1, 1, 1), (0, 0, 1, 0, 1, 1, 0), (0, 0, 1, 1, 0, 0, 1),
+(0, 1, 0, 0, 1, 0, 1), (0, 1, 0, 1, 0, 1, 0), (0, 1, 1, 0, 0, 1, 1), (0, 1, 1, 1, 1, 0, 0),
+(1, 0, 0, 0, 0, 1, 1), (1, 0, 0, 1, 1, 0, 0), (1, 0, 1, 0, 1, 0, 1), (1, 0, 1, 1, 0, 1, 0),
+(1, 1, 0, 0, 1, 1, 0), (1, 1, 0, 1, 0, 0, 1), (1, 1, 1, 0, 0, 0, 0), (1, 1, 1, 1, 1, 1, 1)}</dd>
+</dl>
+
+<h2 id="distancia-hamming">Distancia Hamming</h2>
+
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Sea A un alfabeto y sean u, v ∈ An. La distancia Hamming d(u, v ) es el número de
+posiciones en las que se diferencian las palabras u y v.</dd>
+</dl>
+
+<dl class="e">
+  <dt>Ejemplo</dt>
+  <dd>Sea C es código Hamming [7, 4] y sean u = (0, 0, 0, 0, 0, 0, 0), v = (0, 0, 1, 0, 1, 1, 0)
+y w = (1, 1, 1, 1, 1, 1, 1).
+Entonces d(u, v ) = 3, d(u, w) = 7 y d(v , w) = 4.</dd>
+</dl>
+
+<h2 id="distancia-hamming-1">Distancia Hamming</h2>
+
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Sea A un alfabeto y sean u, v ∈ An . La distancia Hamming d(u, v ) es el número de
+posiciones en las que se diferencian las palabras u y v.</dd>
+</dl>
+
+<dl class="e">
+  <dt>Ejemplo</dt>
+  <dd>Sea C es código Hamming [7, 4] y sean u = (0, 0, 0, 0, 0, 0, 0), v = (0, 0, 1, 0, 1, 1, 0)
+y w = (1, 1, 1, 1, 1, 1, 1).
+Entonces d(u, v ) = 3, d(u, w) = 7 y d(v , w) = 4.</dd>
+</dl>
+
+<dl class="t">
+  <dt>Teorema</dt>
+  <dd>La distancia Hamming \(d\) es una métrica, es decir, satisface las siguientes propiedades:
+    <ol>
+      <li>\(d(u, v ) ≥ 0, ∀u, v y d(u, v ) = 0 si y solo si \(u=v.\)</li>
+      <li>\(d(u, v ) = d(v , u), ∀u, v .\)</li>
+      <li>\(d(u, v ) ≤ d(u, w) + d(w, v ), ∀u, v , w.\)</li>
+    </ol>
+  </dd>
+</dl>
+
+<h2 id="a-du-v---0-u-v-por-definición-por-otro-lado-du-v---0-es-equivalente-a-decir">(a) d(u, v ) ≥ 0, ∀u, v por definición. Por otro lado, d(u, v ) = 0 es equivalente a decir</h2>
+<p>a que u y v no difieren en ninguna posición, es decir, u = v .
+(b) d(u, v ) = d(v , u) es obvio por definición.
+(c) Simplemente hemos de tener en cuenta que si u y v difieren en una posición en
+concreto, entonces, o bien u y w difieren en dicha posición, o w y v difieren dicha
+posición, o ambas afirmaciones. De este modo, el número de posiciones en las que
+difieren u y v siempre es menor o igual que la suma de las posiciones en las que
+difieren u y w y w y v.</p>
+
+<h2 id="a-du-v---0-u-v-por-definición-por-otro-lado-du-v---0-es-equivalente-a-decir-1">(a) d(u, v ) ≥ 0, ∀u, v por definición. Por otro lado, d(u, v ) = 0 es equivalente a decir</h2>
+<p>a que u y v no difieren en ninguna posición, es decir, u = v .
+(b) d(u, v ) = d(v , u) es obvio por definición.
+(c) Simplemente hemos de tener en cuenta que si u y v difieren en una posición en
+concreto, entonces, o bien u y w difieren en dicha posición, o w y v difieren dicha
+posición, o ambas afirmaciones. De este modo, el número de posiciones en las que
+difieren u y v siempre es menor o igual que la suma de las posiciones en las que
+difieren u y w y w y v .</p>
+
+<h2 id="distancia-mı́nima">Distancia mı́nima</h2>
+
+<dl>
+  <dt>Definición</dt>
+  <dd>Sea C un código. La distancia mínima de C, d(C), es el mı́nimo del conjunto
+{d(u, v ) : u, v ∈ C, u 6= v }
+Ejemplo</dd>
+  <dd>(a) La distancia mı́nima del código de repetición {(0, 0, 0, 0), (1, 1, 1, 1)} es 4.
+(b) La distancia mı́nima del código de paridad de longitud 4 es 2.
+(c) La distancia mı́nima del código Hamming [7, 4] es 3.</dd>
+</dl>
+
+<h2 id="detección-y-corrección">Detección y corrección</h2>
+
+<p>Al transmitir una palabra código, esta puede sufrir errores en el canal y, por tanto difiere de lo que se recibe. Estos errores se corrigen encontrando la palabra código
+que se encuentra a menor distancia Hamming.</p>
+
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Un código C es capaz de detectar hasta k errores si el hecho de cambiar hasta k
+posiciones de una palabra código de C no la transforma en otra palabra código.</dd>
+</dl>
+
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Un código C se dice que es capaz de corregir hasta t errores si dada una palabra
+código c ∈ C y se cambian t posiciones de la misma, obteniendo c 0 , entonces la
+palabra código más próxima a c 0 sigue siendo c.</dd>
+</dl>
+
+<h2 id="distancia-mı́nima-detección-y-corrección">Distancia mı́nima, detección y corrección</h2>
+
+<dl class="t">
+  <dt>Teorema</dt>
+  <dd>Sea C un código C y sea d(c) su distancia mı́nima. Entonces C es capaz de detectar
+hasta k errores si d(C) ≥ k + 1. Del mismo modo, C es capaz de corregir hasta t
+errores si d(C) ≥ 2t + 1.</dd>
+</dl>
+
+<h2 id="supongamos-que-dc--k--1-si-en-una-palabra-código-c--c-se-cambian-k-o">Supongamos que d(C) ≥ k + 1. Si en una palabra código c ∈ C, se cambian k o</h2>
+
+<p>menos posiciones, y se obtiene c 0 , entonces, por la definición de distancia mı́nima de
+un código, c 0 ∈
+/ C.
+Supongamos ahora que d(C) ≥ 2t + 1. Si dada una palabra c ∈ C, se cambian a lo
+sumo t posiciones, obteniéndose c 0 , entonces d(c, c 0 ) ≤ t. Sea ahora c1 ∈ C.
+Veamos que d(c1 , c 0 ) ≥ t + 1.
+Supongamos, por el contrario, que d(c1 , c 0 ) &lt; t + 1, es decir, d(c1 , c 0 ) ≤ t. Entonces:
+2t + 1 ≤ d(C) ≤ d(c, c1 ) ≤ d(c, c 0 ) + d(c 0 , c1 ) ≤ t + t = 2t
+Lo que constituye una contradicción y, ası́, la palabra código más próxima a c 0 es c, es
+decir, C es capaz de corregir hasta t errores.</p>
+
+<h2 id="notación-general-sobre-códigos">Notación general sobre códigos</h2>
+
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Sea A un alfabeto, y C ⊆ An un código con M palabras código y tal que d(C) = d.
+Entonces nos referiremos a C como un (n, M, d)-código.</dd>
+</dl>
+
+<dl class="e">
+  <dt>Ejemplo</dt>
+  <dd>(a) El código de repetición C = {(0, 0, 0, 0), (1, 1, 1, 1) es un (4, 2, 4)-código.
+(b) El código de paridad de longitud 4 es un (4, 8, 2)-código.
+(c) El código Hamming [7, 4] es un (7, 16, 3)-código.</dd>
+</dl>
+
+<h2 id="tasa-de-información">Tasa de información</h2>
+
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Sea C un (n, M, d)-código q-ario. La tasa de información R se define como
+R=
+logq M
+n</dd>
+</dl>
+
+<dl class="e">
+  <dt>Ejemplo</dt>
+  <dd>(a) Para el código de repetición C = {(0, 0, 0, 0), (1, 1, 1, 1), R = 1/4.
+(b) Para el código de paridad de longitud 4, R = 3/4.
+(c) Para el código Hamming [7, 4], R = 4/7.</dd>
+</dl>
+
+<h2 id="códigos-equivalentes">Códigos equivalentes</h2>
+
+<dl class="d">
+  <dt>Definición</dt>
+  <dd>Sea A un alfabeto y sean los códigos C, C 0 ⊆ An . Se dice que C y C 0 son
+equivalentes si cualquier palabra código de C 0 puede obtenerse a partir de una
+palabra código de C mediante una serie de operaciones como:
+Aplicar una permutación f ∈ Sn de las posiciones del código.
+Aplicar una permutación f ∈ SA de los signos que aparecen en determinadas
+posiciones fijas de las palabras del código.</dd>
+</dl>
+
+<dl class="e">
+  <dt>Ejemplo</dt>
+  <dd>Sea el código
+C = {(0, 0, 0, 0), (0, 0, 1, 1), (0, 1, 0, 1), (0, 1, 1, 0), (1, 0, 0, 1), (1, 0, 1, 0),
+(1, 1, 0, 0), (1, 1, 1, 1)} y consideremos la permutación (1 2 3 4) ∈ S4 .
+Entonces, el código
+C 0 = {(0, 0, 0, 0), (1, 0, 0, 1), (1, 0, 1, 0), (0, 0, 1, 1), (1, 1, 0, 0), (0, 1, 0, 1),
+(0, 1, 1, 0), (1, 1, 1, 1)} es equivalente al código C.</dd>
+</dl>
+
+<dl>
+  <dt>Ejemplo</dt>
+  <dd>Sea el código C = {(0, 1, 2), (1, 2, 0), (1, 0, 2)} y sea la permutación de f de SA dada
+por f (0) = 1, f (1) = 2, f (2) = 1. Entonces, aplicando f a la segunda posición de cada
+palabra del código se obtiene el código equivalente C 0 = {(0, 2, 2), (1, 1, 0), (1, 1, 2).</dd>
+</dl>
+
+  </div>
+
+</article>
+
+        </div>
+    </main>
+
+    
+        <div id="disqus_thread"></div>
+        <script>
+            /**
+            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+            /*
+            var disqus_config = function () {
+            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            };
+            */
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://sksource.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    <footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">SK Source</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">SK Source</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://instagram.com/sksource_art"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#instagram"></use></svg> <span class="username">sksource_art</span></a></li><li><a href="https://www.twitter.com/sksource_art"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">sksource_art</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido  sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer  pero espero que me apoyéis a seguir adelante.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+
+</html>
+
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://example.com/mathjax/MathJax.js?config=TeX-AMS_CHTML&locale=fr"></script>

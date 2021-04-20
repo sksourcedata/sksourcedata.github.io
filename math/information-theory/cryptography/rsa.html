@@ -128,7 +128,23 @@
                 
                 
                 
+                
+                
+                
+                
                     <a class="page-link" href="/art/">Arte</a>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 
                 
                 
@@ -148,15 +164,21 @@
                 
                 
                 
-                
-                
-                
-                
                     <a class="page-link" href="/programming/">Programación</a>
                 
                 
                 
+                
+                
+                
+                
+                
+                
+                
+                
                     <a class="page-link" href="/about/">Sobre mí</a>
+                
+                
                 
                 
                 
@@ -207,7 +229,7 @@
 
 <dl class="d">
   <dt>Definición</dt>
-  <dd>La <strong>función indicatriz de Euler</strong> o <strong>función \(varphi\) de Euler</strong> es la función \(\varphi:\mathbb{N}^{\ast}\to\mathbb{N}\), dada por
+  <dd>La <strong>función indicatriz de Euler</strong> o <strong>función \(\  varphi\) de Euler</strong> es la función \(\varphi:\mathbb{N}^{\ast}\to\mathbb{N}\), dada por
 <em class="eq">\[ \varphi(n):=|\mathbb{Z}_n^{\times}|, \]</em>
 donde \(\mathbb{Z}_n^{\times}\) es el grupo multiplicativo de las unidades de \(\mathbb{Z}_n.\)</dd>
 </dl>
@@ -269,6 +291,34 @@ mensaje recibido usando la puerta trasera d ya que:
 (me )d = med (mod n) = m1-Φ(n)v (mod n) = m · (mΦ(n) )-v (mod n) = m (mod n)
 Teniendo en cuenta que, dado que m ∈ U(Zn ) y |U(Zn )| = Φ(n), entonces
 mΦ(n) = 1 (mod n) .</dd>
+</dl>
+
+<dl>
+  <dt>Ejemplo</dt>
+  <dd>Sea \((n,e):=(91,12)\) una clave pública. We are given $N$ and that will give us the prime factors $p$ and $q$ as:
+<em class="eq">\[N = 91 =  p \times q = 7 \times 13\]</em>
+We need the Euler Totient Function of the modulus, hence we get:
+<em class="eq">\[\varphi(N) = \varphi(91) = (p-1)(q-1) = 6 \times 12 = 72\]</em>
+Now, we choose an encryption exponent $1 \lt e \lt \varphi(N) = 72$. We were told to pick an an $e \lt 6$, so lets choose $e = 5$ and see if that works, where it should be coprime with $\varphi(N)$.
+<em class="eq">\[(5, 72) = 1 \rightarrow e = 5\]</em>
+To find the decryption exponent , we just find the modular inverse of the encryption exponent using the totient result, hence:
+<em class="eq">\[d\equiv_{\varphi(n)} e^{-1} \equiv_{72} 5^{-1}\equiv_{72} 29\]</em>
+Encryption:
+<em class="eq">\[\displaystyle c\equiv_{n} m^{e} \rightarrow 9^5\equiv_{91} 81\]</em>
+Decryption:
+<em class="eq">\[\displaystyle m\equiv_{n} c^{d} \rightarrow 81^{29}\equiv_{91} 9\]</em>
+Where:
+    <blockquote>
+      <ul>
+        <li>\(m\) es el mensaje a encriptar.</li>
+        <li>\(c\) es el mensaje encriptado.</li>
+        <li>\(e\) es el exponente de encriptación.</li>
+        <li>\(d\) es el exponente de desencriptación.</li>
+        <li>\(n\) es el módulo que es formado por los dos primos p y q.</li>
+        <li>\(\varphi\) es la función indicatriz de Euler.</li>
+      </ul>
+    </blockquote>
+  </dd>
 </dl>
 
 <h2 id="preguntas">Preguntas</h2>
