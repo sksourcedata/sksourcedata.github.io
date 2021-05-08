@@ -5,19 +5,19 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Conjunto | SK Source</title>
+<title>Código cíclico | SK Source</title>
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Conjunto" />
+<meta property="og:title" content="Código cíclico" />
 <meta property="og:locale" content="es_ES" />
 <meta name="description" content="Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante." />
 <meta property="og:description" content="Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante." />
-<link rel="canonical" href="https://sksourcedata.github.io//math/set-theory/set.html" />
-<meta property="og:url" content="https://sksourcedata.github.io//math/set-theory/set.html" />
+<link rel="canonical" href="https://sksourcedata.github.io//math/information-theory/cyclic-code/cyclic-code.html" />
+<meta property="og:url" content="https://sksourcedata.github.io//math/information-theory/cyclic-code/cyclic-code.html" />
 <meta property="og:site_name" content="SK Source" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Conjunto" />
+<meta property="twitter:title" content="Código cíclico" />
 <script type="application/ld+json">
-{"headline":"Conjunto","@type":"WebPage","url":"https://sksourcedata.github.io//math/set-theory/set.html","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
+{"headline":"Código cíclico","@type":"WebPage","url":"https://sksourcedata.github.io//math/information-theory/cyclic-code/cyclic-code.html","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://sksourcedata.github.io//feed.xml" title="SK Source" /><link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -224,95 +224,123 @@
     <main class="page-content" aria-label="Content">
         <div class="wrapper">
             
+                <div style="color:rgb(120, 120, 121);border: 2px solid rgb(247, 204, 17);padding: 2px">
+                    &#9888;Esta página aún se encuentra en desarrollo.
+                </div>
+                <!--<div style="color:rgb(120, 120, 121);border: 2px solid rgb(10, 154, 250);padding: 2px">
+                    &#8505;Información
+                </div>-->
+            
 
             <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Conjunto</h1>
+    <h1 class="post-title">Código cíclico</h1>
   </header>
 
   <div class="post-content">
-    <!--Set-->
+    <h2 id="definición">Definición</h2>
+
 <dl class="d">
   <dt>Definición</dt>
-  <dd>Un <strong>conjunto</strong> es una colección de objetos bien definida. Los objetos de un conjunto son llamados <strong>elementos</strong>. Cuando \(a\) es un elemento de un conjunto \(A\), se dice que \(a\) <strong>pertenece</strong> a \(A\), y se escribe \(a\in A\). Se dice que un conjunto <strong>contiene</strong> a sus elementos.</dd>
+  <dd>Un código C es cı́clico si y solo si C es un código lineal y si además, para cualquier palabra (a0 , a1 , . . . , an−2 , an−1 ) ∈ C se tiene que (an−1 , a0 , . . . , an−2 ) ∈ C.</dd>
 </dl>
-
-<p>Bien definida quiere decir que no hay duda de si un elemento pertenece o no al conjunto.</p>
-
-<p>Los elementos pueden ser cualquier cosa: números, letras, colores, otros conjuntos, etc.</p>
-
-<p>Los conjuntos se suelen denotar por letras mayúsculas y no importa el orden de sus elementos. Se pueden definir de dos maneras:</p>
-<ul>
-  <li><strong>Por enumeración.</strong> Enumerando o listando todos sus elementos separándolos por comas y entre llaves.</li>
-  <li><strong>Por compresión.</strong> Declarando la propiedad o propiedades que deben tener todos sus elementos.</li>
-</ul>
 
 <dl class="e">
   <dt>Ejemplo</dt>
-  <dd>El conjunto de las vocales del alfabeto se puede escribir:
-    <ul>
-      <li>Por enumeración: \(\{a,e,i,o,u\}\).</li>
-      <li>Por compresión: \(\{x:x\text{ es una vocal del alfabeto}\}\).</li>
-    </ul>
+  <dd>
+    <ol>
+      <li>C = {000, 101, 011, 110} es un código cı́clico.</li>
+      <li>C = {0000, 1001, 0110, 1111} es un código equivalente al código
+C 0 = {0000, 1010, 0101, 1111}, que es un código cı́clico.</li>
+    </ol>
   </dd>
 </dl>
 
-<p>En la anterior, expresión los dos puntos, «:», significan «tal que».</p>
+<h2 id="identificación-en-anillos-de-polinomios">Identificación en anillos de polinomios</h2>
 
-<!--Equals-->
+<p>Sea f (x) = x n − 1 en GF (q)[x] y consideremos el anillo cociente GF (q)[x]/(x n − 1). Entonces se tiene que x n ≡x n −1 1, de donde para reducir cualquier polinomio módulo x n − 1 nos basta reemplazar x n por 1, x n+1 por x, etc.</p>
+
+<p>Entonces, dado un vector (a0 , a1 , . . . an−1 ) en GF (q)n , podemos identificarlo con el vector a(x) = a0 + a1 x + · · · + an−1 x n−1 ∈ GF (q)[x]/(x n − 1), lo que produce un isomorfismo de espacios vectoriales.</p>
+
+<p>Pero además, si multiplicamos a(x) por el polinomio x, se tiene
+xa(x) = a0 x + a1 x 2 + · · · + an−1 x n , el cual, es congruente módulo x n − 1 con el polinomio
+an−1 + a0 x + · · · + an−2 x n−1.</p>
+
+<p>De este modo, si a = (a0 , a1 , . . . an−1 ) es una palabra de un código cı́clico C, entonces (an−1 , a0 , . . . , an−2 ) vuelve a ser una palabra de dicho código C, lo que en términos de la identificación de a con
+a(x) = a0 + a1 x + · · · + an−1 x n−1 ∈ GF (q)[x]/(x n − 1), 
+equivale a decir que la palabra a0 se corresponde con el producto xa(x) en GF (q)[x]/(x n − 1).</p>
+
+<h2 id="caracterización-códigos-cı́clicos">Caracterización códigos cı́clicos</h2>
+
+<dl class="t">
+  <dt>Teorema</dt>
+  <dd>Un subconjunto C ⊆ GF (q)[x]/(x n − 1) es un código cı́clico si y solo si es un ideal.</dd>
+</dl>
+
+<h2 id="estructura-códigos-cı́clicos">Estructura códigos cı́clicos</h2>
+
+<dl class="t">
+  <dt>Teorema</dt>
+  <dd>Sea C un código cı́clico. Entonces:
+    <ol>
+      <li>Existe un único polinomio mónico g(x) de menor grado en C.</li>
+      <li>C = hg(x)i.</li>
+      <li>g(x) es un factor de x n − 1.</li>
+    </ol>
+  </dd>
+</dl>
+
+<dl class="p">
+  <dt>Demostración</dt>
+  <dd>
+    <ol>
+      <li>Supongamos que existen dos polinomios mónicos en C de menor grado r , g1 (x)
+y g2 (x). Entonces g1 (x) − g2 (x) es un polinomio de grado menor o igual que
+r − 1, que multiplicado por el inverso del coeficiente lı́der del mismo produce un
+polinomio de menor grado que r y mónico.</li>
+      <li>Sea g(x) el polinomio mónico de menor grado de C y sea r = deg(g(x)).
+Consideremos ahora a(x) ∈ C. Entonces a(x) = g(x)q(x) + r (x), de donde
+r (x) = a(x) − g(x)q(x) ∈ C
+dado que a(x) ∈ C y g(x)q(x) ∈ C por ser C un ideal. De este modo, si multiplicamos r (x) por el inverso de su coeficiente lı́der,
+se tiene que existe un polinomio mónico de grado menor que r , de donde se sigue que C = hg(x)i.</li>
+      <li>Sea x n − 1 = g(x)q(x) + r (x). Si reducimos módulo x n − 1, se sigue que
+r (x) ≡x n −1 g(x)q(x) ∈ C, de donde por el mismo razonamiento anterior, existe
+un polinomio mónico de menor grado que g(x) en C y ası́, se sigue que r (x) = 0.</li>
+    </ol>
+  </dd>
+</dl>
+
+<h2 id="polinomio-generador">Polinomio generador</h2>
+
 <dl class="d">
   <dt>Definición</dt>
-  <dd>Dos conjuntos \(A\) y \(B\) son <strong>iguales</strong> si, y solo si, cada elemento de \(A\) está en \(B\), y viceversa. En tal caso, se escribirá \(A=B\).</dd>
+  <dd>Sea C un código cı́clico y sea C = hg(x)i. Entonces g(x) se denomina polinomio
+generador de C.</dd>
 </dl>
 
-<dl class="e">
-  <dt>Ejemplo</dt>
-  <dd>Los conjuntos \(\{1,3\}\) y \(\{x\in\mathbb{R}:x^2-4x+3=0\}\) son iguales.</dd>
+<dl class="l">
+  <dt>Lema</dt>
+  <dd>Sea g(x) = g0 + g1 x + · · · + gk x k un polinomio generador de un código cı́clico.
+Entonces g0 6= 0.</dd>
 </dl>
 
-<dl class="e">
-  <dt>Ejemplo</dt>
-  <dd>Como las soluciones reales de la ecuación \(x^2-4x+3\) son \(1\) y \(3\), entonces 
-<em class="eq">\[\{x\in\mathbb{R}:x^2-4x+3=0\}=\{1,3\}. \]</em></dd>
+<dl class="p">
+  <dt>Demostración</dt>
+  <dd>Supongamos que g0 = 0. Entonces x n−1 g(x) = x −1 g(x) es un polinomio mónico de
+grado k − 1, lo cual es absurdo.</dd>
 </dl>
 
-<dl class="e">
-  <dt>Ejemplo</dt>
-  <dd>Los conjuntos \(\{1,2\}\) y \(\{1,\{2\}\}\) no son iguales, ya que \(2\not\in\{1,\{2\}\}\) (y \(\{2\}\not\in\{1,2\}\)).</dd>
-</dl>
+<h2 id="ejemplo">Ejemplo</h2>
 
-<!--Universal set-->
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>El <strong>conjunto universal</strong>, denotado por \(\mathbb{U}\), es el conjunto que contiene todos los objetos considerados.</dd>
-</dl>
-
-<!--Empty set-->
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>El <strong>conjunto vacío</strong>, denotado por \(\varnothing\), es el conjunto que no tiene elementos.</dd>
-</dl>
-
-<!--Cardinality-->
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>El <strong>cardinal</strong> de un conjunto \(A\), denotado por \(|A|\), es el número de elementos de \(A\).</dd>
-</dl>
-
-<p>Según el número de elementos de un conjunto, se puede clasificar en dos tipos.</p>
-
-<!--Finite set-->
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>Un <strong>conjunto finito</strong> es un conjunto \(A\) que satisface \(|A|&lt;\aleph_0\).</dd>
-</dl>
-
-<!--Infinite set-->
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>Un <strong>conjunto infinito</strong> es un conjunto que no es finito.</dd>
-</dl>
+<p>Vamos a calcular todos los códigos binarios cı́clicos de longitud 3. Sea pues el polinomio x 3 − 1 ∈ GF (2)[x]. Entonces
+x 3 − 1 = (x + 1)(x 2 + x + 1) De este modo, los divisores, son {1, x + 1, x 2 + x + 1, x 3 − 1}, con lo que los correspondientes códigos cı́clicos son</p>
+<ol>
+  <li>h1i = GF (2)[x]/(x 3 − 1) = {0, 1, x, 1 + x, x 2 , 1 + x 2 , x + x 2 , 1 + x + x 2 }, o lo que es lo mismo, {000, 100, 010, 110, 001, 101, 011, 111}.</li>
+  <li>h1 + xi = {0, 1 + x, x + x 2 , 1 + x 2 }, es decir, {000, 110, 011, 101}.</li>
+  <li>h1 + x + x 2 i = {0, 1 + x + x 2 }, o equivalentemente {000, 111}.</li>
+  <li>hx 3 − 1i = 0, que es el código {000}.</li>
+</ol>
 
   </div>
 

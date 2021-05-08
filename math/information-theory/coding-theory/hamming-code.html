@@ -5,19 +5,19 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Conjunto | SK Source</title>
+<title>Código de Hamming | SK Source</title>
 <meta name="generator" content="Jekyll v4.2.0" />
-<meta property="og:title" content="Conjunto" />
+<meta property="og:title" content="Código de Hamming" />
 <meta property="og:locale" content="es_ES" />
 <meta name="description" content="Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante." />
 <meta property="og:description" content="Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante." />
-<link rel="canonical" href="https://sksourcedata.github.io//math/set-theory/set.html" />
-<meta property="og:url" content="https://sksourcedata.github.io//math/set-theory/set.html" />
+<link rel="canonical" href="https://sksourcedata.github.io//math/information-theory/coding-theory/hamming-code.html" />
+<meta property="og:url" content="https://sksourcedata.github.io//math/information-theory/coding-theory/hamming-code.html" />
 <meta property="og:site_name" content="SK Source" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Conjunto" />
+<meta property="twitter:title" content="Código de Hamming" />
 <script type="application/ld+json">
-{"headline":"Conjunto","@type":"WebPage","url":"https://sksourcedata.github.io//math/set-theory/set.html","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
+{"headline":"Código de Hamming","@type":"WebPage","url":"https://sksourcedata.github.io//math/information-theory/coding-theory/hamming-code.html","description":"Bienvenidos al sitio web personal de SK Source. Aquí encontrarás contenido sobre matemáticas, programación y arte. Aún queda un gran camino que recorrer pero espero que me apoyéis a seguir adelante.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="https://sksourcedata.github.io//feed.xml" title="SK Source" /><link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -224,94 +224,299 @@
     <main class="page-content" aria-label="Content">
         <div class="wrapper">
             
+                <div style="color:rgb(120, 120, 121);border: 2px solid rgb(247, 204, 17);padding: 2px">
+                    &#9888;Esta página aún se encuentra en desarrollo.
+                </div>
+                <!--<div style="color:rgb(120, 120, 121);border: 2px solid rgb(10, 154, 250);padding: 2px">
+                    &#8505;Información
+                </div>-->
+            
 
             <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Conjunto</h1>
+    <h1 class="post-title">Código de Hamming</h1>
   </header>
 
   <div class="post-content">
-    <!--Set-->
+    <h2 id="caso-binario">Caso binario</h2>
+
+<p>Los códigos Hamming son una clase de códigos lineales capaces de corregir un error y con algoritmos de codificación y decodificación muy sencillos. Fueron utilizados originalmente en llamadas telefónicas.</p>
+
 <dl class="d">
   <dt>Definición</dt>
-  <dd>Un <strong>conjunto</strong> es una colección de objetos bien definida. Los objetos de un conjunto son llamados <strong>elementos</strong>. Cuando \(a\) es un elemento de un conjunto \(A\), se dice que \(a\) <strong>pertenece</strong> a \(A\), y se escribe \(a\in A\). Se dice que un conjunto <strong>contiene</strong> a sus elementos.</dd>
+  <dd>Un código de Hamming binario es un código lineal tal que su matriz de paridad tiene m filas y 2m − 1 columnas, que son todos los vectores no nulos de Zm2. Dicho código de Hamming se denota usualmente por Ham(m, 2).</dd>
 </dl>
 
-<p>Bien definida quiere decir que no hay duda de si un elemento pertenece o no al conjunto.</p>
+<dl class="l">
+  <dt>Lema</dt>
+  <dd>Los parámetros del código Ham(m, 2) son:
+Longitud del código n = 2m − 1.
+Dimensión del código k = 2m − m − 1.
+Distancia mínima d = 3.</dd>
+</dl>
 
-<p>Los elementos pueden ser cualquier cosa: números, letras, colores, otros conjuntos, etc.</p>
-
-<p>Los conjuntos se suelen denotar por letras mayúsculas y no importa el orden de sus elementos. Se pueden definir de dos maneras:</p>
-<ul>
-  <li><strong>Por enumeración.</strong> Enumerando o listando todos sus elementos separándolos por comas y entre llaves.</li>
-  <li><strong>Por compresión.</strong> Declarando la propiedad o propiedades que deben tener todos sus elementos.</li>
-</ul>
+<h2 id="ejemplos">Ejemplos</h2>
 
 <dl class="e">
   <dt>Ejemplo</dt>
-  <dd>El conjunto de las vocales del alfabeto se puede escribir:
+  <dd>El código Ham(2, 2) tiene como matriz de paridad H =
+generadora de dicho código es, por tanto, G =
+de repetición de longitud 3.
+1
+1
+
+1 1 0
+. La matriz
+1 0 1
+
+1 , es decir, es un código.</dd>
+</dl>
+
+<dl class="e">
+  <dt>Ejemplo</dt>
+  <dd>El código Ham(3, 2) es un (7, 4, 3)-código lineal con matriz de paridad
+
+
+0 0 0 1 1 1 1
+
+0 1 1 0 0 1 1 
+H=
+1 0 1 0 1 0 1</dd>
+</dl>
+
+<h2 id="códigos-hamming-y-cota-de-hamming">Códigos Hamming y cota de Hamming</h2>
+
+<dl class="t">
+  <dt>Teorema</dt>
+  <dd>Todo código de Hamming, es perfecto, es decir, alcanza la cota de Hamming:
+M·
+t  
+X
+n
+i=0
+i
+(2 − i)i
+
+= 2n</dd>
+</dl>
+
+<dl class="p">
+  <dt>Demostración</dt>
+  <dd>En primer lugar, se tiene que dado que la distancia mínima es 3, se tiene que t = 1.
+Por otro lado, n = 2m − 1 y, como la dimensión del código es 2m − m − 1, se sigue que
+m
+M = 22 −m−1 .
+
+
+m
+m
+De este modo, 22 −m−1 ( n0 (2 − 0)0 + n1 (2 − 1)1 ) = 22 −m−1 (1 + n) =
+m
+22
+−m−1 (1
     <ul>
-      <li>Por enumeración: \(\{a,e,i,o,u\}\).</li>
-      <li>Por compresión: \(\{x:x\text{ es una vocal del alfabeto}\}\).</li>
+      <li>2m − 1) = 22
+m
+−m−1 2m
+m
+= 22
+−1 .</li>
     </ul>
   </dd>
 </dl>
 
-<p>En la anterior, expresión los dos puntos, «:», significan «tal que».</p>
+<h2 id="decodificación-de-hamm-2">Decodificación de Ham(m, 2)</h2>
 
-<!--Equals-->
+<p>Supongamos que recibimos la palabra y = x + e con w(e) = 1 y supongamos que la posición de e distinta de cero es j. Entonces:
+S(y) = yH t = (x + e)H t = xH t + eH t = eH t = hj
+donde hj es la j-ésima columna de H. Si se ordenan las columnas de H de menor a mayor, hj será la representación de j en binario. Así</p>
+
+<p>Algoritmo de decodificación</p>
+<ol>
+  <li>Recibida y, se calcula el síndrome S(y).</li>
+  <li>Si S(y) = 0, entonces no se ha producido ningún error.</li>
+  <li>Si S(y) 6= 0, entonces el síndrome indica la posición, en binario, en la que ha tenido lugar el error.</li>
+</ol>
+
+<h2 id="ejemplo">Ejemplo</h2>
+
+<dl class="e">
+  <dt>Ejemplo</dt>
+  <dd>Sea el código Ham(3, 2), con matriz de paridad
+
+0 0 0 1 1
+H= 0 1 1 0 0
+1 0 1 0 1
+1
+1
+0
+
+1
+1 
+1
+    <blockquote>
+      <p>Supongamos que se envía x = (1, 1, 0, 1, 0, 0, 1) y se recibe y = (1, 1, 0, 1, 0, 1, 1). Si
+calculamos S(y) = (1, 1, 0), es decir, detectamos que se ha producido un error en la
+posición 6 y, por tanto, se decodifica por x = (1, 1, 0, 1, 0, 0, 1)
+En caso de que se reciba y = (1, 1, 1, 1, 0, 0, 0), es decir, dos errores, en las
+posiciones 2 y 7, al calcular S(y) = (1, 0, 0) (que es la suma (0, 1, 1) + (1, 1, 1)), con
+lo que se decodifica, erróneamente, por x = (1, 1, 1, 0, 0, 0, 0).</p>
+    </blockquote>
+  </dd>
+</dl>
+
+<h2 id="códigos-hamming-no-binarios">Códigos Hamming no binarios</h2>
+
+<p>Sea GF (q) un cuerpo finito cualquiera, y consideremos GF (q)r con r ≥ 2.</p>
+
 <dl class="d">
   <dt>Definición</dt>
-  <dd>Dos conjuntos \(A\) y \(B\) son <strong>iguales</strong> si, y solo si, cada elemento de \(A\) está en \(B\), y viceversa. En tal caso, se escribirá \(A=B\).</dd>
+  <dd>Llamaremos código de Hamming y lo denotaremos por Ham(r , q) a todo aquel código
+cuya matriz de paridad, se construye de la siguiente forma:
+q r −1
+).
+q−1
+1 Sean todos los subespacios de dimensión 1 de GF (q)r (en total hay
+2 De cada uno de los subespacios se toma un vector no nulo y se incluye como
+columna de la matriz de paridad.</dd>
 </dl>
 
 <dl class="e">
   <dt>Ejemplo</dt>
-  <dd>Los conjuntos \(\{1,3\}\) y \(\{x\in\mathbb{R}:x^2-4x+3=0\}\) son iguales.</dd>
+  <dd>El código Ham(3, 3) es el código cuya matriz de paridad es
+
+0 0 0 0 1 1 1 1 1 1 1
+H= 0 1 1 1 0 0 0 1 1 1 2
+1 0 1 2 0 1 2 0 1 2 0
+1
+2
+1
+
+1
+2 
+2</dd>
 </dl>
+
+<h2 id="parámetros-de-los-códigos-hamr--q">Parámetros de los códigos Ham(r , q)</h2>
+
+<dl class="t">
+  <dt>Teorema</dt>
+  <dd> r
+−1
+Un qq−1
+,
+q r −1
+q−1
+
+− r , 3 -código lineal sobre GF (q) es un código de Hamming.</dd>
+</dl>
+
+<dl class="p">
+  <dt>Demostración</dt>
+  <dd>En primer lugar, hemos de poner de manifiesto que un código de Hamming se define
+por su matriz de paridad, compuesta por n vectores de GF (q)r de modo que dos
+cualesquiera son siempre linealmente independientes y n es lo más grande posible, de
+donde se tiene que, como hemos indicado antes, hay un total de q r − 1 subespacios
+unidimensionales que dividimos por los posibles múltiplos, es decir, q − 1, con lo que
+r
+−1
+su longitud es precisamente qq−1
+. Así mismo, la matriz de paridad de un código
+r
+−1
+Hamming tiene rango r , de donde la dimensión ha de ser qq−1
+− r (recordemos que la
+matriz H representa las ecuaciones cartesianas). Finalmente, como H tiene siempre 3
+columnas linealmente independientes y no existe un subconjunto de 2 filas linealmente
+independiente, entonces la distancia mínima es 3.
+El recíproco es inmediato dado que la distancia mínima es 3 (lo que nos da la
+propiedad sobre la dependencia lineal de las columnas) y la matriz de paridad tiene r
+r
+−1
+filas y qq−1
+columnas.</dd>
+</dl>
+
+<h2 id="decodificación-con-códigos-hamr--q">Decodificación con códigos Ham(r , q)</h2>
+
+<p>Supongamos que recibimos la palabra y = x + e con w(e) = 1. Supongamos que la
+posición de e distinta de cero es j. En este caso, e = (0, . . . , 0, b, 0, . . . , 0),
+b ∈ GF (q). Entonces:
+S(y) = yH t = (x + e)H t = xH t + eH t = eH t = b · hj</p>
+
+<p>Algoritmo de decodificación</p>
+<ol>
+  <li>Recibida y, se calcula el síndrome S(y).</li>
+  <li>Si S(y) = 0, entonces no se ha producido ningún error.</li>
+  <li>Si S(y) 6= 0, entonces S(y) = bhj y el el error cometido es
+e = (0, . . . , 0, b, 0, . . . , 0)
+y decodificamos por y − e.</li>
+</ol>
+
+<h2 id="ejemplo-1">Ejemplo</h2>
 
 <dl class="e">
   <dt>Ejemplo</dt>
-  <dd>Como las soluciones reales de la ecuación \(x^2-4x+3\) son \(1\) y \(3\), entonces 
-<em class="eq">\[\{x\in\mathbb{R}:x^2-4x+3=0\}=\{1,3\}. \]</em></dd>
+  <dd>Sea Ham(2, 5) definido por
+
+H=
+0
+1
+1
+0
+1
+1
+1
+2
+1
+3
+1
+4
+</dd>
 </dl>
+<blockquote class="e">
+  <p>Supongamos que recibimos y = (2, 0, 3, 0, 3, 1). Entonces S(y) = (2, 3) = 2(1, 4) y
+como 4 es la sexta columna de H, entonces e = (0, 0, 0, 0, 0, 2), con lo que
+decodificamos por x = y − e = (2, 0, 3, 0, 3, 4).</p>
+</blockquote>
 
-<dl class="e">
-  <dt>Ejemplo</dt>
-  <dd>Los conjuntos \(\{1,2\}\) y \(\{1,\{2\}\}\) no son iguales, ya que \(2\not\in\{1,\{2\}\}\) (y \(\{2\}\not\in\{1,2\}\)).</dd>
-</dl>
+<h2 id="códigos-simplex">Códigos simplex</h2>
 
-<!--Universal set-->
 <dl class="d">
   <dt>Definición</dt>
-  <dd>El <strong>conjunto universal</strong>, denotado por \(\mathbb{U}\), es el conjunto que contiene todos los objetos considerados.</dd>
+  <dd>Un código simplex es el código dual de un código Hamming.</dd>
 </dl>
 
-<!--Empty set-->
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>El <strong>conjunto vacío</strong>, denotado por \(\varnothing\), es el conjunto que no tiene elementos.</dd>
+<dl class="t">
+  <dt>Teorema</dt>
+  <dd>Cualquier palabra de un código simplex tiene peso q r −1.</dd>
 </dl>
 
-<!--Cardinality-->
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>El <strong>cardinal</strong> de un conjunto \(A\), denotado por \(|A|\), es el número de elementos de \(A\).</dd>
-</dl>
-
-<p>Según el número de elementos de un conjunto, se puede clasificar en dos tipos.</p>
-
-<!--Finite set-->
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>Un <strong>conjunto finito</strong> es un conjunto \(A\) que satisface \(|A|&lt;\aleph_0\).</dd>
-</dl>
-
-<!--Infinite set-->
-<dl class="d">
-  <dt>Definición</dt>
-  <dd>Un <strong>conjunto infinito</strong> es un conjunto que no es finito.</dd>
+<dl class="p">
+  <dt>Demostración</dt>
+  <dd>La matriz generadora de un código simplex es la matriz de paridad H de un código
+r
+−1
+Hamming, con lo que tiene r filas y qq−1
+columnas y además sabemos que el rango
+de dicha matriz es r . De este modo, el código es hHi = {xH : x ∈ GF (q)r }.
+Nótese que w(xH) = n-(columnas de H, y, tales que xy = 0). Sabemos que
+r −1
+dimx ⊥ = r − 1, luego tiene q q−1−1 subespacios de dimensión 1 y todos ellos están
+representados en las columnas de H. Por tanto,
+qr − 1
+q r −1 − 1
+−
+= q r −1
+q−1
+q−1
+ r
+
+−1
+Podemos concluir que un código simplex es un qq−1
+, r , q r −1 -código lineal.
+w(xH) =</dd>
 </dl>
 
   </div>
